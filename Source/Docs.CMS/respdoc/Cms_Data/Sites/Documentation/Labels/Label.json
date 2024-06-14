@@ -1,0 +1,317 @@
+﻿[
+  {
+    "UUID": null,
+    "Name": "Sample site",
+    "Value": "reSP Documentation",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.4800598Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Member Login",
+    "Value": "Member Login",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.4956864Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Register",
+    "Value": "Register",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.5738273Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Articles",
+    "Value": "Index",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.5738273Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Copyright &copy; 2009 - 2013 Kooboo team",
+    "Value": "Copyright © 2016 reSP team",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.5738273Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Admin Login",
+    "Value": "Admin Login",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.5738273Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Login",
+    "Value": "Login",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.5738273Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Username",
+    "Value": "Username",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.5894346Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Required",
+    "Value": "Required",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.5894346Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Password",
+    "Value": "Password",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.5894346Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Remember me",
+    "Value": "Remember me",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.5894346Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Forgot password?",
+    "Value": "Forgot password?",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.5894346Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Register a new account",
+    "Value": "Register a new account",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.5894346Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Login with social accounts",
+    "Value": "Login with social accounts",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6050752Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "<b>Note</b>: You need to configure Fackbook or <br > Twitter settings before using them.",
+    "Value": "<b>Note</b>: You need to configure Fackbook or <br > Twitter settings before using them.",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6050752Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Register member",
+    "Value": "Register member",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6050752Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Email",
+    "Value": "Email",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6050752Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Confirm password",
+    "Value": "Confirm password",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6050752Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "'Confirm password' and 'Password' do not match.",
+    "Value": "'Confirm password' and 'Password' do not match.",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6206848Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Sign up",
+    "Value": "Sign up",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6206848Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Index",
+    "Value": "Index",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6206848Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Search",
+    "Value": "Search",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6206848Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Basic",
+    "Value": "Basic features",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6206848Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "CodeCompletion",
+    "Value": "CodeCompletion",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6363095Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Inspection",
+    "Value": "Inspection",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6363095Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "ASP.NET",
+    "Value": "ASP.NET",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6363095Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Code",
+    "Value": "C#",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6363095Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "JavaScript",
+    "Value": "JavaScript",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6519349Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Xml",
+    "Value": "Xml",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6519349Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "LiveTemplates",
+    "Value": "LiveTemplates",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6519349Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Pro",
+    "Value": "Pro",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6519349Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Releases",
+    "Value": "Releases",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.6519349Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": "H3MPRRBVPR",
+    "Name": "Return",
+    "Value": "Return",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T22:32:19.7289325Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": "admin"
+  },
+  {
+    "UUID": "8FPULE4GBP",
+    "Name": "About us",
+    "Value": "About us",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T22:44:29.8029384Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": "admin"
+  },
+  {
+    "UUID": "EU7X6ZLMNS",
+    "Name": "Last updated",
+    "Value": "Last updated",
+    "Category": "",
+    "UtcCreationDate": "2015-12-31T16:23:56.5806697Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": "admin"
+  }
+]

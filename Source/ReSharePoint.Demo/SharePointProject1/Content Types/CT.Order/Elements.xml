@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  Parent ContentType: CT.Item.Base (0x0100DDCF54DFA5494411BACD914E6079CC59) 
+  
+  <ContentType ID="0x0100DDCF54DFA5494411BACD914E6079CC5900dbf81fb4a1a34d64bd61fb23148c0f0f"
+               Name="Demo - Order"
+               Group="Demo"
+               Description="Заявка"
+               Inherits="TRUE"
+               Version="0"
+               FeatureId="00bfea71-e717-4e80-aa17-d0c71b360101">
+    <FieldRefs>
+      <FieldRef ID="{BBC0AC6C-992D-476E-B226-D53F0885819B}" Name="Demo_OrderType" />
+      <FieldRef ID="{12AF008E-BB7D-45D7-8197-CF7939656538}" Name="Demo_OrderDepartment" />
+      <FieldRef ID="{3F9B67CF-2AA3-4FE9-AB74-B75DF7E22BE8}" Name="Demo_DepartmentBU" />      
+      <FieldRef ID="{7E71923D-F306-415C-BE8C-F1A3116FB5A1}" Name="Demo_DepartmentCostCenter" />      
+      <FieldRef ID="{C2AF84F0-D236-4216-B6F0-699F3ED58F03}" Name="Demo_DepartmentChiefManager" />
+      <FieldRef ID="{DA9AAF44-ABB2-4118-BD98-AED94AEE9DA2}" Name="Demo_OrderStatus" />
+      <FieldRef ID="{DD425DF5-C346-4630-8765-135C4E8B554D}" Name="Demo_OrderPrice" />
+      <FieldRef ID="{6df9bd52-550e-4a30-bc31-a4366832a87e}" Name="V3Comments" />
+      <FieldRef ID="{9DCB575B-648C-4BC1-A827-0BA9FE4B1C4A}" Name="Demo_OrderClosed" />
+      <FieldRef ID="{374EF9DE-BADD-469E-BBB7-2554BDD32C36}" Name="Demo_OrderCanceled" />
+      <FieldRef ID="{7DBD0B4A-A810-4FF9-9647-96101B87A0F8}" Name="Demo_OrderRejected" />
+    </FieldRefs>    
+  </ContentType>
+</Elements>
+-->
+
+  <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: Item (0x01) -->
+  <ContentType ID="0x0100B10E34AB90214C4FA9EFBB7653C208D8"
+               Name="The Receiver element should specify attribute 'Scope' with value 'Site' or 'Web'. See MSDN: 'When a SharePoint Feature is scoped to the site collection level, a 'Receivers' tag is potentially ambiguous. The tag can indicate either site-wide event binding or event binding for the top-level site. Note, however, that the default behavior is to scope to the site level. Therefore, when you scope a Feature to the site collection level, use the attribute named Scope to specify the intended scope. When you set this attribute to 'Site', event receivers that are defined inside a Feature that is scoped to the site collection are then bound at the site collection level. When the attribute is set to 'Web', event receivers that are defined for a Feature of a site collection are bound at the root Web site of that site collection.'. See sample below: "
+               Group="Code Project"
+               Description="Demo contenttype for CodeProject article"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+      <!-- Custom fields -->
+      <FieldRef ID="{a9f5f963-cd43-437f-9832-fa340e50334a}" 
+          Name="ProjectName" DisplayName="Name"/>
+      <FieldRef ID="{c55b0ed1-c874-491e-914d-621abd9066f6}" 
+          Name="ProjectDescription" DisplayName="Description"/>
+      <!-- Builtin fields -->
+      <FieldRef ID="{64CD368D-2F95-4BFC-A1F9-8D4324ECB007}" 
+          Name="StartDate" DisplayName="Start"/>
+      <FieldRef ID="{8A121252-85A9-443D-8217-A1B57020FADF}" 
+          Name="_EndDate" DisplayName="End"/>
+    <FieldRef ID="{fd169b93-4395-4298-9145-c240354d8c45}"
+          Name="TestFields"/>
+
+    <RemoveFieldRef ID="67df98f4-9dec-48ff-a553-29bece9c5bf4" Name="Attachments" /> 
+    <RemoveFieldRef ID="{f1e020bc-ba26-443f-bf2f-b68715017bbc}" Name="WorkflowVersion" /> 
+
+    </FieldRefs>
+    <XmlDocuments>
+      <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+      <FormTemplates xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+          <New>CPListForm</New>
+      </FormTemplates>
+      </XmlDocument>
+  </XmlDocuments>
+  </ContentType>
+
+    <ContentType ID="0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900242457EFB8B24247815D688C526CD44D00FCC00200282046D29292E250D777F2FC"
+               Name="Demo. Page. Regular"
+               Group="Demo"
+               Description="Page with custom content"
+               Inherits="TRUE"
+               Version="0"
+               Overwrite="TRUE">
+      <FieldRefs>
+      </FieldRefs>
+      <DocumentTemplate TargetName ="/_layouts/CreatePage.aspx"/>
+    </ContentType>
+</Elements>

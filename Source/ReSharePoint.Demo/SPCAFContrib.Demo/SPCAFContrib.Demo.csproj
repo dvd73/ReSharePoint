@@ -1,0 +1,772 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{769CE911-EE7E-49E4-98D8-D711AD33163C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPCAFContrib.Demo</RootNamespace>
+    <AssemblyName>SPCAFContrib.Demo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <TokenReplacementFileExtensions>svc</TokenReplacementFileExtensions>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <ProjectMode>SharePointCustomization</ProjectMode>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\packages\AjaxControlToolkit.7.1213\lib\45\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin">
+      <HintPath>..\..\packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="Camlex.NET, Version=3.5.0.0, Culture=neutral, PublicKeyToken=831792d54d5285b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\Camlex.NET\Camlex.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Activities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.BusinessData, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.BusinessData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.SecureStoreService, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.Office.SecureStoreService.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.Office.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.Office.Server.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server.Search.Connector, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.Office.Server.Search.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server.UserProfiles, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.Office.Server.UserProfiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.SharePoint.Client.ServerRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Linq">
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.SharePoint.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.sharepoint.portal, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\microsoft.sharepoint.portal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.SharePoint.Publishing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Security, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.SharePoint.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Taxonomy, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.SharePoint.Taxonomy.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.sharepoint.WorkflowActions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\microsoft.sharepoint.WorkflowActions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage">
+      <HintPath>..\..\packages\WindowsAzure.Storage.2.1.0.3\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="MOSS.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e688b91a6577ddf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\Custom\MOSS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SharePoint.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e8a6f7d47d89a049, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\Custom\SharePoint.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\Scripting\PowerShell\System.Management.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\AjaxWebService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\CommonHelper.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\flvplayerfieldcontrol.cs" />
+    <Compile Include="Common\Iterators\usernotificationtemplatelistfielditerator.cs" />
+    <Compile Include="Common\PortalGroups.cs" />
+    <Compile Include="Common\SPListItemFile.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\StoreItemAvailabilityResult.cs" />
+    <Compile Include="Common\StoreItemsAvailabilityResult.cs" />
+    <Compile Include="Common\UpdateWebConfig.cs" />
+    <Compile Include="ControlTemplates\SPCAFContrib.Demo\UsingSPDataSourceUserControl.ascx.cs">
+      <DependentUpon>UsingSPDataSourceUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\SPCAFContrib.Demo\UsingSPDataSourceUserControl.ascx.designer.cs">
+      <DependentUpon>UsingSPDataSourceUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\UpdateWebConfig\UpdateWebConfig.EventReceiver.cs">
+      <DependentUpon>UpdateWebConfig.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ISAPI\MyService\IMyService.cs" />
+    <Compile Include="ISAPI\MyService\MyService.svc.cs">
+      <DependentUpon>MyService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\SPCAFContrib.Demo\PersonalPage.aspx.cs">
+      <DependentUpon>PersonalPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\SPCAFContrib.Demo\PersonalPage.aspx.designer.cs">
+      <DependentUpon>PersonalPage.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\SPCAFContrib.Demo\UsingSPDataSource.aspx.cs">
+      <DependentUpon>UsingSPDataSource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\SPCAFContrib.Demo\UsingSPDataSource.aspx.designer.cs">
+      <DependentUpon>UsingSPDataSource.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\EventReceivers\Department\Department.cs" />
+    <Compile Include="Modules\EventReceivers\OrderItem\OrderItem.cs" />
+    <Compile Include="Modules\EventReceivers\Order\Order.cs" />
+    <Compile Include="Modules\EventReceivers\StoreItem\StoreItem.cs" />
+    <Compile Include="WebParts\ClientsWebPart\ClientsWebPart.cs" />
+    <Compile Include="Common\Consts.cs" />
+    <Compile Include="Common\CustomerEntity.cs" />
+    <Compile Include="Common\CustomerService.cs" />
+    <Compile Include="Common\LocalizationHelper.cs" />
+    <Compile Include="Common\MailHelper.cs" />
+    <Compile Include="ControlTemplates\SPCAFContrib.Demo\FeedbackUserControl.ascx.cs">
+      <DependentUpon>FeedbackUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\SPCAFContrib.Demo\FeedbackUserControl.ascx.designer.cs">
+      <DependentUpon>FeedbackUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\AspxPages\AspxPages.EventReceiver.cs">
+      <DependentUpon>AspxPages.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\SPCAFContrib.Demo\error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\SPCAFContrib.Demo\error.aspx.designer.cs">
+      <DependentUpon>error.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Intra10DB.cs" />
+    <Compile Include="Common\MeetingNotification.cs" />
+    <Compile Include="Layouts\SPCAFContrib.Demo\NotifyUser.aspx.cs">
+      <DependentUpon>NotifyUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\SPCAFContrib.Demo\NotifyUser.aspx.designer.cs">
+      <DependentUpon>NotifyUser.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SecureStoreService.cs" />
+    <Compile Include="Common\SPObjectNameStringComparison.cs" />
+    <Compile Include="Common\WorkWithUserProfiles.cs" />
+    <Compile Include="ControlTemplates\SPCAFContrib.Demo\CustomFormControl.ascx.cs">
+      <DependentUpon>CustomFormControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\SPCAFContrib.Demo\CustomFormControl.ascx.designer.cs">
+      <DependentUpon>CustomFormControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\CustomersWebPart\CustomersWebPart.cs" />
+    <Compile Include="DB Models\AdventureWorks.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorks.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB Models\AdventureWorks.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorks.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB Models\AdventureWorks.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorks.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DB Models\AdventureWorks1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorks.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CustomMasterPages\CustomMasterPages.EventReceiver.cs">
+      <DependentUpon>CustomMasterPages.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Job\UserProfileWatcherJob.cs" />
+    <Compile Include="Job\UserProfileLogger.cs" />
+    <Compile Include="Logging\SystemEventLog.cs" />
+    <Compile Include="Artifacts\Modules\MasterPages\Demo2.master.cs">
+      <DependentUpon>Demo2.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Artifacts\Modules\MasterPages\Demo1.master.cs">
+      <DependentUpon>Demo1.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Publishing\PublishingPageCollectionCodeSamples.cs" />
+    <Compile Include="WebControls\BadUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Features\BadFeatureWithoutImageUrl\BadFeatureWithoutImageUrl.EventReceiver.cs">
+      <DependentUpon>BadFeatureWithoutImageUrl.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GoodFeatureWithImageUrl\GoodFeatureWithImageUrl.EventReceiver.cs">
+      <DependentUpon>GoodFeatureWithImageUrl.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receivers\BadSPFeatureReceiver.cs" />
+    <Compile Include="Receivers\GoodSPFeatureReceiver.cs" />
+    <Compile Include="Services\ClientService.cs" />
+    <Compile Include="Services\LogService.cs" />
+    <Compile Include="WebControls\BadAppPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\BadWebPart.cs" />
+    <Compile Include="Workflow\ExecuteStoredProcedure\Common.cs" />
+    <Compile Include="Workflow\ExecuteStoredProcedure\Data.cs" />
+    <Compile Include="Workflow\ExecuteStoredProcedure\ExecuteStoredProcedure.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workflow\ExecuteStoredProcedure\ExecuteStoredProcedure.designer.cs">
+      <DependentUpon>ExecuteStoredProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\ExecuteStoredProcedure\Utils.cs" />
+    <Compile Include="Workflow\ReadInt\ReadInt.cs" />
+    <Compile Include="Workflow\TaskActivity\TaskActivity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workflow\TaskActivity\TaskActivity.Designer.cs">
+      <DependentUpon>TaskActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Workflow2\Workflow2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workflow\Workflow2\Workflow2.Designer.cs">
+      <DependentUpon>Workflow2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\Workflow3\Workflow3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workflow\Workflow3\Workflow3.Designer.cs">
+      <DependentUpon>Workflow3.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Artifacts\Actions\SPCAFContrib Group\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9bee0353-8456-4221-be33-fa86daa2ecde}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Actions\RemoveLeftNavigationAreaCell\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{23f1ce16-d20d-4022-aa4e-71cb61276451}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Content Types\CT.OrderItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{db5a2b1a-361f-45db-bcb4-1a52fb0ba424}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Content Types\CT.OrderLog\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b8e8b10b-4491-4f84-9f67-9614250836b7}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Content Types\CT.Order\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{94e6ceab-3f7f-4494-a750-0e15717cd6ca}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Content Types\CT.StoreItemNotStd\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8742e2f0-25b9-4537-96aa-6cf3c91e636f}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Content Types\CT.StoreItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3842cba7-96ad-437a-9206-d7f0c029e4f8}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Fields\FinanceFields\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d4783860-1d16-4e88-8c2e-376de6964d7a}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Fields\TestFields\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{edda9a7e-dd27-4617-a7d9-643bef67f22e}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\List\Departments\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{56c5ec33-a6de-4907-9224-0b3ab8b8f9ed}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\List\Divisions\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2f00dc9f-3683-4ef5-8fa8-03222ab1e824}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\List\WorkflowHistoryList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bf56b794-9683-4689-8e91-777794233f77}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\List\WorkflowTaskList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{830b277a-148b-4533-beeb-e6b06c577985}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Modules\AspxPages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{53e3128f-6b46-494e-a5d6-2a9a311c2542}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Modules\DelegateControls\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e485bcd2-cd2f-4cab-99bd-56313f95466c}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Modules\JSFile\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5e4e4b33-0383-44ad-afb6-0921e99ce9f8}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Modules\PageLayouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{82d4bfe8-52a9-44b0-b0ad-05cf4da2e2ed}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\CustomActivity\CustomActivity.feature">
+      <FeatureId>{283654a4-8679-4073-8afd-d5a7ae3915b3}</FeatureId>
+    </None>
+    <None Include="Features\CustomWorkflow1\CustomWorkflow1.feature">
+      <FeatureId>{87e752f2-c15d-4980-abfd-11bbe718cebc}</FeatureId>
+    </None>
+    <None Include="Features\SeqAndStateWorkflows\SeqAndStateWorkflows.feature">
+      <FeatureId>{4f0326df-524d-469f-b5c2-85b0396495ce}</FeatureId>
+    </None>
+    <None Include="Features\Web.WorkflowLists\Web.WorkflowLists.feature">
+      <FeatureId>{9b7d87c2-8537-4d1e-9609-9ac6974a6fd1}</FeatureId>
+    </None>
+    <None Include="Features\ListReceivers\ListReceivers.feature">
+      <FeatureId>{76e96de6-b242-4297-a395-17fa2c04af43}</FeatureId>
+    </None>
+    <None Include="Features\UpdateWebConfig\UpdateWebConfig.feature">
+      <FeatureId>{6ce2ca5e-4667-41d3-86cd-bc753cbe491e}</FeatureId>
+    </None>
+    <None Include="Features\InfoPathForms\InfoPathForms.feature">
+      <FeatureId>{23b20069-6467-4fed-8d40-a9d3cdf85d52}</FeatureId>
+    </None>
+    <None Include="ISAPI\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e2257a93-601f-424a-ac67-00128596ded3}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\EventReceivers\Department\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6edbfaa4-0920-4013-9b11-e292ae273021}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\EventReceivers\OrderItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1d90a6a1-005c-4d9e-a1d3-6d496ac7e097}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\EventReceivers\Order\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{48808e29-3dba-4dd2-9f0e-1ebb737bf94a}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\EventReceivers\StoreItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b4e7e924-821b-4103-88b8-8ebec6d8994a}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\Xsn\Form1.xsn" />
+    <None Include="Modules\Xsn\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1a6ca689-e6c5-45c3-8419-7d00980c019e}</SharePointProjectItemId>
+    </None>
+    <None Include="SiteTemplates\WT.FMC.Department.Communication\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bb203f52-ba76-40d5-bde4-6c0bcd886278}</SharePointProjectItemId>
+    </None>
+    <None Include="SiteTemplates\WT.FMC.Department.HR\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f3f93fbf-2ba2-460f-9781-f226d216ed51}</SharePointProjectItemId>
+    </None>
+    <None Include="SiteTemplates\WT.FMC.Department\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8db60e2c-6b5c-48e2-9b63-68b26b7b07c9}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\ClientsWebPart\ClientsWebPart.webpart" />
+    <None Include="WebParts\ClientsWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9cf03e7a-467c-4055-a41b-f0ba1f62dd25}</SharePointProjectItemId>
+    </None>
+    <None Include="ControlTemplates\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3bcbca62-1cfd-44e4-b7c1-ef12160c743f}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\CustomersWebPart\CustomersWebPart.webpart" />
+    <None Include="WebParts\CustomersWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{20577c14-5dd8-4088-97e3-368e4ac79d10}</SharePointProjectItemId>
+    </None>
+    <None Include="DB Models\AdventureWorks.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdventureWorks.edmx</DependentUpon>
+      <LastGenOutput>AdventureWorks.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DB Models\AdventureWorks.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>AdventureWorks.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="DB Models\AdventureWorks.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdventureWorks1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB Models\AdventureWorks.edmx.diagram">
+      <DependentUpon>AdventureWorks.edmx</DependentUpon>
+    </None>
+    <None Include="DB Models\AdventureWorks.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdventureWorks.edmx</DependentUpon>
+      <LastGenOutput>AdventureWorks.cs</LastGenOutput>
+    </None>
+    <None Include="Features\BadFeatureWithoutImageUrl\BadFeatureWithoutImageUrl.feature">
+      <FeatureId>{6ac5b914-fd9a-4b63-8cd5-036da61acf68}</FeatureId>
+    </None>
+    <None Include="Features\AspxPages\AspxPages.feature">
+      <FeatureId>{e0168c3a-244a-4449-8d8a-61b76c4078cf}</FeatureId>
+    </None>
+    <None Include="Features\CustomMasterPages\CustomMasterPages.feature">
+      <FeatureId>{36d70444-1af7-4658-8313-cbf3c162b845}</FeatureId>
+    </None>
+    <None Include="Features\JSFiles\JSFiles.feature">
+      <FeatureId>{1b96f3e6-9a91-4a23-b71d-85f9e7529585}</FeatureId>
+    </None>
+    <None Include="Features\SameListUrls\SameListUrls.feature">
+      <FeatureId>{31f97abb-21a6-44f0-b1ad-1419310a5fba}</FeatureId>
+    </None>
+    <None Include="Features\Fields\Fields.feature">
+      <FeatureId>{8f065596-1559-47a6-b969-07d588a558c1}</FeatureId>
+    </None>
+    <None Include="Features\WrongFieldID\WrongFieldID.feature">
+      <FeatureId>{8ff2bae5-f255-49ee-b017-0cacea62bd68}</FeatureId>
+    </None>
+    <None Include="Features\GoodFeatureWithImageUrl\GoodFeatureWithImageUrl.feature">
+      <FeatureId>{cdeaf3a9-efdc-4bb2-a0b0-08cbb62fc175}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Artifacts\List\LD.WrongFieldID\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1a02c085-ca54-43b9-af33-4d204dfe09c7}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Modules\XsltStuff\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3cf9e82e-b9ce-4fee-8066-621e8a96f533}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Modules\MasterPages\Demo2.master" />
+    <None Include="Artifacts\Modules\MasterPages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e43d0e32-e018-4553-8d7f-0b63452a3876}</SharePointProjectItemId>
+    </None>
+    <None Include="Artifacts\Modules\MasterPages\Demo1.master" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5efcbb5e-21fc-40c5-a15e-4eea61970d77}</SharePointProjectItemId>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Workflow\MyActivity\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4c716490-2ef2-4b64-877d-e93a490f4334}</SharePointProjectItemId>
+    </None>
+    <None Include="Workflow\Workflow1\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ef226663-5e54-458d-8962-271523133b98}</SharePointProjectItemId>
+    </None>
+    <None Include="Workflow\Workflow2\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d9397ff2-02ef-43da-be28-80ce84c9a197}</SharePointProjectItemId>
+    </None>
+    <None Include="Workflow\Workflow3\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4a557611-f20e-472a-8308-1679fbcc79c3}</SharePointProjectItemId>
+    </None>
+    <None Include="XML\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4a30a318-ff98-4cf7-af30-f3e77a5ac71c}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Artifacts\Actions\SPCAFContrib Group\Elements.xml" />
+    <Content Include="Artifacts\Actions\RemoveLeftNavigationAreaCell\Elements.xml" />
+    <Content Include="Artifacts\Content Types\CT.OrderItem\Elements.xml" />
+    <Content Include="Artifacts\Content Types\CT.OrderLog\Elements.xml" />
+    <Content Include="Artifacts\Content Types\CT.Order\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Artifacts\Content Types\CT.StoreItemNotStd\Elements.xml" />
+    <Content Include="Artifacts\Content Types\CT.StoreItem\Elements.xml" />
+    <Content Include="Artifacts\Fields\FinanceFields\Elements.xml" />
+    <Content Include="Artifacts\Fields\TestFields\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Artifacts\List\Departments\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Artifacts\List\Divisions\Elements.xml" />
+    <Content Include="Artifacts\List\WorkflowHistoryList\Elements.xml" />
+    <Content Include="Artifacts\List\WorkflowTaskList\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Artifacts\Modules\AspxPages\Elements.xml" />
+    <Content Include="Artifacts\Modules\AspxPages\usercard.aspx" />
+    <Content Include="Artifacts\Modules\DelegateControls\Elements.xml" />
+    <Content Include="Artifacts\Modules\JSFile\Elements.xml" />
+    <Content Include="Artifacts\Modules\JSFile\Sample.js" />
+    <Content Include="Artifacts\Modules\PageLayouts\Elements.xml" />
+    <Content Include="Artifacts\Modules\PageLayouts\SampleLayout.aspx" />
+    <Content Include="ControlTemplates\SPCAFContrib.Demo\UserNotificationTemplate.ascx" />
+    <Content Include="ControlTemplates\SPCAFContrib.Demo\UsingSPDataSourceUserControl.ascx" />
+    <Content Include="Features\CustomActivity\CustomActivity.Template.xml">
+      <DependentUpon>CustomActivity.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\CustomWorkflow1\CustomWorkflow1.Template.xml">
+      <DependentUpon>CustomWorkflow1.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SeqAndStateWorkflows\SeqAndStateWorkflows.Template.xml">
+      <DependentUpon>SeqAndStateWorkflows.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\Web.WorkflowLists\Web.WorkflowLists.Template.xml">
+      <DependentUpon>Web.WorkflowLists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\ListReceivers\ListReceivers.Template.xml">
+      <DependentUpon>ListReceivers.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\UpdateWebConfig\UpdateWebConfig.Template.xml">
+      <DependentUpon>UpdateWebConfig.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\InfoPathForms\InfoPathForms.Template.xml">
+      <DependentUpon>InfoPathForms.feature</DependentUpon>
+    </Content>
+    <Content Include="ISAPI\MyService\MyService.svc" />
+    <Content Include="Layouts\SPCAFContrib.Demo\AjaxWebService.asmx" />
+    <Content Include="Layouts\SPCAFContrib.Demo\PersonalPage.aspx" />
+    <Content Include="Layouts\SPCAFContrib.Demo\UsingSPDataSource.aspx" />
+    <Content Include="Modules\EventReceivers\Department\Elements.xml" />
+    <Content Include="Modules\EventReceivers\OrderItem\Elements.xml" />
+    <Content Include="Modules\EventReceivers\Order\Elements.xml" />
+    <Content Include="Modules\EventReceivers\StoreItem\Elements.xml" />
+    <Content Include="Modules\Xsn\Elements.xml" />
+    <Content Include="SiteTemplates\WT.FMC.Department.Communication\Elements.xml" />
+    <Content Include="SiteTemplates\WT.FMC.Department.Communication\onet.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SiteTemplates\WT.FMC.Department.HR\Elements.xml" />
+    <Content Include="SiteTemplates\WT.FMC.Department.HR\onet.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SiteTemplates\WT.FMC.Department.HR\webtemp_WT.FMC.Department.HR.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SiteTemplates\WT.FMC.Department\Elements.xml" />
+    <Content Include="SiteTemplates\WT.FMC.Department\onet.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebParts\ClientsWebPart\Elements.xml" />
+    <Content Include="ControlTemplates\SPCAFContrib.Demo\CustomFormControl.ascx" />
+    <Content Include="ControlTemplates\SPCAFContrib.Demo\FeedbackUserControl.ascx" />
+    <Content Include="WebParts\CustomersWebPart\Elements.xml" />
+    <Content Include="Features\BadFeatureWithoutImageUrl\BadFeatureWithoutImageUrl.Template.xml">
+      <DependentUpon>BadFeatureWithoutImageUrl.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\AspxPages\AspxPages.Template.xml">
+      <DependentUpon>AspxPages.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\CustomMasterPages\CustomMasterPages.Template.xml">
+      <DependentUpon>CustomMasterPages.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\JSFiles\JSFiles.Template.xml">
+      <DependentUpon>JSFiles.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SameListUrls\SameListUrls.Template.xml">
+      <DependentUpon>SameListUrls.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\Fields\Fields.Template.xml">
+      <DependentUpon>Fields.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\WrongFieldID\WrongFieldID.Template.xml">
+      <DependentUpon>WrongFieldID.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GoodFeatureWithImageUrl\GoodFeatureWithImageUrl.Template.xml">
+      <DependentUpon>GoodFeatureWithImageUrl.feature</DependentUpon>
+    </Content>
+    <Content Include="Artifacts\List\LD.WrongFieldID\Elements.xml" />
+    <Content Include="Artifacts\List\LD.WrongFieldID\Schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Artifacts\Modules\XsltStuff\Elements.xml" />
+    <Content Include="Artifacts\Modules\XsltStuff\Sample.xslt">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Artifacts\Modules\MasterPages\Elements.xml" />
+    <Content Include="Layouts\SPCAFContrib.Demo\error.aspx" />
+    <Content Include="Layouts\SPCAFContrib.Demo\NotifyUser.aspx" />
+    <Content Include="Workflow\MyActivity\Elements.xml" />
+    <Content Include="Workflow\MyActivity\MyActivity.actions4" />
+    <Content Include="Workflow\Workflow1\Elements.xml" />
+    <Content Include="Workflow\Workflow2\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Workflow\Workflow3\Elements.xml" />
+    <Content Include="XML\fldtypes_flvplayerfield.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules\Xslt\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DB Models\AdventureWorks.dbml.layout">
+      <DependentUpon>AdventureWorks.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Workflow\Workflow1\Workflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Workflow\MyActivity\MyActivity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="false" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+</Project>

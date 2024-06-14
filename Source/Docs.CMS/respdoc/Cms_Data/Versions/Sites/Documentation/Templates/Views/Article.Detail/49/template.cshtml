@@ -1,0 +1,98 @@
+﻿@using Kooboo.CMS.Content;
+@using Kooboo.CMS.Content.Query;
+@using Kooboo.CMS.Content.Models;
+@using System.Globalization;
+@using System.Threading;
+@{
+    var userKey = Page_Context.Current.PageRequestContext.AllQueryString["UserKey"];
+    var folderCode = Page_Context.Current.PageRequestContext.AllQueryString["folder"];
+    folderCode = !String.IsNullOrEmpty(folderCode) ? folderCode : "Article";
+    var textFolder = ContentHelper.TextFolder(folderCode); 
+    var contentQuery = textFolder.CreateQuery();
+    contentQuery = contentQuery.WhereEquals("UserKey", userKey);
+    var content = contentQuery.FirstOrDefault();
+
+    /* Здесь баг: создается очередная версия страницы. 
+    if (content != null)
+    {        
+        var readings = 1;
+        if (content["Readings"] != null)
+        {
+            readings = (int)content["Readings"] + 1;
+        }
+        Kooboo.CMS.Content.Services.ServiceFactory.TextContentManager.Update(Repository.Current, content.GetSchema(),
+   content.UUID, "Readings", readings, User.Identity.Name, false);
+
+    } */
+
+    var lastModifiedDate = DateTimeHelper.Parse(content["UtcLastModificationDate"].ToString());
+    if (lastModifiedDate == DateTime.MinValue)
+    {
+       lastModifiedDate = DateTimeHelper.Parse(content["UtcCreationDate"].ToString()); // UtcCreationDate хранит локальное время
+    }
+	else
+    {
+       lastModifiedDate = lastModifiedDate.AddHours(-5); // потому что UtcLastModificationDate хранит кривое на 5 часов значение
+    }
+ }
+<header>    
+  
+</header>
+<section class="content" @ViewHelper.Edit(content, "Description")>
+    @Html.Raw(content["Description"] ?? "")
+  <span class="date" style="float:right">@("Last updated".Label()): @ViewHelper.DateTimeToString(lastModifiedDate, Thread.CurrentThread.CurrentUICulture.DateTimeFormat.ShortDatePattern)</span>  
+  <div class="clear" />1234
+</section>
+<footer>
+    <div id="comments" class="block comment">
+        <h6 class="title">Comments</h6>
+        @foreach (dynamic comment in content.Children("Comment"))
+        {
+            <div class="item">
+                <div class="clearfix">
+                    <h5 class="title">@comment.Title</h5>
+                    <span class="name">@comment.Member</span>
+                </div>
+                <p>@comment.Body</p>
+                @if (User.Identity.IsAuthenticated)
+                {
+
+                    <form class="delete" action="@Url.FrontUrl().SubmissionUrl("DeleteComment", new { uuid = comment.UUID })" method="post">
+                        @Html.AntiForgeryToken()
+                        <button type="submit">@("Delete".Label())</button>
+                    </form>    
+                }
+            </div>
+        }
+        @if (ViewContext.HttpContext.Membership().GetMember().Identity.IsAuthenticated)
+        {
+
+            <h6 class="title">@("Post a comment".Localize())</h6>
+
+            <div class="common-form">
+                <form method="post" action="@Url.FrontUrl().SubmissionUrl("PostComment")">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="ParentUUID" value="@content.UUID" />
+                    <input type="hidden" name="Member" value="@ViewContext.HttpContext.Membership().GetMember().Identity.Name" />
+                    <p class="field">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" data-val-required="Title is required" data-val="true" />
+                        @Html.ValidationMessageForInput("title")
+                    </p>
+                    <p class="field">
+                        <label for="Body">Comment:</label>
+                        <textarea id="Summary" name="Body"></textarea>
+                    </p>
+                    <p class="buttons">
+                        <button type="submit">@("Submit".Label())</button>
+                    </p>
+                </form>
+            </div>
+        }
+        else
+        {
+
+            <div class="hint-tips"><a href="@Url.FrontUrl().PageUrl("Member/Login", new { returnUrl = Request.RawUrl })">Login</a><text> to leave a comment.</text></div>
+        }
+    </div>
+</footer>

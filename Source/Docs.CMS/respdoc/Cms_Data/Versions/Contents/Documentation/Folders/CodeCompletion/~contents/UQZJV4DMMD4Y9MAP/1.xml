@@ -1,0 +1,94 @@
+﻿<VersionInfo xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Kooboo.CMS.Content.Versioning">
+	<CommitUser>admin</CommitUser>
+	<UtcCommitDate>2016-01-06T22:48:56.7530929+03:00</UtcCommitDate>
+	<TextContent xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>UserKey</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">FeatureSiteTemplateAssociationFeatureId</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Id</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string"></d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>UtcCreationDate</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:dateTime">2016-01-06T22:48:56.7530929+03:00</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>UtcLastModificationDate</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:dateTime">2016-01-06T22:48:56.7530929+03:00</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>UUID</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">UQZJV4DMMD4Y9MAP</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Repository</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">Documentation</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>FolderName</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">CodeCompletion</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>SchemaName</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">Article</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Title</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">FeatureSiteTemplateAssociationFeatureId</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Summary</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">Feature stapling is an approach used to associate custom features with a site definition.  This feature will be activated automatically when a new site is created  from the associated site definition. The Id attribute contains Ids of "Staplee" feature.
+"Staplee" – the feature associated with a site definition or the feature that applies the customization.</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Description</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">&lt;h3&gt;Description&lt;/h3&gt;
+&lt;p&gt;Feature stapling is an approach used to associate custom features with a site definition. This feature will be activated automatically when a new site is created from the associated site definition. The Id attribute contains Ids of "Staplee" feature.&lt;br /&gt;"Staplee" &amp;ndash; the feature associated with a site definition or the feature that applies the customization.&lt;br /&gt;reSP allows you to select from the drop-down list.&lt;br /&gt;Just use Ctrl+Space shortcut.&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src="http://docs.subpointsolutions.com/wp-content/uploads/2015/06/FeatureSiteTemplateAssociationFeatureId.gif"&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Note&lt;/h3&gt;
+&lt;p&gt;Feature stapling concept itself is fairly easy to use, but an important aspect in feature stapling is [the order](http://blogs.msdn.com/b/mcsnoiwb/archive/2008/05/28/site-provisioning-order.aspx) in which a site is provisioned:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Global onet.xml.&lt;/li&gt;
+&lt;li&gt;Site-scoped features defined in onet.xml, in the order they are defined in the file.&lt;/li&gt;
+&lt;li&gt;Site-scoped stapled features, activated asynchronously, on multiple threads.&lt;/li&gt;
+&lt;li&gt;Web-scoped features defined in onet.xml, in the order they are defined in the file.&lt;/li&gt;
+&lt;li&gt;Web-scoped stapled features, activated asynchronously, on multiple threads.&lt;/li&gt;
+&lt;li&gt;List instances defined in onet.xml.&lt;/li&gt;
+&lt;li&gt;Modules defined in onet.xml.&lt;/li&gt;
+&lt;/ol&gt;</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Readings</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:int">0</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Published</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:boolean">true</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>ParentFolder</d2p1:Key>
+			<d2p1:Value i:nil="true" />
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>ParentUUID</d2p1:Key>
+			<d2p1:Value i:nil="true" />
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>UserId</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">admin</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Sequence</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:int">11</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+	</TextContent>
+	<Categories>
+		<Category>
+			<FolderName>Category</FolderName>
+			<Contents />
+		</Category>
+	</Categories>
+</VersionInfo>

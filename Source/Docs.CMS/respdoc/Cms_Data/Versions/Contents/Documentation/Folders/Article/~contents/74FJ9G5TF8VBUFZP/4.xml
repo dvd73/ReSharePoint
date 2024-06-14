@@ -1,0 +1,102 @@
+﻿<VersionInfo xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Kooboo.CMS.Content.Versioning">
+	<CommitUser>admin</CommitUser>
+	<UtcCommitDate>2015-12-29T22:20:18.2315767Z</UtcCommitDate>
+	<TextContent xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>UserKey</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">F-A-Q-</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Id</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string"></d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>UtcCreationDate</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:dateTime">2015-12-30T01:11:45.0807824+03:00</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>UtcLastModificationDate</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:dateTime">2015-12-29T22:20:18.2315767Z</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>UUID</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">74FJ9G5TF8VBUFZP</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Repository</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">Documentation</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>FolderName</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">Article</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>SchemaName</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">Article</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Title</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">F.A.Q.</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Summary</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">Tips for using reSP</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Description</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">&lt;h4&gt;How is it possible to check all solution projects?&lt;/h4&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt; In case of "bulk" analyse R# exposes the list of incidents in the separate windows. &lt;br /&gt; &lt;img src="http://docs.subpointsolutions.com/wp-content/uploads/2015/03/bulk_inspection.gif" /&gt;&lt;/p&gt;
+&lt;h4&gt;How to change rule severity in the ReSharper?&lt;/h4&gt;
+&lt;p&gt;&lt;br /&gt; * 1 approach: &lt;br /&gt; Open ReSharper | Option dialog and select Code Inspection | Inspection Severity&lt;br /&gt; Click on the reSP title&lt;br /&gt; Click on the colored box with curent severity level.&lt;br /&gt; * 2 approach:&lt;br /&gt; &lt;img src="http://docs.subpointsolutions.com/wp-content/uploads/2015/03/disable_rule.gif" /&gt;&lt;br /&gt;How can I read more about highlighting?&lt;br /&gt; Open context menu, select Options for "name of issue" and select "Why is reSP suggestion this?". The help page will be opened immediatelly in the browser. &lt;img class="alignright size-full wp-image-6671" src="http://docs.subpointsolutions.com/wp-content/uploads/2015/03/get_help.png" /&gt; You can read more about ReSharper code inspection [here](https://www.jetbrains.com/resharper/help/Code_Analysis__Index.html).&lt;/p&gt;
+&lt;h4&gt;How can I do something more with ReSharper?&lt;/h4&gt;
+&lt;p&gt;Read [this](http://sadomovalex.blogspot.ru/search/label/ReSharper) article to know about live templates.&lt;/p&gt;
+&lt;h4&gt;Where I can find the quick access key map in for ReSharper?&lt;/h4&gt;
+&lt;p&gt;Check out this [guide](http://www.jetbrains.com/resharper/docs/ReSharper80DefaultKeymap_IDEA_scheme.pdf) PDF.&lt;/p&gt;
+&lt;h4&gt;How can I enable/disable ReSharper code analysis for specific files?&lt;/h4&gt;
+&lt;p&gt;- Ctrl-8 for the current file, for the current session. - Ctrl-Alt-8 for disabling Resharper code analysis.&lt;/p&gt;
+&lt;h4&gt;List of excluded libraries&lt;/h4&gt;
+&lt;p&gt;You can configure lists of ignored files using regular expression or wildcards in the ReSharper | Options dialog. &lt;img class="alignright size-full wp-image-11291" src="http://docs.subpointsolutions.com/wp-content/uploads/2015/03/settings.png" alt="settings" width="775" height="480" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Readings</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:int">0</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Published</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:boolean">true</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>ParentFolder</d2p1:Key>
+			<d2p1:Value i:nil="true" />
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>ParentUUID</d2p1:Key>
+			<d2p1:Value i:nil="true" />
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>UserId</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">admin</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>Sequence</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:int">1</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+		<d2p1:KeyValueOfstringanyType>
+			<d2p1:Key>___EnableVersion___</d2p1:Key>
+			<d2p1:Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:boolean">true</d2p1:Value>
+		</d2p1:KeyValueOfstringanyType>
+	</TextContent>
+	<Categories>
+		<Category>
+			<FolderName>Category</FolderName>
+			<Contents>
+				<CategoryContent>
+					<UUID>CPGJBJWDHM2ALEEW</UUID>
+					<DisplayName>Basic</DisplayName>
+				</CategoryContent>
+			</Contents>
+		</Category>
+	</Categories>
+</VersionInfo>

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Revision="3" Title="$Resources:spscore,PortalTitle;" ListDir="" xmlns:ows="Microsoft SharePoint" UIVersion="4">
+  <NavBars>
+    <NavBar Name="SharePoint Top Navbar" ID="1002">
+    </NavBar>
+  </NavBars>
+  <ListTemplates>
+  </ListTemplates>
+  <DocumentTemplates>
+
+    <DocumentTemplate Path="STS" Name="" DisplayName="$Resources:core,doctemp_None;" Type="100" Default="FALSE" Description="$Resources:core,doctemp_None_Desc;" />
+
+    <DocumentTemplate Path="STS" DisplayName="$Resources:core,doctemp_Word97;" Type="101" Default="TRUE" Description="$Resources:core,doctemp_Word97_Desc;">
+      <DocumentTemplateFiles>
+        <DocumentTemplateFile Name="doctemp\word\wdtmpl.doc" TargetName="Forms/template.doc" Default="TRUE"/>
+      </DocumentTemplateFiles>
+    </DocumentTemplate>
+    <DocumentTemplate Path="STS" DisplayName="$Resources:core,doctemp_Excel97;" Type="103" Description="$Resources:core,doctemp_Excel97_Desc;">
+      <DocumentTemplateFiles>
+        <DocumentTemplateFile Name="doctemp\xl\xltmpl.xls" TargetName="Forms/template.xls" Default="TRUE"/>
+      </DocumentTemplateFiles>
+    </DocumentTemplate>
+    <DocumentTemplate Path="STS" DisplayName="$Resources:core,doctemp_Powerpoint97;" Type="104" Description="$Resources:core,doctemp_Powerpoint97_Desc;">
+      <DocumentTemplateFiles>
+        <DocumentTemplateFile Name="doctemp\ppt\pptmpl.pot" TargetName="Forms/template.pot" Default="TRUE"/>
+      </DocumentTemplateFiles>
+    </DocumentTemplate>
+    <DocumentTemplate Path="STS" DisplayName="$Resources:core,doctemp_Word;" Type="121" Default="TRUE" Description="$Resources:core,doctemp_Word_Desc;">
+      <DocumentTemplateFiles>
+        <DocumentTemplateFile Name="doctemp\word\wdtmpl.dotx" TargetName="Forms/template.dotx" Default="TRUE"/>
+      </DocumentTemplateFiles>
+    </DocumentTemplate>
+    <DocumentTemplate Path="STS" DisplayName="$Resources:core,doctemp_Excel;" Type="122" Description="$Resources:core,doctemp_Excel_Desc;">
+      <DocumentTemplateFiles>
+        <DocumentTemplateFile Name="doctemp\xl\xltmpl.xlsx" TargetName="Forms/template.xlsx" Default="TRUE"/>
+      </DocumentTemplateFiles>
+    </DocumentTemplate>
+    <DocumentTemplate Path="STS" DisplayName="$Resources:core,doctemp_Powerpoint;" Type="123" Description="$Resources:core,doctemp_Powerpoint_Desc;">
+      <DocumentTemplateFiles>
+        <DocumentTemplateFile Name="doctemp\ppt\pptmpl.pptx" TargetName="Forms/template.pptx" Default="TRUE"/>
+      </DocumentTemplateFiles>
+    </DocumentTemplate>
+    <DocumentTemplate Path="STS" DisplayName="$Resources:core,doctemp_OneNote;" Type="111" Description="$Resources:core,doctemp_OneNote_Desc;">
+      <DocumentTemplateFiles>
+        <DocumentTemplateFile Name="doctemp\onenote\template.one" TargetName="Forms/template.one" Default="TRUE"/>
+      </DocumentTemplateFiles>
+    </DocumentTemplate>
+    <DocumentTemplate Path="STS" DisplayName="$Resources:core,doctemp_FP;" Type="102" Description="$Resources:core,doctemp_FP_Desc;">
+      <DocumentTemplateFiles>
+        <DocumentTemplateFile Name="doctemp\fp\fptmpl.htm" TargetName="Forms/template.htm" Default="TRUE"/>
+      </DocumentTemplateFiles>
+    </DocumentTemplate>
+    <DocumentTemplate Path="STS" DisplayName="$Resources:core,doctemp_BasicPage;" Type="105" Description="$Resources:core,doctemp_BasicPage_Desc;">
+      <DocumentTemplateFiles>
+        <DocumentTemplateFile Name="doctemp\blankpgs\_basicpage.htm" TargetName="Forms/_basicpage.htm" Default="TRUE"/>
+      </DocumentTemplateFiles>
+    </DocumentTemplate>
+
+    <DocumentTemplate Path="STS" DisplayName="$Resources:core,doctemp_WebPartPage;" Type="106" Description="$Resources:core,doctemp_WebPartPage_Desc;">
+      <DocumentTemplateFiles>
+        <DocumentTemplateFile Name="doctemp\smartpgs\_webpartpage.htm" TargetName="Forms/_webpartpage.htm" Default="TRUE"/>
+      </DocumentTemplateFiles>
+    </DocumentTemplate>
+
+    <DocumentTemplate XMLForm="TRUE" Path="STS" DisplayName="$Resources:core,doctemp_BlankForm;" Type="1000" Default="TRUE" Description="$Resources:core,doctemp_BlankForm_Desc;">
+      <DocumentTemplateFiles>
+        <DocumentTemplateFile Name="doctemp\xmlforms\blank\template.xml" TargetName="Forms/template.xml" Default="TRUE" />
+      </DocumentTemplateFiles>
+    </DocumentTemplate>
+
+  </DocumentTemplates>
+  <Configurations>
+    <Configuration ID="-1" Name="NewWeb"/>
+    <!-- Portal Department site (HR, Communication). -->
+    <Configuration ID="0" Name="HR Department" MasterUrl="~SiteCollection/_catalogs/masterpage/v4.master">
+      <Lists>
+      </Lists>
+      
+      <SiteFeatures>
+        <!--Site.GenerateMetadataTerms-->
+        <Feature Id="b54ff066-14a0-4282-9ffb-defc02c81077"/>
+      </SiteFeatures>
+      
+      <WebFeatures>
+        <!-- OOB BaseWeb -->
+        <Feature ID="99FE402E-89A0-45aa-9163-85342E865DC8" />
+
+        <!-- OOB Publishing -->
+        <Feature ID="22A9EF51-737B-4ff2-9346-694633FE4416">
+          <Properties xmlns="http://schemas.microsoft.com/sharepoint/">
+            <Property Key="ChromeMasterUrl" Value="~SiteCollection/_catalogs/masterpage/v4.master"/>
+            <Property Key="WelcomePageUrl" Value="$Resources:cmscore,List_Pages_UrlName;/Default.aspx" />
+            <Property Key="SimplePublishing" Value="true" />
+            <!--<Property Key="AvailableWebTemplates" Value="*-Site#2"/>-->
+            <Property Key="AvailablePageLayouts" Value="~SiteCollection/_catalogs/masterpage/FMC_Blank.aspx:~SiteCollection/_catalogs/masterpage/FMC_DepartmentBlank.aspx:~SiteCollection/_catalogs/masterpage/FMC_HR_DepartmentMain.aspx:~SiteCollection/_catalogs/masterpage/FMC_HR_DepartmentArea.aspx:~SiteCollection/_catalogs/masterpage/FMC_HR_DepartmentCategory.aspx"/>
+            <Property Key="DefaultPageLayout" Value="~SiteCollection/_catalogs/masterpage/FMC_DepartmentBlank.aspx"/>
+            <Property Key="NewPageUrlToken" Value=""/>
+            <Property Key="RequireCheckoutOnPages" Value="false" />
+            <Property Key="VersioningOnPages" Value="MajorAndMinor" />
+            <Property Key="EnableModerationOnPages" Value="false" />
+            <Property Key="EnableSchedulingOnPages" Value="false" />
+            <Property Key="ShowSiblings" Value="true"/>
+            <Property Key="IncludeSubSites" Value="true"/>
+          </Properties>
+        </Feature>
+
+        <!-- OOB NavigationProperties-->
+        <Feature ID="541F5F57-C847-4e16-B59A-B31E90E6F9EA">
+          <Properties xmlns="http://schemas.microsoft.com/sharepoint/">
+            <Property Key="InheritGlobalNavigation" Value="true"/>
+            <Property Key="InheritCurrentNavigation" Value="false" />
+            <Property Key="ShowSiblings" Value="false"/>
+            <Property Key="IncludeSubSites" Value="true"/>
+            <Property Key="IncludePages" Value="false"/>
+          </Properties>
+        </Feature>
+
+        <!-- Custom List -->
+        <!--<Feature ID="00bfea71-de22-43b2-a848-c05709900100" />-->
+
+        <!-- TeamCollabaration -->
+        <Feature ID="00bfea71-4ea5-48d4-a4ad-7ea5c011abe5" />
+        
+        <!-- SharePoint Server Publishing -->
+        <Feature ID="94c94ca6-b32f-4da9-a9e3-1f3d343d7ecb" />
+        
+        <!-- FMC common  -->
+        <Feature ID="a7f41ce7-fec4-4c48-aa24-3a9a04977f66" />        
+        
+        <!-- FMC HR Department pages and CT binding -->        
+        <Feature ID="56ed0735-ee44-402a-9dcc-c2ac434fffe1" />
+        
+        <!-- FMC lists -->
+        <Feature ID="24a4f702-0418-420a-8055-744ed5c93165" />
+        
+        <!-- FMC document libraries -->
+        <Feature ID="2586988a-c272-4cde-8ac7-4a5bc3603d8e" />        
+        
+      </WebFeatures>
+
+    </Configuration>
+  </Configurations>
+</Project>

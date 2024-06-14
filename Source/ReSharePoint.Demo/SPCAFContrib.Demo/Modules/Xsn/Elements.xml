@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Xsn">
+    <File Path="Xsn\Form1.xsn" Url="Xsn/Form1.xsn" />
+  </Module>
+</Elements>

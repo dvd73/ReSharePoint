@@ -1,0 +1,37 @@
+﻿<div class="block list">
+  
+@using Kooboo.CMS.Content.Query;
+@{
+    var userKey = Page_Context.Current.PageRequestContext.AllQueryString["UserKey"];
+    var folderCode = !String.IsNullOrEmpty(userKey) ? userKey : "Article";    
+    var textFolder = ContentHelper.TextFolder(folderCode);     
+    var contentQuery = textFolder.CreateQuery();     
+    if (textFolder.Sortable.HasValue && textFolder.Sortable.Value)
+    {
+  		contentQuery = contentQuery.OrderByDescending("Sequence");
+    }
+    else
+    {
+  		contentQuery = contentQuery.OrderBy("Sequence");
+    }
+  
+    foreach (var item in contentQuery){
+      <div class="item" @ViewHelper.Edit(item)>
+        <h6 class="title"><a href='@Url.FrontUrl().PageUrl("Articles/Detail", new { UserKey = item.UserKey, folder = folderCode})'@ViewHelper.Edit(item,"Title") >@item["Title"]</a></h6>      
+        <p @ViewHelper.Edit(item,"Summary")>@Html.Raw(item["Summary"])</p>
+        <a class="comment" href="@Url.FrontUrl().PageUrl("Articles/Detail", new { UserKey = item.UserKey, folder = folderCode})#comments">@(item.Children("Comment").Count()) Comments</a>
+     </div>        
+    }    
+  }
+</div>
+@{
+    var pageOption = new PagerOptions
+    {
+        NextPageText = "Next »",
+        PrevPageText = "« Previous",
+        CssClass="pagination",
+        CurrentPagerItemWrapperFormatString="<span class=\"current\">{0}</span>",
+        NavigationPagerItemWrapperFormatString="<span class=\"pagenavigation\">{0}</span>"
+    };
+}
+@Html.FrontHtml().Pager(ViewBag.Articles,pageOption)

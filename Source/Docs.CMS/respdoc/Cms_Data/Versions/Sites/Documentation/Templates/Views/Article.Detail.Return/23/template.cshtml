@@ -1,0 +1,33 @@
+﻿@using Kooboo.CMS.Content.Query;
+@using Kooboo.CMS.Content.Models;
+@using Kooboo.CMS.Common.Runtime;
+@using Kooboo.CMS.Content.Services;
+@{
+    var userKey = Page_Context.Current.PageRequestContext.AllQueryString["UserKey"];
+    var folderCode = Page_Context.Current.PageRequestContext.AllQueryString["folder"];
+    folderCode = !String.IsNullOrEmpty(folderCode) ? folderCode : "Article";
+    var textFolder = ContentHelper.TextFolder(folderCode); 
+    var contentQuery = textFolder.CreateQuery();
+    contentQuery = contentQuery.WhereEquals("UserKey", userKey);
+    var content = contentQuery.FirstOrDefault();    
+
+	if (content == null)
+    {
+		var textFolderManager = EngineContext.Current.Resolve<TextFolderManager>();
+        foreach(var folder in textFolderManager.All(Repository.Current,""))
+        {			
+            var query = folder.CreateQuery();
+            query = query.WhereEquals("UserKey", userKey);
+            content = query.FirstOrDefault();    
+			if (content != null)
+            {
+				folderCode = folder.Name;
+				break;
+            }
+        }
+    }
+ }
+
+<h1 class="title" @(content != null ? ViewHelper.Edit(content, "Title") : null)>@Html.FrontHtml().PageLink("Back", "Articles", folderCode != "Article" ? new {UserKey = folderCode} : null, new {@class="back"}) @(content != null && content["Title"] != null ? content["RESP_CODE"] + content["Title"] : "")</h1>
+
+

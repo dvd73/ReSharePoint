@@ -1,0 +1,101 @@
+﻿[
+  {
+    "UUID": null,
+    "Name": "Sample site",
+    "Value": "Sample site",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.7144346Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Member Login",
+    "Value": "Member Login",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.7144346Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Register",
+    "Value": "Register",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.7144346Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Articles",
+    "Value": "Articles",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.7144346Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Copyright &copy; 2009 - 2013 Kooboo team",
+    "Value": "Copyright &copy; 2009 - 2013 Kooboo team",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.7144346Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Admin Login",
+    "Value": "Admin Login",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.7144346Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Login",
+    "Value": "Login",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.7300606Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Username",
+    "Value": "Username",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.7300606Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Required",
+    "Value": "Required",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.7300606Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Password",
+    "Value": "Password",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.7300606Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  },
+  {
+    "UUID": null,
+    "Name": "Remember me",
+    "Value": "Remember me",
+    "Category": "",
+    "UtcCreationDate": "2015-12-30T18:12:43.7300606Z",
+    "UtcLastestModificationDate": null,
+    "LastestEditor": null
+  }
+]

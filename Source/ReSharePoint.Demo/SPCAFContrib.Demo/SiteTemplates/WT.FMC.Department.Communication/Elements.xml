@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <WebTemplate Name="WT.FMC.Department.Communication"
+               Title="$Resources:ReaktorFMCIntranet,SiteDefinition_CommunicationDepartment_Name;"
+               Description="$Resources:ReaktorFMCIntranet,SiteDefinition_CommunicationDepartment_Description;"
+               BaseTemplateID="53"
+               BaseTemplateName="BLANKINTERNET"
+               BaseConfigurationID="0"
+               DisplayCategory="$Resources:ReaktorFMCIntranet,SiteDefinition_DisplayCategory_Name;"
+               />
+</Elements>

@@ -1,0 +1,87 @@
+﻿using System;
+using System.Linq;
+using JetBrains.DocumentModel;
+using JetBrains.ProjectModel;
+using JetBrains.ReSharper.Feature.Services.CodeCompletion;
+using JetBrains.ReSharper.Feature.Services.CodeCompletion.Infrastructure;
+using JetBrains.ReSharper.Feature.Services.CodeCompletion.Infrastructure.LookupItems;
+using JetBrains.ReSharper.Feature.Services.CSharp.CodeCompletion.Infrastructure;
+using JetBrains.ReSharper.Feature.Services.LiveTemplates.LiveTemplates;
+using JetBrains.ReSharper.Feature.Services.Util;
+using JetBrains.ReSharper.Psi;
+using JetBrains.ReSharper.Psi.CSharp;
+using JetBrains.ReSharper.Psi.CSharp.Parsing;
+using JetBrains.ReSharper.Psi.CSharp.Tree;
+using JetBrains.ReSharper.Psi.Tree;
+using ReSharePoint.Common.Consts;
+using ReSharePoint.Common.Extensions;
+using ReSharePoint.Entities;
+using ReSharePoint.Pro.CodeCompletion.Common;
+using ReSharePoint.Pro.CodeCompletion.Common.LookupItem;
+
+namespace ReSharePoint.Pro.CodeCompletion
+{
+    [Language(typeof(CSharpLanguage))]
+    public class UserProfilePropertyName : ItemsProviderOfSpecificContext<CSharpCodeCompletionContext>
+    {
+        protected override bool IsAvailable(CSharpCodeCompletionContext context)
+        {
+            IPsiSourceFile sourceFile = context.BasicContext.SourceFile;
+            if (sourceFile == null || !sourceFile.LanguageType.Is<CSharpProjectFileType>() ||
+                context.BasicContext.CodeCompletionType == CodeCompletionType.ImportCompletion)
+                return false;
+
+            ITreeNode node = TextControlToPsi.GetElement<ITreeNode>(context.BasicContext.Solution,
+                context.BasicContext.TextControl);
+
+            return IsInvalid(node);
+        }
+
+        private bool IsInvalid(ITreeNode treeNode)
+        {
+            bool result = false;
+
+            var element = treeNode.GetContainingNode<IElementAccessExpression>();
+            if (element != null)
+            {
+                IExpressionType expressionType = element.Operand.GetExpressionType();
+
+                if (expressionType.IsResolved)
+                {
+                    var nextToken = element.Operand.GetNextMeaningfulToken();
+
+                    if (nextToken != null && element.Operand.IsOneOfTypes(new[] { ClrTypeKeys.UserProfile }) &&
+                        nextToken.GetTokenType() == CSharpTokenType.LBRACKET)
+                    {
+                        result = true;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        protected override bool AddLookupItems(CSharpCodeCompletionContext context, IItemsCollector collector)
+        {
+            //var solution = context.BasicContext.SourceFile.GetSolution();
+            //var project = context.BasicContext.SourceFile.GetProject();
+            var prefix = LiveTemplatesManager.GetPrefix(new DocumentOffset(context.BasicContext.TextControl.Document,
+                context.BasicContext.TextControl.Caret.Position.Value.ToDocOffsetAndVirtual().Offset), new[] {'-'});
+            Func<TypeInfo.UserProfileProperty, bool> predicateBuiltIn = x => !String.IsNullOrEmpty(x.DisplayName);
+
+            if (!String.IsNullOrEmpty(prefix))
+            {
+                prefix = prefix.ToLower();
+                predicateBuiltIn = x => !String.IsNullOrEmpty(x.DisplayName) && x.DisplayName.ToLower().Contains(prefix);
+            }
+
+            foreach (var profileProperty in TypeInfo.UserProfileProperties.Where(predicateBuiltIn))
+            {
+                collector.Add(new UserProfilePropertyLookupItem(prefix, profileProperty.DisplayName, profileProperty.Name, context.ReplaceRangeWithJoinedArguments, CompletionCaseType._UserProfilePropertyName));
+            }
+
+            return base.AddLookupItems(context, collector);
+        }
+    }
+}
+

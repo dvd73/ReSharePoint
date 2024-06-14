@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Templates xmlns:ows="Microsoft SharePoint">
+  <Template Name="WT.FMC.Department.HR" ID="110002">
+    <Configuration 
+      ID="0" 
+      Title="HR site" 
+      Hidden="FALSE" 
+      ImageUrl="/_layouts/images/SPCAFContrib.Demo/HR_logo.png" 
+      Description="Create a WT.FMC.Department.HR division site" 
+      DisplayCategory="SPCAFContrib"
+      RootWebOnly="false"
+      SubWebOnly="TRUE"
+      VisibilityFeatureDependency="3541324f-5718-4e07-a4e9-08964a80502b">
+    </Configuration>
+  </Template>
+</Templates>

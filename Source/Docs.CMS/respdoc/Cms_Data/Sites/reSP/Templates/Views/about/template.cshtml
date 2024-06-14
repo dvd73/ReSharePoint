@@ -1,0 +1,22 @@
+﻿         <div class="section" id="about">
+           @foreach (var item in ViewBag.aboutInfo){
+           <div @ViewHelper.Edit(item)>
+           	<h1>@item.title</h1>
+            <div class="img_border img_fl">
+				<img src="@item.img" alt="About Us" />	
+			</div>
+           @Html.Raw(item.summary)
+           @Html.Raw(item.content)
+            </div>
+           }
+            <div class="cleaner h20"></div>
+            <h2>@("Testimonial".Label())</h2>
+           @foreach (var item in ViewBag.testimonials){
+            <blockquote @ViewHelper.Edit(item)>
+            @Html.Raw(item.content)
+            <cite>@item.name - <span>@item.position</span></cite></blockquote>
+           }
+            <a href="#home" class="home_btn">home</a> 
+            <a href="#home" class="page_nav_btn previous">Previous</a>
+            <a href="#social" class="page_nav_btn next">Next</a>
+        </div> 

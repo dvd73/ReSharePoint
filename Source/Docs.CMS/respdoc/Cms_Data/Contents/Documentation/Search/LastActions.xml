@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLastAction xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Kooboo.CMS.Search.Models">
+	<LastAction>
+		<FolderName>Code</FolderName>
+		<ContentSummary>UserProfileManager.GetEnumerator() is used</ContentSummary>
+		<Action>Update</Action>
+		<UtcActionDate>2016-01-08T19:42:21.5519975Z</UtcActionDate>
+	</LastAction>
+	<LastAction>
+		<FolderName>Code</FolderName>
+		<ContentSummary>Static SP-object used as field</ContentSummary>
+		<Action>Update</Action>
+		<UtcActionDate>2016-01-08T17:42:27.9362771Z</UtcActionDate>
+	</LastAction>
+	<LastAction>
+		<FolderName>Code</FolderName>
+		<ContentSummary>resp510234</ContentSummary>
+		<Action>Add</Action>
+		<UtcActionDate>2016-01-08T17:42:15.4242555Z</UtcActionDate>
+	</LastAction>
+	<LastAction>
+		<FolderName>Code</FolderName>
+		<ContentSummary>Unsafe SPObject.Name == &lt;string&gt; comparison</ContentSummary>
+		<Action>Update</Action>
+		<UtcActionDate>2016-01-08T17:40:04.5546209Z</UtcActionDate>
+	</LastAction>
+	<LastAction>
+		<FolderName>Code</FolderName>
+		<ContentSummary>Unsafe SPObject.Name == &lt;string&gt; comparison</ContentSummary>
+		<Action>Update</Action>
+		<UtcActionDate>2016-01-08T17:39:41.3527225Z</UtcActionDate>
+	</LastAction>
+</ArrayOfLastAction>

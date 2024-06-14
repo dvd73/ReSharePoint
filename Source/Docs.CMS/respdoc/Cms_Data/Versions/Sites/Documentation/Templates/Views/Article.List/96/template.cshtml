@@ -1,0 +1,40 @@
+﻿<div class="block list">
+  
+@using Kooboo.CMS.Content.Query;
+@using Kooboo.CMS.Sites.DataRule;
+@{
+    var userKey = Page_Context.Current.PageRequestContext.AllQueryString["UserKey"];
+    var folderCode = !String.IsNullOrEmpty(userKey) ? userKey : "Article";    
+    var textFolder = ContentHelper.TextFolder(folderCode);     
+    var contentQuery = textFolder.CreateQuery();     
+    contentQuery = contentQuery.OrderByDescending("Sequence"); // считаем, что все папки у нас сортируются вручную  
+  
+    var pageIndex = 1;
+    var pageSize = 15;
+    if(!string.IsNullOrEmpty(Page_Context.Current.PageRequestContext.AllQueryString["PageIndex"]))
+    {
+         pageIndex = int.Parse(Page_Context.Current.PageRequestContext.AllQueryString["PageIndex"]);
+    }
+    
+    var pageData = contentQuery.Skip((pageIndex - 1) * pageSize).Take(pageSize);
+    dynamic pagedList = new DataRulePagedList(pageData, pageIndex, pageSize, contentQuery.Count()){ PageIndexParameterName = "PageIndex" };
+  
+    foreach (var item in pagedList){
+      <div class="item" @ViewHelper.Edit(item)>        
+        <h6 class="title"><a href='@Url.FrontUrl().PageUrl("Articles/Detail", new { UserKey = item.UserKey, folder = folderCode })'@ViewHelper.Edit(item,"Title") >@item["Title"]</a></h6>      
+        <p @ViewHelper.Edit(item,"Summary")>@Html.Raw(item["Summary"])</p>
+     </div>        
+    }    
+  }
+</div>
+@{
+    var pageOption = new PagerOptions
+    {
+        NextPageText = "Next »",
+        PrevPageText = "« Previous",
+        CssClass="pagination",
+        CurrentPagerItemWrapperFormatString="<span class=\"current\">{0}</span>",
+        NavigationPagerItemWrapperFormatString="<span class=\"pagenavigation\">{0}</span>"
+    };
+}
+@Html.FrontHtml().Pager(pagedList,pageOption)

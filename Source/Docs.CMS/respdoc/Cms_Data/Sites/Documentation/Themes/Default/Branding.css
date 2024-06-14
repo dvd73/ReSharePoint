@@ -1,0 +1,98 @@
+﻿
+.horizontalSpace_h25
+{
+	background-image: url('Images/spacer.gif');
+	height: 25px;
+}
+
+.horizontalSpace_h20
+{
+	background-image: url('Images/spacer.gif');
+	height: 20px;
+}
+
+.horizontalSpace_h15
+{
+	background-image: url('Images/spacer.gif');
+	height: 15px;
+}
+
+.horizontalSpace_h10
+{
+	background-image: url('Images/spacer.gif');
+	height: 10px;
+}
+
+.horizontalSpace_h5
+{
+	background-image: url('Images/spacer.gif');
+	height: 5px;
+}
+
+table.regular_table
+{
+	border-collapse:collapse;    
+	border:0px;
+}
+
+table.full_width_table
+{
+	border-collapse:collapse;    
+	border:0px;
+	width:100%;
+}
+
+table.full_height_table
+{
+	border-collapse:collapse;    
+	border:0px;    
+	height:100%;
+	min-height:100%;
+}
+
+table.full_table
+{
+	border-collapse:collapse;    
+	border:0px;
+	width:100%;
+	height:100%;
+}
+
+table.full_width_table td
+{
+    padding: 0;
+	vertical-align: top; 
+}
+
+table.regular_table td
+{
+    padding: 0;
+	vertical-align: top; 
+}
+
+table.full_height_table td 
+{
+    padding: 0;
+	vertical-align: top;
+}
+
+table.full_table td
+{
+    padding: 0;
+	vertical-align: top;  
+}
+
+div.clear
+{
+	clear: both;
+}
+
+.noDisplay
+{
+	display:none;
+}
+
+.content h3 {
+    font-size: 20px;
+    font-weight: normal;
+}

@@ -1,0 +1,17 @@
+﻿         <div class="section" id="portfolio"> 
+            <h1>@("Portfolio".Label())</h1>
+            <ul id="gallery">
+              @{var index=0;}
+              @foreach (var item in ViewBag.galleries){
+              if(index%4==0 || index%5==0){
+                <li><a href="@item.b_img" class="no_margin_right" rel="lightbox[portfolio]"><img src="@item.s_img" alt="@item.alt" /></a></li>
+              }
+              else{
+                <li><a href="@item.b_img" rel="lightbox[portfolio]"><img src="@item.s_img" alt="@item.alt" /></a></li>
+              }
+              }                                                          
+            </ul>
+            <a href="#home" class="home_btn">home</a> 
+            <a href="#services" class="page_nav_btn previous">Previous</a>
+            <a href="#contact" class="page_nav_btn next">Next</a>
+		</div> 

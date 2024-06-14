@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Id="e7d0f042-9f7c-47fc-a266-2ca18cb4cbdd"                 
+                Title="Remove LeftNavigationAreaCell" 
+                Location="ScriptLink"
+                RegistrationType="List"
+                ScriptBlock="function loadImageUploaderScript() {   
+                
+                      var head = document.getElementsByTagName('head')[0];                      
+                      var body = document.getElementsByTagName('body')[0];
+                      var url = window.location.toString();
+                      /*
+                      if (typeof jQuery == 'undefined')
+                      {
+                        var jq_script = document.createElement('script');         
+                        jq_script.type = 'text/javascript';                         
+                        url = typeof(L_Menu_BaseUrl) != 'undefined' ? L_Menu_BaseUrl : url.substr(0, url.indexOf('/_layouts')); 
+                        jq_script.src = url + '/_layouts/moss.common/scripts/jquery.min.js';                         
+                        (head || body).appendChild(jq_script);
+                      }                      
+                       */
+                      var script = document.createElement('script');         
+                      script.type = 'text/javascript';     
+                      url = window.location.toString();
+                      url = typeof(L_Menu_BaseUrl) != 'undefined' ? L_Menu_BaseUrl : url.substr(0, url.indexOf('/_layouts')); 
+                      script.src = url + '/_layouts/SPCAFContrib/Scripts/LeftNavigationAreaCellOff.js';                         
+                      (head || body).appendChild(script);                          
+                      
+            }   
+ _spBodyOnLoadFunctionNames.push('loadImageUploaderScript()');" Sequence="120"/>
+  <CustomAction
+  Id="Muhimbi.SharePoint.Audit.Ribbon.ListItem.Share.ViewAuditLog.Action"
+  Location="CommandUI.Ribbon"
+  RegistrationType="ContentType"
+  RegistrationId="0x01"
+  >
+    <CommandUIExtension>
+      <CommandUIDefinitions>
+        <CommandUIDefinition
+          Location="Ribbon.Documents.Share.Controls._children">
+          <Button Id="Muhimbi.SharePoint.Audit.Ribbon.ListItem.Share.ViewAuditLog.Button"
+                  Command="Muhimbi.SharePoint.Audit.Ribbon.ListItem.Share.ViewAuditLog.Button.Command"
+                  Image16by16="/_layouts/images/Muhimbi.SharePointAudit/Report16.gif"
+                  Image32by32="/_layouts/images/Muhimbi.SharePointAudit/Report.gif"
+                  LabelText="$Resources:MuhimbiAuditProvisioningResources,ECB_ViewAuditLog;"
+                  Sequence="11"
+                  TemplateAlias="o1" />
+        </CommandUIDefinition>
+        <CommandUIDefinition
+          Location="Ribbon.ListItem.Share.Controls._children">
+          <Button Id="Muhimbi.SharePoint.Audit.Ribbon.ListItem.Share.ViewAuditLog.Button"
+                  Command="Muhimbi.SharePoint.Audit.Ribbon.ListItem.Share.ViewAuditLog.Button.Command"
+                  Image16by16="/_layouts/images/Muhimbi.SharePointAudit/Report16.gif"
+                  Image32by32="/_layouts/images/Muhimbi.SharePointAudit/Report.gif"
+                  LabelText="$Resources:MuhimbiAuditProvisioningResources,ECB_ViewAuditLog;"
+                  Sequence="11"
+                  TemplateAlias="o1" />
+        </CommandUIDefinition>
+        <CommandUIDefinition
+          Location="Ribbon.Calendar.Events.Share.Controls._children">
+          <Button Id="Muhimbi.SharePoint.Audit.Ribbon.ListItem.Share.ViewAuditLog.Button"
+                  Command="Muhimbi.SharePoint.Audit.Ribbon.ListItem.Share.ViewAuditLog.Button.Command"
+                  Image16by16="/_layouts/images/Muhimbi.SharePointAudit/Report16.gif"
+                  Image32by32="/_layouts/images/Muhimbi.SharePointAudit/Report.gif"
+                  LabelText="$Resources:MuhimbiAuditProvisioningResources,ECB_ViewAuditLog;"
+                  Sequence="11"
+                  TemplateAlias="o1" />
+        </CommandUIDefinition>
+      </CommandUIDefinitions>
+      <CommandUIHandlers>
+        <CommandUIHandler
+          Command="Muhimbi.SharePoint.Audit.Ribbon.ListItem.Share.ViewAuditLog.Button.Command"
+          CommandAction="javascript:window.location='{SiteUrl}/_layouts/Muhimbi.SharePointAudit.Site/AuditLogViewer.aspx?RequestFrom=listitem&amp;ItemId=' + SP.ListOperation.Selection.getSelectedItems()[0].id + '&amp;ListId={ListId}&amp;Source=' + escape(window.location)"
+          EnabledScript="javascript:function singleEnable()
+        {
+          var items = SP.ListOperation.Selection.getSelectedItems();
+          var ci = CountDictionary(items);
+          return (ci == 1);
+        }
+        singleEnable();" />
+      </CommandUIHandlers>
+    </CommandUIExtension>
+  </CustomAction>
+</Elements>

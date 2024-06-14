@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{9a52e838-5485-4d8a-b935-8e88240b0b74}"
+       Name="TestFields"
+       DisplayName="Test Field 1"
+       Type="Text"
+       Required="FALSE"
+       Group="Test1">
+  </Field>
+
+<Field
+       ID="{FD169B93-4395-4298-9145-C240354D8C45}"
+       Name="TestFields"
+       DisplayName="Test Field 2"
+       Type="Note"
+       Indexed="TRUE"
+       Required="FALSE"
+       Group="Test2"
+       Version="1">
+  </Field>
+
+  <Field 
+      ID="{7086C4EC-6666-463F-BF41-EBB459F09DFC}"
+		  Name="FAQGroup"
+		  StaticName="FAQGroup"
+		  DisplayName="Test Field 3"
+		  Group="Test3"
+		  Type="Lookup"
+      ShowField="Title"
+      List="{A3CFCD96-A014-4E57-B94A-E14B25D29543}"
+		  SourceID="http://schemas.microsoft.com/sharepoint/v3/fields"/>
+
+  <Field
+     ID="{defbf0ed-377a-4e62-a980-0493ac0ef42e}"
+     Name="TaxonomyColumn1"
+     DisplayName="Taxonomy Column 1"
+     Type="TaxonomyFieldType"
+     Required="FALSE"
+     Group="Custom Site Columns"
+     DisplaceOnUpgrade="TRUE"
+     Overwrite="TRUE">
+  </Field>
+
+  <Field
+     ID="{1CE793A1-3AA4-41B2-BF82-385402792616}"
+     Name="TaxonomyColumn2"
+     DisplayName="Taxonomy Column 2"
+     Type="TaxonomyFieldTypeMulti"
+     Required="FALSE"
+     Group="Custom Site Columns"
+     DisplaceOnUpgrade="TRUE"
+     Overwrite="TRUE">
+  </Field>
+  
+  <Field ID="{D1F39E25-9DB1-49FA-B7A2-993795A1251F}" 
+         Name="Process"  
+         DisplayName="Process" 
+         StaticName="Process" 
+         Group="Custom Site Columns" 
+         Type="TaxonomyFieldType" 
+         Required="TRUE" 
+         ShowField="Path1033" 
+         DisplaceOnUpgrade="TRUE" 
+         xmlns="http://schemas.microsoft.com/sharepoint/">
+    <Customization>
+      <ArrayOfProperty>
+        <Property>
+          <Name>IsPathRendered</Name>
+          <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">true</Value>
+        </Property>
+        <Property>
+          <Name>TextField</Name>
+          <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{0DEB6928-56E5-4E36-B2C7-75C1F0A7D49C}</Value>
+        </Property>
+      </ArrayOfProperty>
+    </Customization>
+  </Field>
+
+  <Field Group="ПФР. ИЦПУ"
+         ID="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}"
+         Type="Note"
+         DisplayName="Содержание"
+         Description="Краткое содержание пакета документов."
+         Required="TRUE"
+         NumLines="6"
+         Name="Name1"
+         StaticName="Name1"
+         Overwrite="TRUE" >
+  </Field>
+
+  <Field Name="ContractId" StaticName="ContactIdInSP" />
+  <Field Name="ContractOrder" StaticName="ContactOrderInSP" />
+
+  
+</Elements>

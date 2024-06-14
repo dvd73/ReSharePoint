@@ -1,0 +1,33 @@
+﻿<div class="block list">
+  
+@using Kooboo.CMS.Content.Query;
+@{
+    var userKey = Page_Context.Current.PageRequestContext.AllQueryString["UserKey"];
+    var textFolder = ContentHelper.TextFolder("Code"); 
+    var contentQuery = textFolder.CreateQuery();
+    contentQuery = contentQuery.WhereEquals("UserKey", userKey);
+    var items = contentQuery.FirstOrDefault();
+  
+    <p>userKey = @userKey</p>
+    <p>textFolder = @textFolder.ToString()</p>
+    <p>contentQuery.Count = @contentQuery.Count()</p>
+    if (items != null)
+    {
+      foreach (var item in items){
+        <p>@item.Key</p>
+        <p>@item.Value</p>  
+      }
+    }
+  }
+</div>
+@{
+    var pageOption = new PagerOptions
+    {
+        NextPageText = "Next »",
+        PrevPageText = "« Previous",
+        CssClass="pagination",
+        CurrentPagerItemWrapperFormatString="<span class=\"current\">{0}</span>",
+        NavigationPagerItemWrapperFormatString="<span class=\"pagenavigation\">{0}</span>"
+    };
+}
+@Html.FrontHtml().Pager(ViewBag.Articles,pageOption)

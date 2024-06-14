@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FieldTypes>
+  <FieldType>
+    <Field Name="Type">SharePointVideoPlayer</Field>
+    <Field Name="TypeName">SharePointVideoPlayer</Field>
+    <Field Name="ParentType">URL</Field>
+    <Field Name="TypeDisplayName">HTML 5 Video Player</Field>
+    <Field Name="TypeShortDescription">Video Player</Field>
+    <Field Name="AllowBaseTypeRendering">TRUE</Field>
+    <Field Name="Sortable">TRUE</Field>
+    <Field Name="Filterable">FALSE</Field>
+    <Field Name="UserCreatable">TRUE</Field>
+    <Field Name="ShowInListCreate">TRUE</Field>
+    <Field Name="ShowInDocumentLibraryCreate">FALSE</Field>
+    <Field Name="ShowInColumnTemplateCreate">FALSE</Field>    
+    <Field Name="FieldTypeClass">SPCAFContrib.Demo.Common.FLVPlayerFieldControl, SPCAFContrib.Demo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9748d9de51040d52</Field>
+    <Field Name="InternalType">Integer</Field>
+    <Field Name="SQLType">Int</Field>
+      <PropertySchema>
+      <Fields>
+        <Field Name="HowOpenUrl" DisplayName="Выберите как открыть видео ('Self' = в этом же окне, 'New' = в новом окне" Type="Text">
+          <Default>New</Default>
+        </Field>
+      </Fields>
+    </PropertySchema>
+    <RenderPattern Name="DisplayPattern" >
+      <FieldSwitch>
+        <Expr>
+          <Property Select='HowOpenUrl'/>
+        </Expr>
+        <Case Value="Self">
+        
+          <HTML><![CDATA[<a target="_self" href="../../_layouts/SPCAFContrib.Demo/VideoPlayer.aspx?video=]]></HTML>
+          <Column Name="ID" />
+          <HTML><![CDATA[&listID=]]></HTML>
+          <List />        
+          <HTML><![CDATA[">]]></HTML>
+          <HTML><![CDATA[<img border="0" src="../../_layouts/images/SPCAFContrib.Demo/flowplayer_icon.jpg"></a>]]></HTML>
+        </Case>
+        <Case Value="New">
+          <HTML>
+            <![CDATA[
+            <script language="javascript" type="text/javascript">
+            var win=null;
+            function NewWindow(mypage){
+            LeftPosition=(screen.width)?(screen.width-522)/2:100;
+            TopPosition=(screen.height)?(screen.height-348)/2:100;
+            settings='width=522,height=348,top='+TopPosition+',left='+LeftPosition+',scrollbars=no,location=no,directories=no,status=no,menubar=no,toolbar=no,resizable=no';
+            win=window.open(mypage,'a',settings);}
+            </script>
+            ]]>
+          </HTML>
+          <HTML><![CDATA[<a target="_blank" href="#" onclick="javascript:NewWindow('../../_layouts/SPCAFContrib.Demo/VideoPlayer.aspx?video=]]></HTML>
+          <Column Name="ID" />
+          <HTML><![CDATA[&listID=]]></HTML>
+          <List />
+          <HTML><![CDATA[');return false">]]></HTML>
+          <HTML><![CDATA[<img border="0" src="../../_layouts/images/SPCAFContrib.Demo/flowplayer_icon.jpg"></a>]]></HTML>
+        </Case>
+        <Default>
+          <Column HTMLEncode="TRUE" />
+        </Default>
+      </FieldSwitch>
+    </RenderPattern>
+    <RenderPattern Name="EditPattern">
+      <HTML><![CDATA[<img border="0" src="../../_layouts/images/SPCAFContrib.Demo/flowplayer_icon.jpg">]]></HTML>
+    </RenderPattern>
+    <RenderPattern Name="NewPattern" DisplayName="NewPattern">
+      <HTML><![CDATA[<img border="0" src="../../_layouts/images/SPCAFContrib.Demo/flowplayer_icon.jpg">]]></HTML>
+    </RenderPattern>
+    <RenderPattern Name="PreviewDisplayPattern">
+      <HTML><![CDATA[<img border="0" src="../../_layouts/images/SPCAFContrib.Demo/flowplayer_icon.jpg">]]></HTML>
+    </RenderPattern>
+    <RenderPattern Name="PreviewEditPattern">
+      <HTML><![CDATA[<img border="0" src="../../_layouts/images/SPCAFContrib.Demo/flowplayer_icon.jpg">]]></HTML>
+    </RenderPattern>
+    <RenderPattern Name="PreviewNewPattern">
+      <HTML><![CDATA[<img border="0" src="../../_layouts/images/SPCAFContrib.Demo/flowplayer_icon.jpg">]]></HTML>
+    </RenderPattern>
+
+ 
+
+  </FieldType>
+</FieldTypes>
+

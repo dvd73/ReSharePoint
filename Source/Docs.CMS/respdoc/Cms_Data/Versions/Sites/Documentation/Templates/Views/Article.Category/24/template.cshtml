@@ -1,0 +1,38 @@
+﻿@using Kooboo.CMS.Content.Models
+@functions{
+    IEnumerable<TextContent> GetChildContents(string parentUUID)
+    {
+        var all = (TextContent[])ViewBag.Categories;
+        return all.Where(it => (it["ParentUUID"] ==null && null == parentUUID) || (it["ParentUUID"] !=null && it["ParentUUID"].ToString() == parentUUID) );        
+    }
+}
+@helper RenderCategories(string parentUUID, int level)
+{
+   <ul>
+     @foreach (dynamic item in GetChildContents(parentUUID)){
+     <li>
+       @item.UserKey
+       @
+         if (item.UserKey == "Pro")
+         {
+              Html.FrontHtml().PageLink(item.Title, "Articles/Detail", new { UserKey = item.UserKey, folder = item.UserKey});
+         }
+         else if (item.UserKey == "Basic")
+         {
+       		  Html.FrontHtml().PageLink(item.Title, "Articles/Detail", new { UserKey = "Basic-features", folder = item.UserKey});
+         }
+         else
+         {
+              Html.FrontHtml().PageLink(item.Title, "Articles", new { UserKey = item.UserKey});
+         }
+         RenderCategories(item.UUID,level+1);
+       
+     </li>
+       
+     }
+   </ul>
+}
+<div class="block menu">
+  	@RenderCategories(null,0)
+</div>
+

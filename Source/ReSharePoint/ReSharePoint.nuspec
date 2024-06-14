@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>SPCAFContrib.ReSharper</id>
+    <version>1.3.1.7</version>
+    <title>reSP</title>
+    <authors>Dmitry Dolotovskikh</authors>
+    <owners>SubPoint Solutions</owners>
+    <projectUrl>http://www.subpointsolutions.com/resp/</projectUrl>
+    <iconUrl>http://docs.resharepoint.ru/Cms_Data/Contents/Documentation/Media/Common/SharePointR.png</iconUrl>
+    <licenseUrl>http://docs.resharepoint.ru/Articles/Detail/License?folder=Article</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Essential tool to ensure SharePoint code quality</description>
+    <copyright>Copyright &#x00A9; 2020 SubPoint Solutions</copyright>
+    <tags>SharePoint reSP</tags>
+    <releaseNotes>
+      Support R# 2020.1.2
+    </releaseNotes>
+    <dependencies>
+      <dependency id="Wave" version="[201.0]" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- ReSharper -->
+    <file src="bin\Release\net47\ReSharePoint.dll" target="DotFiles" />
+    <file src="bin\Release\net47\ReSharePoint.Entities.dll" target="DotFiles" />
+    <file src="reSP.DotSettings" target="DotFiles\Extensions\SPCAFContrib.ReSharper\settings" />
+  </files>
+</package>

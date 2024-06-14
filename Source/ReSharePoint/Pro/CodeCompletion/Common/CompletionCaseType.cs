@@ -1,0 +1,33 @@
+﻿namespace ReSharePoint.Pro.CodeCompletion.Common
+{
+    public enum CompletionCaseType
+    {
+        _CommandUIDefinitionLocation,
+        _ContentPlaceHolderId,
+        _ContentTypeBindingContentTypeId,
+        _ContentTypeBindingListUrl,
+        _ContentTypeFieldRef,
+        _ContentTypeGroup,
+        _ControlSrc,
+        _CustomActionLocation,
+        _CustomActionRegistrationId,
+        _CustomActionRegistrationType,
+        _CustomActionRights,
+        _FeatureSiteTemplateAssociationFeatureId,
+        _FeatureSiteTemplateAssociationTemplateName,
+        _FieldGroup,
+        _FieldLookupList,
+        _FieldType,
+        _FileContentType,
+        _FilePublishingAssociatedContentType,
+        _FilePublishingPageLayout,
+        _ListInstanceFeatureId,
+        _ListInstanceTemplateType,
+        _SPItemEventProperties,
+        _SPWebCollectionAdd,
+        _UseBuiltInFieldsInsteadOfStrings,
+        _UserProfilePropertyName,
+        _WebPartGroup,
+        _WebPartZoneTitle
+    }
+}

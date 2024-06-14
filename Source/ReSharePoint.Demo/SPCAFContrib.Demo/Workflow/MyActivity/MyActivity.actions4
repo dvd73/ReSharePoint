@@ -1,0 +1,5 @@
+﻿<Action Name="Activity1" ClassName="SharePointProject1.Activity1" Category="Custom" AppliesTo="all">
+  <RuleDesigner Sentence="Enter sentence for workflow action">
+    <!-- Define the UI widgets SharePoint designer should use for configuring this action -->
+  </RuleDesigner>
+</Action>

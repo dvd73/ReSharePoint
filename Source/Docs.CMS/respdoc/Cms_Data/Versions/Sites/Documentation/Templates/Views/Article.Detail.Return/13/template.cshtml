@@ -1,0 +1,14 @@
+﻿@using Kooboo.CMS.Content.Query;
+@using Kooboo.CMS.Content.Models;
+@{
+    var userKey = Page_Context.Current.PageRequestContext.AllQueryString["UserKey"];
+    var folderCode = Page_Context.Current.PageRequestContext.AllQueryString["folder"];
+    folderCode = !String.IsNullOrEmpty(folderCode) ? folderCode : "Article";
+    var textFolder = ContentHelper.TextFolder(folderCode); 
+    var contentQuery = textFolder.CreateQuery();
+    contentQuery = contentQuery.WhereEquals("UserKey", userKey);
+    var content = contentQuery.FirstOrDefault();    
+ }
+<h1 class="title" @ViewHelper.Edit(content, "Title")>@Html.FrontHtml().PageLink("Back", "Articles", new {UserKey = folderCode}, new {@class="back"}) @(content["Title"] ?? "")</h1>
+
+

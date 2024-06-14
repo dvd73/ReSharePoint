@@ -1,0 +1,77 @@
+﻿         <div class="section" id="contact"> 
+            <h1>@("Contact".Label())</h1> 
+            <div class="half left">
+              @foreach (var item in ViewBag.contactInfo){
+                <div @ViewHelper.Edit(item)>
+                <h4>@item.title</h4>
+                <p>@item.content</p>
+                </div>
+              }
+              
+              
+                <div id="contact_form">
+                    <form method="post" name="contact" action="#contact" id="contact_form2">
+                        <div class="col_175 left">
+                            <label for="author">@("Name:".Label())</label> 
+                            <input type="text" id="author" name="author" class="input_field"  title="Enter your Name" data-val-required="Name is required" data-val="true"/>
+                          @Html.ValidationMessageForInput("author")
+                        </div>
+                        <div class="col_175 right">                           
+                            <label for="email">@("Email:".Label())</label> 
+                            <input type="text" id="email" name="email" class="input_field" title="Enter your Email" data-val-required="Email is required" data-val-regex-pattern="^\s*[a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~]+(\.[a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~]+)*@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})\s*$" data-val-regex="Palese input an email address"  data-val="true" />
+                          @Html.ValidationMessageForInput("email")
+                        </div>
+                        <label for="text">@("Message:".Label())</label> 
+                        <textarea id="text" name="message" rows="0" cols="0" class="required" title="Enter your Message"   data-val-required="Message is required" data-val="true" ></textarea>
+                        @Html.ValidationMessageForInput("message")
+                        <input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Send" />
+                    </form>
+                </div>
+			</div>
+            
+            <div class="half right">
+             @foreach (var item in ViewBag.contactAddress){
+              <div @ViewHelper.Edit(item)>
+                <h5><strong>@item.title</strong></h5>
+         		  @Html.Raw(item.address)                             
+                <strong>Phone:</strong> @item.phone | <strong>Email:</strong> <a href="mailto:x@xxx.com">@item.email</a>
+              </div>
+             }
+                <div class="clear h10"></div>
+                <div class="img_nom img_border"><span></span>
+                <iframe width="355" height="190" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=new+york+central+park&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=60.158465,135.263672&amp;vpsrc=6&amp;ie=UTF8&amp;hq=&amp;hnear=Central+Park,+New+York&amp;t=m&amp;ll=40.769606,-73.973372&amp;spn=0.014284,0.033023&amp;z=14&amp;output=embed"></iframe></div>
+            </div>
+            <a href="#home" class="home_btn">home</a> 
+            <a href="#portfolio" class="page_nav_btn previous">Previous</a>
+            <a href="#home" class="page_nav_btn next">Next</a>
+		</div>
+
+
+
+<script type="text/javascript">
+  $(function(){
+      $('#contact_form2').submit(function() {
+        var jsonData = $(this).serializeObject();
+        if(jsonData.author !== "" && jsonData.email !== "" && jsonData.message !== ""){
+          alert(JSON.stringify(jsonData));
+          return true;
+        }
+        return false;
+      });
+      $.fn.serializeObject = function() {
+      var o = {};
+      var a = this.serializeArray();
+      $.each(a, function() {
+        if (o[this.name] !== undefined && this.name !== '__RequestVerificationToken') {
+          if (!o[this.name].push) {
+            o[this.name] = [o[this.name]];
+          }
+          o[this.name].push(this.value || '');
+        } else {
+          o[this.name] = this.value || '';
+        }
+      });
+      return o;
+    };
+  });
+</script>

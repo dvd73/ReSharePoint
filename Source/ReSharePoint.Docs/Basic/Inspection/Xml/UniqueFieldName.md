@@ -1,0 +1,14 @@
+﻿<properties 
+	pageTitle="RESP515109: Duplicate field Name" 
+    pageName="resp515109"
+    parentPageId="xml"
+/>
+
+###Description
+It is recommended to have unique field Name.
+
+###Resolution
+Correct field Name in manifest.
+
+###Links
+- [Field Element](http://msdn.microsoft.com/en-us/library/office/aa979575.aspx)

@@ -1,0 +1,23 @@
+﻿         <div class="section" id="services">
+           @foreach (var item in ViewBag.servicesInfo){
+			<h1>@item.title</h1>
+            <div class="half left" @ViewHelper.Edit(item)>
+                <div class="img_border img_fl">
+                    <img src="@item.img" alt="image" />	
+                </div>
+                @Html.Raw(item.summary)
+                @Html.Raw(item.content)
+			</div>
+           }
+            <div class="half right">
+                <h2>@("What we do".Label())</h2>
+                <ul class="list_bullet">
+                  @foreach (var item in ViewBag.servicesList){
+                    <li @ViewHelper.Edit(item)>@item.listItem</li>
+                  }
+                </ul>
+			</div>
+            <a href="#home" class="home_btn">home</a> 
+            <a href="#social" class="page_nav_btn previous">Previous</a>
+            <a href="#portfolio" class="page_nav_btn next">Next</a>		
+		</div> 

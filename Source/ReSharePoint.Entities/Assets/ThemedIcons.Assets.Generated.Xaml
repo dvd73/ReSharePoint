@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+  <ImageDrawing AutomationProperties.Name="ReSPLogo32" AutomationProperties.ItemType="-" x:Key="0002">
+    <ToolTipService.ToolTip>
+      <x:Array Type="s:String">
+        <s:String>iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAA8RJREFUWEftl1tME1kYx6sm+uSriXGl9Vbc9dIsmlDE+qAxmlVj4oNGE28P6oPyQlLBtWIprbSoWVY2cdXgJmtEY9QYFVBoBapVyq4bRAREKd4AMRgqpS2VMp//c5jqEKZaLj5swpf8wsyZyff/DXPOaav43kVE48FUkAy2ASM4B1zALt42skKjSUANVoO94Di4Jgj0uCvQ63vypouKatrpZNkLSr9cT5tP/UdLsl1UWNP+SGwxtELzreA0cIT7hBdt3p5ed1MnXapqpaO3mmjf+Vpad6KKNMYK+kFvp2lRuF79dtgCZWl4kuVHH9Ccg2WyzWNhRALLcu7LNh0KYwIjEXBpj7hkmw6F7yIQj0lpK3rOl93Vh2104Eo9qdIdsveOusD0/Q76t9mLy0Qf/B8p1NtHgVCY5hrKB93LGHWBVb+5efi9xvcUB5l4QxntyK8edF+EbwqYFNrJQJupSNKIQ7yEj8HKZEv/U6n0t2iGvhjHpXxfYOV558cm5BwQJsdXBUyKJDPoASTSBJb4c5QaQFXWFWhSSu9savLZVBSnv813vfKGDi7R4QtRxrWnNCP9zqDgCFEFEJQpCZbirdulXsMECrJ30tL0c8RlLLrPTVmgtfAZeTEHWFW/+sBfhTQ4gqwAQiaBbjHQA9aCXPGcsdN/bLaQZTlMewxmLvC3aQuevmRA8/mHK/hcYJV1o3HAtQiyAnjfCZKw3WzMqNCNk4zp/bnzwixYSol5NW/646EvM37Tnw+5wPnKN5/HpET5D2gTJWHr+8eS9kTGzigXbfTnqITi7A3UZp3Lwx3mVZRiMFJcmoNedgSoGHvACXsz1bzu4gKpF58MXwDYJOfObqsyI5C/MqAxllOL9Scu0L8K7LQo6y7Vtfh4KCt/T5hySzzYHwaHM2IVqBePvTU71DoEhvzHZgkvbQt5eLdNSZ5sDSWmXeBN2Ur42eSkpVYXzTwQfQUwYhU4GDk3T9CmItQZOJXc02hdzAVYeIWFLUn5kK8RkwAm5QT8dYvnwZu6BWvCzc5nf1hSuMChDL1s81gYwiTUxuM4sjRteL219iNrucCGX/Nkm8dCNAEVQvJEForDGE/aAm7jegIE6vLM++hs5lZS778h2zwWZAViKQgUYasNuj2dVFDZQiZsNNvxoZOMb7pKLEW5MDmGLcAKEhMB+yq+DuhBPnAFQ+GOhlafcA==</s:String>
+        <s:String>81E7/V7qoZSCWvol1y37kTwigWgFiXFgCtCBXYD9Rijs6xOaWjuDvXexPf917xUZrjbQP83e0RcYq7H6n5VC8Qn4yW2n2f0qiwAAAABJRU5ErkJggg==</s:String>
+      </x:Array>
+    </ToolTipService.ToolTip>
+  </ImageDrawing>
+  <ImageDrawing AutomationProperties.Name="ReSP32" AutomationProperties.ItemType="-" x:Key="0003">
+    <ToolTipService.ToolTip>
+      <x:Array Type="s:String">
+        <s:String>iVBORw0KGgoAAAANSUhEUgAAACAAAAAVCAYAAAAnzezqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAThJREFUSEvFVIsNxCAIdS4Gch6n6TIdhkNABMNdr7nGM3lJ5fN4IrYg4l+RGnciNe5EatyJ1Pg9TmxQiIUAgFAA24l4VLUtgO5cOMLmLs4GRjy+60EePLBq0QKNZLq9BBhHILwLOymTSpFcgOtUqeTlxRw5IQU1PtEIdoTaZloufrZe2vxJwBCZCKA+0j0KIXBCJx7JXYwSMylNgLZ9FuJFXD8LoKDWv6noUTXRCRhdcPGR+AkBGjRP6QVMf5h468InAfMKOy4FhAIO9qTSLqwC3F4CrOYNAWMgXbwiiOREV9BjKd4RNtdXILYB9q0F1xPbtbg6DtGQCKC3JUROgD039ondhD4ugNJlgMbwdPL4CqaYd/8BXrGWImzyie6+d8/IFXI56+DawCZIjTuRGnciNe5EatwHLC9jxN0j3oxC/AAAAABJRU5ErkJggg==</s:String>
+      </x:Array>
+    </ToolTipService.ToolTip>
+  </ImageDrawing>
+  <ImageDrawing AutomationProperties.Name="ReSPLogo16" AutomationProperties.ItemType="-" x:Key="0000">
+    <ToolTipService.ToolTip>
+      <x:Array Type="s:String">
+        <s:String>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAABl0lEQVQ4T2MgBP7//88ExDJAbPfv3//Ep+++N++++nrZ/COPT2y68OIKVBkmAGpwn3fk0dXWrbe/ZS25/N970qn/uvUH/0uX7oHj+HkXXkCVYwKgAQm6Daga0DEhAxK10WxEx4QMSNaqgxggA8RAP/+/8uTT/7zlV3Ab0MRgwQzEUiD2vz+/k7Vq9/+XK93136Dx0P8XH3/8V6na/18HyVUoBjQxWCoA8X0g/g/Ehz62Kcwrqm/8/7xDE+iC3f9nHXz4/9qzz/99J5/GaUA3EF8EYnOQIZdTdLdsbQ34/6BD779z5fz/8uV7/0fOOvf/1L33OA2YDcTLgbgGiD+8atbftLYt8v+mZv//ZtXr/99++QXsgo5tdwgacKWL03zF1z71Ny87Nf7faTf4r1S2/b9ixb7/qtX74ZrxGWALxL9uL1+x8HyH3X/HygUompAxugG6QGwAZbt+fPSyYOfWNX+jZp35b9Jy+L9MGQEDsAFgWuAGYkMgjnzx4UfDziuvVsw+9PACKHmnLbr0v37jTfwGDAXAwAAAVfJxH3TQS4cAAAAASUVORK5CYII=</s:String>
+      </x:Array>
+    </ToolTipService.ToolTip>
+  </ImageDrawing>
+  <ImageDrawing AutomationProperties.Name="SharePoint2013" AutomationProperties.ItemType="-" x:Key="0001">
+    <ToolTipService.ToolTip>
+      <x:Array Type="s:String">
+        <s:String>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABiklEQVR42mNkoBAwYoh4NXIziKnqMQjKGjAwMhkw/PunzDDB1gW3AZ51Ygya7klAtgEUqwCFmeEq/v39ADRAELcBfh12DCp2B3G6EWTAy5tlDLyinQyMjEUMM/0WkG7Ai+sTGPjEG4AGXGN4fceKYV3RR6wGqIpwMOTZSjDcevWDYfLRFwgDXt+OYuASymNgYtoHFAlkeP/Ij2FVzhsMA3alaTKsvPCW4cG7Hwx773zCHgaJy10Z2LgzGT6/bGJYlnoBxYBFkSoMItwsDNnr7jPcf/cTuwEJS8MZ2PlWMDD8/83w9JI6igEcLIwMDW6yDK7q/AzG/ZexGxC/JJyBgx9mgAaKAW2esgwsTIwMHhoCDHq9l7AbkLTSlYGVM5Ph7YMmhjV5qF4wkeFmMAbiXbc+onrh9e0IYCDmAAPxAFAkmOHNXT+GtYWYgUhUND6/asWwqRJ7NOJJSBXAhNQN5BUyzPKfi5qQXErFGHT8koDOIzMpowPnUkhmElE2YGDlMARmJiX8mYlCAAACbK70ZwJPjAAAAABJRU5ErkJggg==</s:String>
+      </x:Array>
+    </ToolTipService.ToolTip>
+  </ImageDrawing>
+</ResourceDictionary>

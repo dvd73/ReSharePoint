@@ -1,0 +1,31 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=angular_002Ejs/@EntryIndexedValue">angular.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=angular_002E_002A_002Ejs/@EntryIndexedValue">angular.*.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=angular_002D_002A_002Ejs/@EntryIndexedValue">angular-*.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=balloontip_002Ejs/@EntryIndexedValue">balloontip.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=bootstrap_002E_002A_002Ejs/@EntryIndexedValue">bootstrap.*.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=ECOTree_002Ejs/@EntryIndexedValue">ECOTree.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=excanvas_002Ejs/@EntryIndexedValue">excanvas.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=expand_002Ejs/@EntryIndexedValue">expand.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=flowplayer_002E_002A_002Ejs/@EntryIndexedValue">flowplayer.*.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=hoverIntent_002Ejs/@EntryIndexedValue">hoverIntent.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=jit_002Dyc_002Ejs/@EntryIndexedValue">jit-yc.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=jit_002Ejs/@EntryIndexedValue">jit.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=jquery_002Ejs/@EntryIndexedValue">jquery.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=jquery_002E_002A_002Ejs/@EntryIndexedValue">jquery.*.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=jquery_002D_002A_002Ejs/@EntryIndexedValue">jquery-*.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=jcarousellite_002Ejs/@EntryIndexedValue">jcarousellite.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=knockout_002A_002Ejs/@EntryIndexedValue">knockout*.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=ng_002Dtable_002Ejs/@EntryIndexedValue">ng-table.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=ng_002Dgrid_002Ejs/@EntryIndexedValue">ng-grid.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=SPJS_Charts_002A_002Ejs/@EntryIndexedValue">SPJS_Charts*.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=superfish_002Ejs/@EntryIndexedValue">superfish.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=supersubs_002Ejs/@EntryIndexedValue">supersubs.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=swfobject_002Ejs/@EntryIndexedValue">swfobject.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=thickbox_002Ejs/@EntryIndexedValue">thickbox.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/IgnoredJsFiles/=wz_005Ftooltip_002Ejs/@EntryIndexedValue">wz_tooltip.js</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/Loggers/=Microsoft_002SharePoint_002Administration_002SPDiagnosticsService/@EntryIndexedValue">Microsoft.SharePoint.Administration.SPDiagnosticsService</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/Loggers/=Microsoft_002Office_002Server_002Administration_002DiagnosticsService/@EntryIndexedValue">Microsoft.Office.Server.Administration.DiagnosticsService</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/Loggers/=Logger/@EntryIndexedValue">Logger</s:String>
+  <s:String x:Key="/Default/CodeInspection/ReSharePoint/Loggers/=Logging/@EntryIndexedValue">Logging</s:String>
+</wpf:ResourceDictionary>

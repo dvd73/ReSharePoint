@@ -1,0 +1,60 @@
+﻿
+@using Kooboo.CMS.Content.Models;
+@using Kooboo.CMS.Content.Query;
+@{
+    var schema = (Kooboo.CMS.Content.Models.Schema)ViewData["Schema"];
+    var allowedEdit = (bool)ViewData["AllowedEdit"];
+    var allowedView = (bool)ViewData["AllowedView"];
+    var workflowItem  = Model._WorkflowItem_;
+    var hasWorkflowItem = workflowItem!=null;
+    var availableEdit = hasWorkflowItem || (!hasWorkflowItem && allowedEdit);
+}
+    @using(Html.BeginForm(ViewContext.RequestContext.AllRouteValues()["action"].ToString()
+            , ViewContext.RequestContext.AllRouteValues()["controller"].ToString()
+            , ViewContext.RequestContext.AllRouteValues()
+            , FormMethod.Post, new RouteValueDictionary(new { enctype = "multipart/form-data" })))
+{
+    <table><tr>
+            <th>
+            <label for="alt">alt</label>
+            </th>
+            <td>
+            <input class='long' id="alt" name="alt" type="text" value="@(Model.alt ?? "")" />            
+            @Html.ValidationMessageForColumn(((ISchema)ViewData["Schema"])["alt"], null)
+            
+            </td>          
+            </tr><tr>
+            <th>
+            <label for="s_img">s_img</label>
+            </th>
+            <td>
+            <input id="s_img" name="s_img" type="file" data-value="@(Model.s_img ?? "")" class='filestyle' />            
+            @Html.ValidationMessageForColumn(((ISchema)ViewData["Schema"])["s_img"], null)
+            
+            </td>          
+            </tr><tr>
+            <th>
+            <label for="b_img">b_img</label>
+            </th>
+            <td>
+            <input id="b_img" name="b_img" type="file" data-value="@(Model.b_img ?? "")" class='filestyle' />            
+            @Html.ValidationMessageForColumn(((ISchema)ViewData["Schema"])["b_img"], null)
+            
+            </td>          
+            </tr>
+            @if (allowedEdit) {
+                <tr>
+            <th>
+           
+            </th>
+            <td>
+            <input id='Published' name="Published" type="checkbox" @(Convert.ToBoolean(Model.Published)?"checked":"") value="true"/>
+                                    <input type="hidden" value="false" name="Published"/>
+            <label class="inline" for="Published">Published</label>
+            @Html.ValidationMessageForColumn(((ISchema)ViewData["Schema"])["Published"], null)
+            </td>          
+            </tr>
+            }
+    @Html.Action("Categories", ViewContext.RequestContext.AllRouteValues())
+    </table>   
+}

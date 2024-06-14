@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   	@{
+  	 if(Html.FrontHtml().HtmlTitle().ToString()==""){
+  			<title>Focus Theme - templatemo.com</title>
+ 	  }
+     else{
+ 		 @Html.FrontHtml().HtmlTitle()
+  	  }
+ 	 }  
+@Html.FrontHtml().Meta()
+@Html.FrontHtml().RegisterStyles() 
+@Html.FrontHtml().RegisterScripts() 
+	
+</head> 
+<body> 
+<div id="templatemo_wrapper">
+	<div id="header">
+    	<div id="site_title"><a href="#home">@("Creating Digital Dreams".Label())</a></div>
+    </div>
+														
+	<div id="content"> 
+      @Html.FrontHtml().RenderView("home",ViewData)
+      @Html.FrontHtml().RenderView("about",ViewData)
+      @Html.FrontHtml().RenderView("social",ViewData)
+      @Html.FrontHtml().RenderView("services",ViewData)
+      @Html.FrontHtml().RenderView("portfolio",ViewData)
+      @Html.FrontHtml().RenderView("contact",ViewData)    	
+	</div>
+	<div id="templatemo_footer">Copyright © 2072 <a href="http://www.kooboo.com">@("Your Company Name".Label())</a> | Focus Theme by <a href="http://www.kooboo.com" target="_parent" title="www.kooboo.com">@("Kooboo.CMS".Label())</a></div>
+</div>
+ 
+</body> 
+</html>

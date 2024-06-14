@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLastAction xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Kooboo.CMS.Search.Models">
+	<LastAction>
+		<FolderName>aboutInfo</FolderName>
+		<ContentSummary>About</ContentSummary>
+		<Action>Update</Action>
+		<UtcActionDate>2013-08-12T03:06:21.8185668Z</UtcActionDate>
+	</LastAction>
+	<LastAction>
+		<FolderName>contactAddress</FolderName>
+		<ContentSummary>Mailing Address</ContentSummary>
+		<Action>Add</Action>
+		<UtcActionDate>2013-08-07T09:43:28.7036095Z</UtcActionDate>
+	</LastAction>
+	<LastAction>
+		<FolderName>contactInfo</FolderName>
+		<ContentSummary>Quick Contact</ContentSummary>
+		<Action>Add</Action>
+		<UtcActionDate>2013-08-07T09:33:10.7032619Z</UtcActionDate>
+	</LastAction>
+	<LastAction>
+		<FolderName>galleries</FolderName>
+		<ContentSummary>image 1</ContentSummary>
+		<Action>Add</Action>
+		<UtcActionDate>2013-08-07T09:16:56.978568Z</UtcActionDate>
+	</LastAction>
+	<LastAction>
+		<FolderName>galleries</FolderName>
+		<ContentSummary>image 9</ContentSummary>
+		<Action>Add</Action>
+		<UtcActionDate>2013-08-07T09:16:41.9557088Z</UtcActionDate>
+	</LastAction>
+</ArrayOfLastAction>

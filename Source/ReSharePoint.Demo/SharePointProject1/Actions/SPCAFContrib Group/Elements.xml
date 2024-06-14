@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomActionGroup Id="87f82955-6572-4a8d-934a-8578554a54bf" 
+                     Title="SPCAFContrib" 
+                     Location="Microsoft.SharePoint.SiteSettings"
+                     Description="Вспомогательные операции" 
+                     Sequence="50"
+                     ImageUrl="/Lists/SiteImages/ca_logo.gif"/>
+</Elements>

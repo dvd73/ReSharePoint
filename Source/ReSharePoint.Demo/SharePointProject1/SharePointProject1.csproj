@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4EDB2C08-AC4B-4B73-A222-64DB070FCE87}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharePointProject1</RootNamespace>
+    <AssemblyName>SharePointProject1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Camlex.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=831792d54d5285b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\Camlex.NET\Camlex.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.Office.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server.UserProfiles, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.Office.Server.UserProfiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_3rd part\SharePoint\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Features\Feature1\Feature1.EventReceiver.cs">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Job\UserProfileWatcherJob.cs" />
+    <Compile Include="Modules\EventReceivers\Department\Department.cs" />
+    <Compile Include="Modules\EventReceivers\OrderItem\OrderItem.cs" />
+    <Compile Include="Modules\EventReceivers\Order\Order.cs" />
+    <Compile Include="Modules\EventReceivers\StoreItem\StoreItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebParts\ClientsWebPart\ClientsWebPart.cs" />
+    <Compile Include="WebParts\CustomersWebPart\CustomersWebPart.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Actions\RemoveLeftNavigationAreaCell\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{777d8851-2cdc-4cde-9c93-be9601d37144}</SharePointProjectItemId>
+    </None>
+    <None Include="Actions\SPCAFContrib Group\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{28d1cfb5-3583-46ef-aa41-e644fe99524a}</SharePointProjectItemId>
+    </None>
+    <None Include="Content Types\CT.OrderItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{970ead49-05b5-413e-80d1-9a5fee10b78e}</SharePointProjectItemId>
+    </None>
+    <None Include="Content Types\CT.OrderLog\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1ccd21ba-9edb-4276-b0e9-4e0f76f74efb}</SharePointProjectItemId>
+    </None>
+    <None Include="Content Types\CT.Order\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e4c4f2e6-92e6-40fa-9591-6f20563a351b}</SharePointProjectItemId>
+    </None>
+    <None Include="Content Types\CT.StoreItemNotStd\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{580fe842-d63b-4044-9ac6-cab04f0164b6}</SharePointProjectItemId>
+    </None>
+    <None Include="Content Types\CT.StoreItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{220366dc-beec-4c1c-bcdf-db4c74d5834c}</SharePointProjectItemId>
+    </None>
+    <None Include="Divisions\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d82adc4c-53a9-4c2d-9a5d-3882b248b9ca}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{26d192f8-7ad7-4181-8219-a0da87e779d7}</FeatureId>
+    </None>
+    <None Include="Features\Feature2\Feature2.feature">
+      <FeatureId>{f62e15fd-e881-43a1-b5ce-81cfd8d0442d}</FeatureId>
+    </None>
+    <None Include="Fields\FinanceFields\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1e1d3759-4977-45a7-89e9-c63dcdf51b56}</SharePointProjectItemId>
+    </None>
+    <None Include="Fields\TestFields\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d47b081f-08b4-488a-88df-65ec152ee1b0}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="List1\List1Instance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{56f651b7-0b2a-4076-837e-04bd74858765}</SharePointProjectItemId>
+    </None>
+    <None Include="List1\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3e7f5201-8512-46c6-abad-da99e1675212}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\EventReceivers\Department\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{dd54fc78-f41c-44a2-931f-a2d16cba976b}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\EventReceivers\OrderItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9ea136dc-dc1a-4c71-94f7-0c1fd46ab554}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\EventReceivers\Order\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{29c15506-4d40-42d2-a5dc-873aec2cd169}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\EventReceivers\StoreItem\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{976318b2-93f9-4dfb-acfa-7d8c6e26bb06}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\JSFile\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e3471115-c170-4d94-bda4-7a2c15c7e7f2}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\ClientsWebPart\ClientsWebPart.webpart">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WebParts\ClientsWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{32a7508c-6b39-48d1-a1fe-2cba9be83ca7}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\CustomersWebPart\CustomersWebPart.webpart" />
+    <None Include="WebParts\CustomersWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f06b59e1-ac25-4f96-b0d6-7cc7fe80600f}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Actions\RemoveLeftNavigationAreaCell\Elements.xml" />
+    <Content Include="Actions\SPCAFContrib Group\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content Types\CT.OrderItem\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content Types\CT.OrderLog\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content Types\CT.Order\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content Types\CT.StoreItemNotStd\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content Types\CT.StoreItem\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Divisions\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\Feature2\Feature2.Template.xml">
+      <DependentUpon>Feature2.feature</DependentUpon>
+    </Content>
+    <Content Include="Fields\FinanceFields\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Fields\TestFields\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="List1\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="List1\List1Instance\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="List1\Schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Modules\EventReceivers\Department\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Modules\EventReceivers\OrderItem\Elements.xml" />
+    <Content Include="Modules\EventReceivers\Order\Elements.xml" />
+    <Content Include="Modules\EventReceivers\StoreItem\Elements.xml" />
+    <Content Include="Modules\JSFile\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Modules\JSFile\Sample.js" />
+    <Content Include="WebParts\ClientsWebPart\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebParts\CustomersWebPart\Elements.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0'">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

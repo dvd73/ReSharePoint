@@ -1,0 +1,36 @@
+﻿@using Kooboo.CMS.Common.Runtime;
+@using Kooboo.CMS.Content.Services;  
+@{
+    
+    var userKey = Page_Context.Current.PageRequestContext.AllQueryString["UserKey"];
+    var folderCode = Page_Context.Current.PageRequestContext.AllQueryString["folder"];
+    folderCode = !String.IsNullOrEmpty(folderCode) ? folderCode : "Article";
+    var textFolder = ContentHelper.TextFolder(folderCode); 
+    var contentQuery = textFolder.CreateQuery();
+    contentQuery = contentQuery.WhereEquals("UserKey", userKey);
+    var content = contentQuery.FirstOrDefault(); 
+	var title = String.Empty;
+
+	if (content == null)
+    {
+		var textFolderManager = EngineContext.Current.Resolve<TextFolderManager>();
+        foreach(var folder in textFolderManager.All(Repository.Current,""))
+        {			
+            var query = folder.CreateQuery();
+            query = query.WhereEquals("UserKey", userKey);
+            content = query.FirstOrDefault();    
+			if (content != null)
+            {
+				folderCode = folder.Name;
+				break;
+            }
+        }
+
+    }
+
+    if (content != null)
+    {
+		title =  (content["RESP_CODE"] != null ? content["RESP_CODE"] + ": " : "" ) + Convert.ToString(content["Title"]);
+		Page_Context.Current.HtmlMeta.HtmlTitle = title + Page_Context.Current.HtmlMeta.HtmlTitle;	
+    }
+}

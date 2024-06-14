@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" Debug="true" Class="SPCAFContrib.Demo.Common.AjaxWebService, $SharePoint.Project.AssemblyFullName$"  %>

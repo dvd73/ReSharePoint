@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="List1"
+                OnQuickLaunch="TRUE"
+                TemplateType="10000"
+                Url="Lists/List1"
+                Description="My List Instance 1">
+  </ListInstance>
+
+  <ListInstance Title="List2"
+                OnQuickLaunch="TRUE"
+                TemplateType="10001"
+                Url="Lists/List2"
+                Description="My List Instance 1">
+  </ListInstance>
+
+  <ListInstance Title="Quick Links11"
+                OnQuickLaunch="FALSE"
+                TemplateType="10002"
+                FeatureId="00bfea71-2062-426c-90bf-714c59600103"
+                Url="Lists/QuickLinks11"
+                Description=""
+                xmlns="http://schemas.microsoft.com/sharepoint/">
+    <Data>
+      <Rows>
+
+        <Row>
+          <Field Name="URL">http://test.com, UTS Online</Field>
+          <Field Name="QuickLinkCategory"></Field>
+          <Field Name="QuickLinkDescription">Description</Field>
+        </Row>
+
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>

@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CodeInspectionHelpLink" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;CodeInspectionHelpLink&gt;
+	&lt;Item Id="RESP510201" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510201?folder=Code"/&gt;
+	&lt;Item Id="RESP510202" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510202?folder=Code"/&gt;
+	&lt;Item Id="RESP510203" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510203?folder=Code"/&gt;
+	&lt;Item Id="RESP510204" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510204?folder=Code"/&gt;
+	&lt;Item Id="RESP510205" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510205?folder=Code"/&gt;
+	&lt;Item Id="RESP510206" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510206?folder=Code"/&gt;
+	&lt;Item Id="RESP510207" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510207?folder=Code"/&gt;
+	&lt;Item Id="RESP510208" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510208?folder=Code"/&gt;
+	&lt;Item Id="RESP510209" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510209?folder=Code"/&gt;
+	&lt;Item Id="RESP510210" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510210?folder=Code"/&gt;
+	&lt;Item Id="RESP510211" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510211?folder=Code"/&gt;
+	&lt;Item Id="RESP510212" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510212?folder=Code"/&gt;
+	&lt;Item Id="RESP510213" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510213?folder=Code"/&gt;
+	&lt;Item Id="RESP510214" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510214?folder=Code"/&gt;
+	&lt;Item Id="RESP510215" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510215?folder=Code"/&gt;
+	&lt;Item Id="RESP510216" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510216?folder=Code"/&gt;
+	&lt;Item Id="RESP510217" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510217?folder=Code"/&gt;
+	&lt;Item Id="RESP510218" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510218?folder=Code"/&gt;
+	&lt;Item Id="RESP510219" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510219?folder=Code"/&gt;
+	&lt;Item Id="RESP510220" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510220?folder=Code"/&gt;
+	&lt;Item Id="RESP510221" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510221?folder=Code"/&gt;
+	&lt;Item Id="RESP510222" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510222?folder=Code"/&gt;
+	&lt;Item Id="RESP510223" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510223?folder=Code"/&gt;
+	&lt;Item Id="RESP510224" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510224?folder=Code"/&gt;
+	&lt;Item Id="RESP510225" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510225?folder=Code"/&gt;
+	&lt;Item Id="RESP510226" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510226?folder=Code"/&gt;
+	&lt;Item Id="RESP510227" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510227?folder=Code"/&gt;
+	&lt;Item Id="RESP510228" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510228?folder=Code"/&gt;
+	&lt;Item Id="RESP510229" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510229?folder=Code"/&gt;
+	&lt;Item Id="RESP510231" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510231?folder=Code"/&gt;
+	&lt;Item Id="RESP510232" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510232?folder=Code"/&gt;
+	&lt;Item Id="RESP510233" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510233?folder=Code"/&gt;
+	&lt;Item Id="RESP510234" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510234?folder=Code"/&gt;
+	&lt;Item Id="RESP510235" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510235?folder=Code"/&gt;
+	&lt;Item Id="RESP510235-2" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510235?folder=Code"/&gt;
+	&lt;Item Id="RESP510236" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510236?folder=Code"/&gt;
+	&lt;Item Id="RESP510237" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510237?folder=Code"/&gt;
+	&lt;Item Id="RESP510238" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510238?folder=Code"/&gt;
+	&lt;Item Id="RESP510239" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510239?folder=Code"/&gt;
+	&lt;Item Id="RESP510240" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510240?folder=Code"/&gt;
+	&lt;Item Id="RESP510241" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510241?folder=Code"/&gt;
+	&lt;Item Id="RESP510242" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510242?folder=Code"/&gt;
+	&lt;Item Id="RESP510243" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510243?folder=Code"/&gt;
+	&lt;Item Id="RESP510244" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510244?folder=Code"/&gt;
+	&lt;Item Id="RESP510245" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510245?folder=Code"/&gt;
+	&lt;Item Id="RESP510246" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510246?folder=Code"/&gt;
+	&lt;Item Id="RESP510247" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510247?folder=Code"/&gt;
+	&lt;Item Id="RESP510248" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510248?folder=Code"/&gt;
+	&lt;Item Id="RESP510249" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510249?folder=Code"/&gt;
+	&lt;Item Id="RESP510250" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510250?folder=Code"/&gt;
+	&lt;Item Id="RESP510251" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510251?folder=Code"/&gt;
+	&lt;Item Id="RESP510252" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510252?folder=Code"/&gt;
+	&lt;Item Id="RESP510253" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510253?folder=Code"/&gt;		
+	&lt;Item Id="RESP510254" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510254?folder=Code"/&gt;		
+	&lt;Item Id="RESP510255" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510255?folder=Code"/&gt;
+	&lt;Item Id="RESP510256" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510256?folder=Code"/&gt;
+	&lt;Item Id="RESP510257" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510257?folder=Code"/&gt;
+	&lt;Item Id="RESP510258" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510258?folder=Code"/&gt;
+	&lt;Item Id="RESP510259" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510259?folder=Code"/&gt;
+	&lt;Item Id="RESP510261" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510261?folder=Code"/&gt;	
+	&lt;Item Id="RESP515101" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515101?folder=Xml"/&gt;
+	&lt;Item Id="RESP515102" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515102?folder=Xml"/&gt;
+	&lt;Item Id="RESP515103" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515103?folder=Xml"/&gt;
+	&lt;Item Id="RESP515104" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515104?folder=Xml"/&gt;
+	&lt;Item Id="RESP515105" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515105?folder=Xml"/&gt;
+	&lt;Item Id="RESP515106" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515106?folder=Xml"/&gt;
+	&lt;Item Id="RESP515107" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515107?folder=Xml"/&gt;
+	&lt;Item Id="RESP515108" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515108?folder=Xml"/&gt;
+	&lt;Item Id="RESP515109" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515109?folder=Xml"/&gt;
+	&lt;Item Id="RESP515110" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515110?folder=Xml"/&gt;
+	&lt;Item Id="RESP515111" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515111?folder=Xml"/&gt;
+	&lt;Item Id="RESP515112" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515112?folder=Xml"/&gt;
+	&lt;Item Id="RESP515113" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515113?folder=Xml"/&gt;
+	&lt;Item Id="RESP515114" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515114?folder=Xml"/&gt;
+	&lt;Item Id="RESP515115" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515115?folder=Xml"/&gt;
+	&lt;Item Id="RESP515201" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515201?folder=Xml"/&gt;
+	&lt;Item Id="RESP515202" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515202?folder=Xml"/&gt;
+	&lt;Item Id="RESP515203" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515203?folder=Xml"/&gt;
+	&lt;Item Id="RESP515204" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515204?folder=Xml"/&gt;
+	&lt;Item Id="RESP515205" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515205?folder=Xml"/&gt;	
+	&lt;Item Id="RESP515402" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515402?folder=Xml"/&gt;
+	&lt;Item Id="RESP515403" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515403?folder=Xml"/&gt;
+	&lt;Item Id="RESP515404" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515404?folder=Xml"/&gt;
+	&lt;Item Id="RESP515405" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515405?folder=Xml"/&gt;
+	&lt;Item Id="RESP515501" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515501?folder=Xml"/&gt;
+	&lt;Item Id="RESP515502" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515502?folder=Xml"/&gt;
+	&lt;Item Id="RESP515503" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515503?folder=Xml"/&gt;
+	&lt;Item Id="RESP515504" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515504?folder=Xml"/&gt;
+	&lt;Item Id="RESP515505" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515505?folder=Xml"/&gt;
+	&lt;Item Id="RESP515506" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515506?folder=Xml"/&gt;
+	&lt;Item Id="RESP515507" Url="http://docs.resharepoint.ru/Articles/Detail/RESP515507?folder=Xml"/&gt;
+	&lt;Item Id="RESP516401" Url="http://docs.resharepoint.ru/Articles/Detail/RESP516401?folder=Xml"/&gt;
+	&lt;Item Id="RESP516402" Url="http://docs.resharepoint.ru/Articles/Detail/RESP516402?folder=Xml"/&gt;	
+	&lt;Item Id="RESP516801" Url="http://docs.resharepoint.ru/Articles/Detail/RESP516801?folder=JavaScript"/&gt;
+	&lt;Item Id="RESP516802" Url="http://docs.resharepoint.ru/Articles/Detail/RESP516802?folder=Code"/&gt;
+	&lt;Item Id="RESP516803" Url="http://docs.resharepoint.ru/Articles/Detail/RESP516803?folder=Code"/&gt;
+	&lt;Item Id="RESP516804" Url="http://docs.resharepoint.ru/Articles/Detail/RESP516804?folder=JavaScript"/&gt;
+	&lt;Item Id="RESP516805" Url="http://docs.resharepoint.ru/Articles/Detail/RESP516805?folder=Code"/&gt;
+	&lt;Item Id="RESP516901" Url="http://docs.resharepoint.ru/Articles/Detail/RESP516901?folder=JavaScript"/&gt;
+	&lt;Item Id="RESP516902" Url="http://docs.resharepoint.ru/Articles/Detail/RESP516902?folder=ASP-NET"/&gt;
+	&lt;Item Id="RESP516903" Url="http://docs.resharepoint.ru/Articles/Detail/RESP516903?folder=JavaScript"/&gt;
+	&lt;Item Id="RESP516904" Url="http://docs.resharepoint.ru/Articles/Detail/RESP516904?folder=ASP-NET"/&gt;
+	&lt;Item Id="RESP516905" Url="http://docs.resharepoint.ru/Articles/Detail/RESP516905?folder=ASP-NET"/&gt;
+	&lt;Item Id="RESP517301" Url="http://docs.resharepoint.ru/Articles/Detail/RESP517301?folder=JavaScript"/&gt;
+	&lt;Item Id="RESP517302" Url="http://docs.resharepoint.ru/Articles/Detail/RESP517302?folder=ASP-NET"/&gt;
+	&lt;Item Id="RESP517303" Url="http://docs.resharepoint.ru/Articles/Detail/RESP517303?folder=Code"/&gt;
+	&lt;Item Id="RESP517304" Url="http://docs.resharepoint.ru/Articles/Detail/RESP517304?folder=ASP-NET"/&gt;
+	&lt;Item Id="RESP518901" Url="http://docs.resharepoint.ru/Articles/Detail/RESP518901?folder=JavaScript"/&gt;
+	&lt;Item Id="RESP518902" Url="http://docs.resharepoint.ru/Articles/Detail/RESP518902?folder=JavaScript"/&gt;
+	&lt;Item Id="RESP510004" Url="http://docs.resharepoint.ru/Articles/Detail/RESP510004?folder=Xml"/&gt;	
+&lt;/CodeInspectionHelpLink&gt;</value>
+  </data>
+</root>

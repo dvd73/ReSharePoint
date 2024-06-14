@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{a983defa-cb3c-4db0-822b-7ae09df7dbcd}"
+       Name="FinanceFields"
+       DisplayName="Finance Fields"
+       Type="Text"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+
+  <Field
+       ID="{8F980346-652E-4B2E-8A14-3CFF1CDA4413}"
+       Name="FinanceFields2"
+       DisplayName="Finance Fields"
+       Type="Note"
+       Indexed="TRUE"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+
+  <Field
+       ID="{9DBC243B-EA4A-434E-B422-FF40A91238F9}"
+       Name="FinanceFieldsID"
+       StaticName="FinanceFieldsId"
+       DisplayName="Finance Fields ids"
+       Type="Note"
+       Indexed="TRUE"
+       Required="FALSE"
+       Group="Custom Site Columns"
+       Overwrite="TRUE"
+       AllowDeletion ="FALSE">
+  </Field>
+
+
+</Elements>
