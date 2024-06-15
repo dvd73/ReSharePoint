@@ -38,6 +38,8 @@ To install to an experimental instance, run the ReSharper installer, select the 
 ## To link rule with help page 
 1. You need to ensure that [CheckId - help page url] pair exists in the project resources.
 
+![help image](/assets/get_help.png 'how to get help for incident')
+
 ## To update package:
 1. Modify assembly version.
 2. Edit Deploy\ReSharePoint.nuspec file. Change version in the <version> tag.
