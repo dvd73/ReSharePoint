@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015801Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015801Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015801Highlighting.CheckId + ": " + SPC015801Highlighting.Message,
   "Required attributes 'Location' and 'Title' must be declared in CustomActionGroup.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

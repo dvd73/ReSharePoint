@@ -11,16 +11,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC046401Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC046401Highlighting.CheckId,
   null,
   Consts.DESIGN_GROUP,
   SPC046401Highlighting.CheckId + ": " + SPC046401Highlighting.Message,
   "A WebPart should contain the attribute title and description to provide meaningfull information to the end user which would add the web part to a page.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

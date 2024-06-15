@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015210Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015210Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015210Highlighting.CheckId + ": " + SPC015210Highlighting.Message,
   "If ContentType defines attribute 'FeatureId' the value must be correct and include braces.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

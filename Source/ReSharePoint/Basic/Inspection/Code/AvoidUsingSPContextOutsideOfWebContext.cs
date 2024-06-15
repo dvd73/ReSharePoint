@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(AvoidUsingSPContextOutsideOfWebContextHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(AvoidUsingSPContextOutsideOfWebContextHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   AvoidUsingSPContextOutsideOfWebContextHighlighting.CheckId + ": " + AvoidUsingSPContextOutsideOfWebContextHighlighting.Message,
   "Avoid using SPContext.Current outside of web request context.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(AvoidUsingSPContextOutsideOfWebContextHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

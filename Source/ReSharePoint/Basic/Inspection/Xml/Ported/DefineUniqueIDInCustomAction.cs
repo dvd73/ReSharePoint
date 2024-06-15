@@ -12,16 +12,15 @@ using ReSharePoint.Basic.Inspection.Common.XmlAnalysis;
 using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015702Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015702Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015702Highlighting.CheckId + ": " + SPC015702Highlighting.Message,
   "Define a unique value for attribute 'Id' in CustomAction.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

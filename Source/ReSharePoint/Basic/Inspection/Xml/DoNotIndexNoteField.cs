@@ -14,16 +14,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotSpecifyIndexedAttributeForNoteFieldHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DoNotSpecifyIndexedAttributeForNoteFieldHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DoNotSpecifyIndexedAttributeForNoteFieldHighlighting.CheckId + ": " + DoNotSpecifyIndexedAttributeForNoteFieldHighlighting.Message,
   "Do not specify Indexed=TRUE attribute for Note field.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

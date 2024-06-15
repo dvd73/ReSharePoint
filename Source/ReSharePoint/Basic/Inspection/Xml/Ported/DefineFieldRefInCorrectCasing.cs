@@ -18,16 +18,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC016503Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC016503Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC016503Highlighting.CheckId + ": " + SPC016503Highlighting.Message,
   "The attribute 'ID' in elements of type 'FieldRef' is case sensitive. It must use the same casing as the ID of the referenced field.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

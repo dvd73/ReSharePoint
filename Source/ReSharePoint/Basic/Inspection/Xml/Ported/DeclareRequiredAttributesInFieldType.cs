@@ -11,16 +11,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC012201Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC012201Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC012201Highlighting.CheckId + ": " + SPC012201Highlighting.Message,
   "Required fields Filterable, ParentType, Sortable, TypeDisplayName and TypeName must be declared in FieldType.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

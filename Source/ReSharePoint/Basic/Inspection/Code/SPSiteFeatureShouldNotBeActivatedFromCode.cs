@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPSiteFeatureShouldNotBeActivatedFromCodeHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(SPSiteFeatureShouldNotBeActivatedFromCodeHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   SPSiteFeatureShouldNotBeActivatedFromCodeHighlighting.CheckId + ": " + SPSiteFeatureShouldNotBeActivatedFromCodeHighlighting.Message,
   "Avoid activation features via code; it requires unsafe updates/postbacks, creates unclear and hardly changeable activation sequence.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression),
         HighlightingTypes = new[] { typeof(SPSiteFeatureShouldNotBeActivatedFromCodeHighlighting) })]
     [Applicability(

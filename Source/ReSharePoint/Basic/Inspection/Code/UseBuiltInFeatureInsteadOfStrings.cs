@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
@@ -11,16 +10,15 @@ using ReSharePoint.Common.Attributes;
 using ReSharePoint.Common.Consts;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(UseBuiltInFeatureInsteadOfStringsHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(UseBuiltInFeatureInsteadOfStringsHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   UseBuiltInFeatureInsteadOfStringsHighlighting.CheckId + ": " + UseBuiltInFeatureInsteadOfStringsHighlighting.Message,
   "Use FeatureIds class fields to reference builtin feature.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(ILiteralExpression), HighlightingTypes = new[] { typeof(UseBuiltInFeatureInsteadOfStringsHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

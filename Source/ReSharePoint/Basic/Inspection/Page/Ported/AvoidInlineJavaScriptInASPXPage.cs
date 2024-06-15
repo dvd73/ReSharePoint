@@ -17,16 +17,15 @@ using ReSharePoint.Basic.Inspection.Page.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC046902Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Page.Ported
+{
+    [RegisterConfigurableSeverity(SPC046902Highlighting.CheckId,
   null,
   Consts.DESIGN_GROUP,
   SPC046902Highlighting.CheckId + ": " + SPC046902Highlighting.Message,
   "ASPX pages should not contain JavaScript code. Use separate .JS files instead.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Page.Ported
-{
     [DaemonStage(StagesBefore = new[] { typeof(LanguageSpecificDaemonStage) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

@@ -18,16 +18,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC019902Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC019902Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC019902Highlighting.CheckId + ": " + SPC019902Highlighting.Message,
   "Boolean attributes should be define in upper case letters (TRUE or FALSE).",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

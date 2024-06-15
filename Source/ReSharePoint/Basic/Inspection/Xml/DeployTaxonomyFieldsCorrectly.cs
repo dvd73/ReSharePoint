@@ -16,16 +16,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DeployTaxonomyFieldsCorrectlyHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DeployTaxonomyFieldsCorrectlyHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DeployTaxonomyFieldsCorrectlyHighlighting.CheckId + ": Deploy taxonomy fields correctly.",
   "Set of principal checks for taxonomy field provision.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

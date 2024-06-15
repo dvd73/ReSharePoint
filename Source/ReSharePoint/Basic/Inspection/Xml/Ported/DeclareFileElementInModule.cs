@@ -9,16 +9,15 @@ using ReSharePoint.Basic.Inspection.Common.XmlAnalysis;
 using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015303Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015303Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015303Highlighting.CheckId + ": " + SPC015303Highlighting.Message,
   "A Module should contain at least one File element as child. Otherwise the Module has no need and should be removed.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

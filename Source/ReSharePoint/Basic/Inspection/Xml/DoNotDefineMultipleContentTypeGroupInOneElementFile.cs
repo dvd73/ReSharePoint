@@ -11,16 +11,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotDefineMultipleContentTypeGroupInOneElementFileHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DoNotDefineMultipleContentTypeGroupInOneElementFileHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   DoNotDefineMultipleContentTypeGroupInOneElementFileHighlighting.CheckId + ": " + DoNotDefineMultipleContentTypeGroupInOneElementFileHighlighting.Message,
   "Do not define multiple content type groups in one element file.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

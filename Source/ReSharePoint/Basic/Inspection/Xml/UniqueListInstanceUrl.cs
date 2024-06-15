@@ -13,16 +13,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(UniqueListInstanceUrlHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(UniqueListInstanceUrlHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   UniqueListInstanceUrlHighlighting.CheckId + ": " + UniqueListInstanceUrlHighlighting.Message,
   "Not unique list instance Url might lead to the fail.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

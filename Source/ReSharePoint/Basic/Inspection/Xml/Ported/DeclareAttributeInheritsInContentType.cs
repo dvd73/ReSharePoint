@@ -14,16 +14,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC045201Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC045201Highlighting.CheckId,
   null,
   Consts.DESIGN_GROUP,
   SPC045201Highlighting.CheckId + ": " + SPC045201Highlighting.Message,
   "In SharePoint 2010 the new attribute 'Inherits' for ContentTypes defines whether fields of the parent ContentType are inherited to the ContentType. For compatibility reasons to SharePoint 2007 this attribute should be specified.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.Tree;
@@ -11,7 +10,9 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(AvoidDollarGlobalVariableInCodeHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(AvoidDollarGlobalVariableInCodeHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   AvoidDollarGlobalVariableInCodeHighlighting.CheckId + ": " + AvoidDollarGlobalVariableInCodeHighlighting.Message,
@@ -19,8 +20,6 @@ using ReSharePoint.Entities;
   Severity.WARNING
   )]
 
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(ILiteralExpression), HighlightingTypes = new[] { typeof(AvoidDollarGlobalVariableInCodeHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution |

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
@@ -13,16 +12,15 @@ using ReSharePoint.Common.Attributes;
 using ReSharePoint.Common.Consts;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(MagicStringShouldNotBeUsedHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(MagicStringShouldNotBeUsedHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   MagicStringShouldNotBeUsedHighlighting.CheckId + ": Hardcoded magic string detected",
   "Do not use hardcoded public urls, pathes, emails and account names in code.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(ILiteralExpression), HighlightingTypes = new[] { typeof(MagicStringShouldNotBeUsedHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

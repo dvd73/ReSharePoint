@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC030203Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code.Ported
+{
+    [RegisterConfigurableSeverity(SPC030203Highlighting.CheckId,
   null,
   Consts.SHAREPOINT_SUPPORTABILITY_GROUP,
   SPC030203Highlighting.CheckId + ": " + SPC030203Highlighting.Message,
   "There is no reason to read the connection string of a SharePoint content database except if you want to read from the database which is not supported.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code.Ported
-{
     [ElementProblemAnalyzer(typeof(IAssignmentExpression),
         HighlightingTypes = new[] {typeof (SPC030203Highlighting)})]
     [Applicability(

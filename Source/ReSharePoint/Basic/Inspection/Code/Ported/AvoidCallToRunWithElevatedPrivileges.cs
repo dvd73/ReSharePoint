@@ -1,10 +1,7 @@
-﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
-using JetBrains.ReSharper.Feature.Services.Daemon;
+﻿using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
-using ReSharePoint.Basic.Inspection.Code.Ported;
 using ReSharePoint.Basic.Inspection.Common.CodeAnalysis;
 using ReSharePoint.Common;
 using ReSharePoint.Common.Attributes;
@@ -12,19 +9,18 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC020206Highlighting.CheckId,
-  null,
-  Consts.SECURITY_GROUP,
-  SPC020206Highlighting.CheckId + ": " + SPC020206Highlighting.Message,
-  "The assembly should not call Microsoft.SharePoint.SPSecurity.RunWithElevatedPrivileges to run code with higher permissions.",
-  Severity.WARNING
-  )]
-
 namespace ReSharePoint.Basic.Inspection.Code.Ported
 {
+    [RegisterConfigurableSeverity(SPC020206Highlighting.CheckId,
+        null,
+        Consts.SECURITY_GROUP,
+        SPC020206Highlighting.CheckId + ": " + SPC020206Highlighting.Message,
+        "The assembly should not call Microsoft.SharePoint.SPSecurity.RunWithElevatedPrivileges to run code with higher permissions.",
+        Severity.WARNING
+    )]
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(SPC020206Highlighting) })]
     [Applicability(
-        IDEProjectType.SPFarmSolution  |
+        IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox |
         IDEProjectType.SPServerAPIReferenced)]
     public class AvoidCallToRunWithElevatedPrivileges : SPElementProblemAnalyzer<IReferenceExpression>
@@ -38,7 +34,7 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
             if (expressionType.IsResolved)
             {
                 result = element.IsResolvedAsMethodCall(ClrTypeKeys.SPSecurity,
-                    new[] {new MethodCriteria() {ShortName = "RunWithElevatedPrivileges"}});
+                    new[] { new MethodCriteria() { ShortName = "RunWithElevatedPrivileges" } });
             }
 
             return result;
@@ -50,7 +46,8 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
         }
     }
 
-    [ConfigurableSeverityHighlighting(CheckId, CSharpLanguage.Name, OverlapResolve = OverlapResolveKind.NONE, ShowToolTipInStatusBar = true)]
+    [ConfigurableSeverityHighlighting(CheckId, CSharpLanguage.Name, OverlapResolve = OverlapResolveKind.NONE,
+        ShowToolTipInStatusBar = true)]
     public class SPC020206Highlighting : SPCSharpErrorHighlighting<IReferenceExpression>
     {
         public const string CheckId = CheckIDs.Rules.Assembly.SPC020206;

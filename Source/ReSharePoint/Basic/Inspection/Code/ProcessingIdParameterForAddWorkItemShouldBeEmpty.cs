@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -13,16 +12,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(LastParameterForAddWorkItemShouldBeEmptyHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(LastParameterForAddWorkItemShouldBeEmptyHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   LastParameterForAddWorkItemShouldBeEmptyHighlighting.CheckId + ": " + LastParameterForAddWorkItemShouldBeEmptyHighlighting.Message,
   "Specify gProcessingId parameter for SPSite.AddWorkItem() as Guid.Empty. Overwise it fail.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(LastParameterForAddWorkItemShouldBeEmptyHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

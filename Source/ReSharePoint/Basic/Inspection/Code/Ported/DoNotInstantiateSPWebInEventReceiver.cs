@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -15,16 +14,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC056004Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code.Ported
+{
+    [RegisterConfigurableSeverity(SPC056004Highlighting.CheckId,
   null,
   Consts.DESIGN_GROUP,
   SPC056004Highlighting.CheckId + ": " + SPC056004Highlighting.Message,
   "Do not instantiate an SPWeb object within an event receiver.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code.Ported
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression),
         HighlightingTypes = new[] { typeof(SPC056004Highlighting) })]
     [Applicability(

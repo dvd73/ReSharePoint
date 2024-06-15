@@ -6,6 +6,7 @@ using JetBrains.Application;
 using JetBrains.Application.changes;
 using JetBrains.Application.PersistentMap;
 using JetBrains.Application.Progress;
+using JetBrains.Application.Threading;
 using JetBrains.DataFlow;
 using JetBrains.DocumentManagers.impl;
 using JetBrains.Lifetimes;
@@ -56,8 +57,8 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Psi.XmlCache
 
         private readonly IPersistentIndexManager _persistentIndexManager;
 
-        public FeatureCache(Lifetime lifetime, IPersistentIndexManager persistentIndexManager)
-            : base(lifetime, persistentIndexManager)
+        public FeatureCache(Lifetime lifetime, IShellLocks locks, IPersistentIndexManager persistentIndexManager)
+            : base(lifetime, locks, persistentIndexManager)
         {
             _persistentIndexManager = persistentIndexManager;
         }

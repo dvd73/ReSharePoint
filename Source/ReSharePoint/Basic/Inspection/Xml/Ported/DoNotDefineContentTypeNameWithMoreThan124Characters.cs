@@ -11,16 +11,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015205Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015205Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015205Highlighting.CheckId + ": " + SPC015205Highlighting.Message,
   "Length of attribute 'Name' in content types is limited to 124 characters or contains not allowed characters.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

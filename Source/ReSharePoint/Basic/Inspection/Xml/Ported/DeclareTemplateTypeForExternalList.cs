@@ -11,16 +11,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC045401Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC045401Highlighting.CheckId,
   null,
   Consts.DESIGN_GROUP,
   SPC045401Highlighting.CheckId + ": " + SPC045401Highlighting.Message,
   "If the ListInstance seems to be used for an external list, the correct TemplateType (600) should be used.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

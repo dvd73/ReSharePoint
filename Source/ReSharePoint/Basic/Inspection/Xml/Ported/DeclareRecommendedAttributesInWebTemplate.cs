@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC017711Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC017711Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC017711Highlighting.CheckId + ": " + SPC017711Highlighting.Message,
   "Attributes Title and Description should be declared in WebTemplate.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

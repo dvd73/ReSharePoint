@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC040701Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC040701Highlighting.CheckId,
   null,
   Consts.DESIGN_GROUP,
   SPC040701Highlighting.CheckId + ": " + SPC040701Highlighting.Message,
   "Site definitions are visible in the whole farm by default. The attribute 'VisibilityFeatureDependency' provides a way to hide the site definition depending on an activated feature.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

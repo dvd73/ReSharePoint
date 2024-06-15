@@ -14,16 +14,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotAllowDeletionForFieldHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DoNotAllowDeletionForFieldHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   DoNotAllowDeletionForFieldHighlighting.CheckId + ": " + DoNotAllowDeletionForFieldHighlighting.Message,
   "Prevent SharePoint field from deletion.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

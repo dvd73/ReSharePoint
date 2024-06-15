@@ -12,16 +12,15 @@ using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 using ReSharePoint.Pro.Tooltips;
 
-[assembly: RegisterConfigurableSeverity(DisplayWebTemplateConfigurationNameHighlighting.CheckId,
+namespace ReSharePoint.Pro.Tooltips
+{
+    [RegisterConfigurableSeverity(DisplayWebTemplateConfigurationNameHighlighting.CheckId,
   null,
   Consts.TOOLTIP_GROUP,
   DisplayWebTemplateConfigurationNameHighlighting.CheckId,
   "Display web template configuration name.",
   Severity.INFO
   )]
-
-namespace ReSharePoint.Pro.Tooltips
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
@@ -13,16 +12,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(AvoidSPObjectNameStringComparisonHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(AvoidSPObjectNameStringComparisonHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   AvoidSPObjectNameStringComparisonHighlighting.CheckId + ": Avoid SPObject.Name == <string> comparison",
   "Depending on the case, SPObject.Name string based comparison is quite unsafe and might lead to the potential issues.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression),
         HighlightingTypes = new[] { typeof(AvoidSPObjectNameStringComparisonHighlighting) })]
     [Applicability(

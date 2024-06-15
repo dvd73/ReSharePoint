@@ -37,7 +37,7 @@ namespace ReSharePoint.Pro.CodeCompletion.Common.LookupItem
         public override void Accept(ITextControl textControl, DocumentRange nameRange, LookupItemInsertType lookupItemInsertType, Suffix suffix,
             ISolution solution, bool keepCaretStill)
         {
-            IPsiServices psiServices = Context.BasicContext.CompletionManager.PsiServices;
+            IPsiServices psiServices = Context.BasicContext.IntellisenseManager.PsiServices;
             ITreeNode treeNode = TextControlToPsi.GetElement<ITreeNode>(solution, textControl);
             if (treeNode != null)
             {

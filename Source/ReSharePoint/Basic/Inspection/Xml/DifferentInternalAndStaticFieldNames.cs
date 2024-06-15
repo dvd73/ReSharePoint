@@ -15,16 +15,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DifferentInternalAndStaticFieldNamesHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DifferentInternalAndStaticFieldNamesHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   DifferentInternalAndStaticFieldNamesHighlighting.CheckId + ": " + DifferentInternalAndStaticFieldNamesHighlighting.Message,
   "Avoid different internal and static names for fields.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

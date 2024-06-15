@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -14,16 +13,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC050222Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code.Ported
+{
+    [RegisterConfigurableSeverity(SPC050222Highlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   SPC050222Highlighting.CheckId + ": " + SPC050222Highlighting.Message,
   "Do not call SPList.Items. Use SPList.GetItems(SPQuery query) instead.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code.Ported
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(SPC050222Highlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

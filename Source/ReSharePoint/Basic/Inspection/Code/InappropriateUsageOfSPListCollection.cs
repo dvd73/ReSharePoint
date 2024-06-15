@@ -19,16 +19,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(InappropriateUsageOfSPListCollectionHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+[RegisterConfigurableSeverity(InappropriateUsageOfSPListCollectionHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   InappropriateUsageOfSPListCollectionHighlighting.CheckId + ": Inappropriate SPListCollection usage",
   "SPWeb.Lists collection shoud not be enumerated directly. Avoid using TryGetList method.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [DaemonStage(StagesBefore = new[] {typeof (LanguageSpecificDaemonStage)})]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

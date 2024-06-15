@@ -33,7 +33,7 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Solution
         /// <param name="projectFileLocation"></param>
         /// <param name="reader"></param>
         /// <returns></returns>
-        public virtual ICollection<T> Read(FileSystemPath projectFileLocation, BinaryReader reader)
+        public virtual ICollection<T> Read(VirtualFileSystemPath projectFileLocation, BinaryReader reader)
         {
             int itemsCount = reader.ReadInt32();
             if (itemsCount == 0)
@@ -57,7 +57,7 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Solution
         /// <param name="projectFileLocation"></param>
         /// <param name="writer"></param>
         /// <param name="data"></param>
-        public virtual void Write(FileSystemPath projectFileLocation, BinaryWriter writer, ICollection<T> data)
+        public virtual void Write(VirtualFileSystemPath projectFileLocation, BinaryWriter writer, ICollection<T> data)
         {
             var items = data.ToArray();
             writer.Write(items.Length);
@@ -69,7 +69,7 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Solution
             }
         }
 
-        public virtual bool CanHandle(FileSystemPath projectFileLocation)
+        public virtual bool CanHandle(VirtualFileSystemPath projectFileLocation)
         {
             bool result = false;
 
@@ -96,7 +96,7 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Solution
         /// <param name="projectFileLocation"></param>
         /// <param name="doc"></param>
         /// <returns></returns>
-        public abstract ICollection<T> BuildData(FileSystemPath projectFileLocation, XmlDocument doc);
+        public abstract ICollection<T> BuildData(VirtualFileSystemPath projectFileLocation, XmlDocument doc);
 
         /// <summary>
         /// You should implement OnDataChanged only if you need to do something when the data changes. 
@@ -107,7 +107,7 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Solution
         /// <param name="oldData"></param>
         /// <param name="newData"></param>
         /// <returns>You can decide what needs to happen in response to this change, and you should return it as an action that will get executed later (after all processing of the file completes).</returns>
-        public virtual Action OnDataChanged(FileSystemPath projectFileLocation, ICollection<T> oldData, ICollection<T> newData)
+        public virtual Action OnDataChanged(VirtualFileSystemPath projectFileLocation, ICollection<T> oldData, ICollection<T> newData)
         {
             /*
             if (oldData != null)

@@ -14,16 +14,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC052201Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC052201Highlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   SPC052201Highlighting.CheckId + ": " + SPC052201Highlighting.Message,
   "Custom field types should not be user creatable because in this case they are visible in the complete farm which may not be the intention.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

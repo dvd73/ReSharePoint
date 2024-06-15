@@ -21,7 +21,7 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Solution.ProjectFileCa
         {
         }
 
-        public override ICollection<ControlTemplateItem> BuildData(FileSystemPath projectFileLocation, XmlDocument doc)
+        public override ICollection<ControlTemplateItem> BuildData(VirtualFileSystemPath projectFileLocation, XmlDocument doc)
         {
             List<ControlTemplateItem> result = new List<ControlTemplateItem>();
 

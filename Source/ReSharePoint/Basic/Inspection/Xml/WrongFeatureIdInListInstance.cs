@@ -16,16 +16,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(WrongFeatureIdInListInstanceHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(WrongFeatureIdInListInstanceHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   WrongFeatureIdInListInstanceHighlighting.CheckId + ": " + WrongFeatureIdInListInstanceHighlighting.Message,
   "It is important to remember to add the right FeatureId attribute to the ListInstance element, if the TemplateType attribute points to a list template which is not in the same feature as the one you are creating the list instance in. If you forget or set it wrong (copy&paste), you will get some very vague error messages.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox)]

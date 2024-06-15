@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -15,16 +14,15 @@ using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 using ReSharePoint.Pro.Tooltips;
 
-[assembly: RegisterConfigurableSeverity(DisplayContentTypeName3Highlighting.CheckId,
+namespace ReSharePoint.Pro.Tooltips
+{
+    [RegisterConfigurableSeverity(DisplayContentTypeName3Highlighting.CheckId,
   null,
   Consts.TOOLTIP_GROUP,
   DisplayContentTypeName3Highlighting.CheckId,
   "Display content type name in SPContentTypeId constructor.",
   Severity.INFO
   )]
-
-namespace ReSharePoint.Pro.Tooltips
-{
     [ElementProblemAnalyzer(typeof(IObjectCreationExpression), HighlightingTypes = new[] { typeof(DisplayContentTypeName3Highlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution |

@@ -21,16 +21,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC016002Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC016002Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC016002Highlighting.CheckId + ": " + SPC016002Highlighting.Message,
   "If event receivers are used within a feature with scope 'Site' the attribute 'Scope' should be specified.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

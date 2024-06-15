@@ -17,16 +17,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotUseUnderscoreInFieldNameHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DoNotUseUnderscoreInFieldNameHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   DoNotUseUnderscoreInFieldNameHighlighting.CheckId + ": " + DoNotUseUnderscoreInFieldNameHighlighting.Message,
   "Field names that are returned are different from the internal names that are displayed on the SharePoint in the sense that the underscores and spaces are being eliminated from them.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPSandbox |
         IDEProjectType.SPFarmSolution )]

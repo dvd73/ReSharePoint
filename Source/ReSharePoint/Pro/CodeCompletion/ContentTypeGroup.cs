@@ -54,7 +54,7 @@ namespace ReSharePoint.Pro.CodeCompletion
         protected override bool AddLookupItems(SPXmlCodeCompletionContext context, IItemsCollector collector)
         {
             var solution = context.BasicContext.SourceFile.GetSolution();
-            var prefix = LiveTemplatesManager.GetPrefix(new DocumentOffset(context.BasicContext.TextControl.Document, context.BasicContext.TextControl.Caret.Position.Value.ToDocOffsetAndVirtual().Offset), Consts.ResourceStringChars);
+            var prefix = LiveTemplatesManager.GetPrefix(new DocumentOffset(context.BasicContext.TextControl.Document, context.BasicContext.TextControl.Caret.Position.Value.ToDocOffsetAndVirtual().Offset.GetHashCode()), Consts.ResourceStringChars);
             Func<ContentTypeXmlEntity, bool> predicate = x => context.Tag == null || x.Id != (string)context.Tag;
 
             if (!String.IsNullOrEmpty(prefix))

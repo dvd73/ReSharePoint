@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Feature.Services.QuickFixes;
 using JetBrains.ReSharper.Psi;
@@ -22,16 +21,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SendMailFromWcfServiceHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(SendMailFromWcfServiceHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SendMailFromWcfServiceHighlighting.CheckId + ": " + SendMailFromWcfServiceHighlighting.Message,
   "Sending an e-mail when SPContext is not available could fail.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(SendMailFromWcfServiceHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

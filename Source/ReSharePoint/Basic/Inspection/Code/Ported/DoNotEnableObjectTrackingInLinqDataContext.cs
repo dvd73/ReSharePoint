@@ -1,6 +1,5 @@
 ﻿using System;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Feature.Services.QuickFixes;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -16,16 +15,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC050228Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code.Ported
+{
+    [RegisterConfigurableSeverity(SPC050228Highlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   SPC050228Highlighting.CheckId + ": " + SPC050228Highlighting.Message,
   "If your code only queries lists, rather than adding, deleting, or editing list items, then you can turn off object change tracking.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code.Ported
-{
     [ElementProblemAnalyzer(typeof(IObjectCreationExpression), HighlightingTypes = new[] { typeof(SPC050228Highlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

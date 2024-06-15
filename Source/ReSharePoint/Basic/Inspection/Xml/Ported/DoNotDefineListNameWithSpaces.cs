@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015505Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015505Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015505Highlighting.CheckId + ": " + SPC015505Highlighting.Message,
   "Name of ListTemplate cannot contain spaces or special characters.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

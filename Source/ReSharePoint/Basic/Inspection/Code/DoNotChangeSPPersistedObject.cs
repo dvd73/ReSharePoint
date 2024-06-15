@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -15,7 +14,9 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotChangeSPPersistedObjectHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(DoNotChangeSPPersistedObjectHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DoNotChangeSPPersistedObjectHighlighting.CheckId + ": " + DoNotChangeSPPersistedObjectHighlighting.Message,
@@ -23,8 +24,6 @@ using ReSharePoint.Entities;
   Severity.ERROR
   )]
 
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression),
         HighlightingTypes = new[] { typeof(DoNotChangeSPPersistedObjectHighlighting) })]
     [Applicability(

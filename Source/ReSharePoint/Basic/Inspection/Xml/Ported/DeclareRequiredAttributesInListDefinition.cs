@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC017511Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC017511Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC017511Highlighting.CheckId + ": " + SPC017511Highlighting.Message,
   "The attribte 'Title', 'Name' and 'Direction' must be declared in the schema.xml of a ListTemplate.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

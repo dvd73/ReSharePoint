@@ -13,16 +13,15 @@ using ReSharePoint.Basic.Inspection.Common.XmlAnalysis;
 using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC012212Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC012212Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC012212Highlighting.CheckId + ": " + SPC012212Highlighting.Message,
   "PropertySchema in FieldTypes is obsolete.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

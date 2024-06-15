@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.Tree;
@@ -11,16 +10,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(AvoidJQueryDocumentReadyInCodeHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(AvoidJQueryDocumentReadyInCodeHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   AvoidJQueryDocumentReadyInCodeHighlighting.CheckId + ": " + AvoidJQueryDocumentReadyInCodeHighlighting.Message,
   "Due to specific SharePoint client side initialization life cycle, it is recommended to avoid using jQuery(document).ready call.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(ILiteralExpression), HighlightingTypes = new[] { typeof(AvoidJQueryDocumentReadyInCodeHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution |

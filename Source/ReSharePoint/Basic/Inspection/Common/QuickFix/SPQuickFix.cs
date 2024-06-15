@@ -15,6 +15,11 @@ using JetBrains.ReSharper.Feature.Services.Intentions.Scoped.Actions;
 
 namespace ReSharePoint.Basic.Inspection.Common.QuickFix
 {
+    public interface IHighlightingsSetScopedAction : IScopedAction
+    {
+        Action<ITextControl> ExecuteAction(IEnumerable<HighlightingInfo> highlightings, ISolution solution, IProgressIndicator progress);
+    }
+
     public abstract class SPQuickFix<THighlighting, TElement> : QuickFixBase, IHighlightingsSetScopedAction
         where THighlighting : class, ISPHighlighting<TElement>
         where TElement : ITreeNode

@@ -17,16 +17,15 @@ using ReSharePoint.Basic.Inspection.Page.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC046903Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Page.Ported
+{
+    [RegisterConfigurableSeverity(SPC046903Highlighting.CheckId,
   null,
   Consts.DESIGN_GROUP,
   SPC046903Highlighting.CheckId + ": " + SPC046903Highlighting.Message,
   "ASPX pages should not contain CSS code. Use separate .CSS files instead.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Page.Ported
-{
     [DaemonStage(StagesBefore = new[] { typeof(LanguageSpecificDaemonStage) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

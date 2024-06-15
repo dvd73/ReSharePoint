@@ -1,6 +1,5 @@
 ﻿using System;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Feature.Services.QuickFixes;
 using JetBrains.ReSharper.Psi;
@@ -18,16 +17,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(UseBuiltInUserProfilePropertyContantInsteadOfStringsHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(UseBuiltInUserProfilePropertyContantInsteadOfStringsHighlighting.CheckId,
   null,
   Consts.DESIGN_GROUP,
   UseBuiltInUserProfilePropertyContantInsteadOfStringsHighlighting.CheckId + ": " + UseBuiltInUserProfilePropertyContantInsteadOfStringsHighlighting.Message,
   "Use PropertyConstants class to reference user profile property.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IElementAccessExpression), HighlightingTypes = new[] { typeof(UseBuiltInUserProfilePropertyContantInsteadOfStringsHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |
@@ -105,9 +103,9 @@ namespace ReSharePoint.Basic.Inspection.Code
             var file = element.GetContainingFile() as ICSharpFile;
 
             if (firstArgument != null && firstArgument.MatchingParameter != null &&
-                firstArgument.MatchingParameter.Element.Type.IsString() && firstArgument.Value is ILiteralExpression && firstArgument.Value.ConstantValue.Value != null)
+                firstArgument.MatchingParameter.Element.Type.IsString() && firstArgument.Value is ILiteralExpression && !firstArgument.Value.ConstantValue.IsNull())
             {
-                string replacement = TypeInfo.GetBuiltInUserProfileProperty(firstArgument.Value.ConstantValue.Value.ToString());
+                string replacement = TypeInfo.GetBuiltInUserProfileProperty(firstArgument.Value.ConstantValue.StringValue);
 
                 if (!String.IsNullOrEmpty(replacement))
                 {
@@ -116,7 +114,7 @@ namespace ReSharePoint.Basic.Inspection.Code
 
                     using (WriteLockCookie.Create(element.IsPhysical()))
                     {
-                        if (!file.Imports.Any(d => d.ImportedSymbolName.QualifiedName.Equals(namespaceIdentifier)))
+                        if (!file.Imports.Any(usingDirective => CommonHelper.EnsureUsingDirective(usingDirective, namespaceIdentifier)))
                             file.AddImport(elementFactory.CreateUsingDirective(namespaceIdentifier));
                         firstArgument.SetValue(newElement);
                     }

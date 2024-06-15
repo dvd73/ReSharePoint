@@ -32,7 +32,7 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Solution
         /// <param name="projectFileLocation"></param>
         /// <param name="reader"></param>
         /// <returns></returns>
-        public virtual T Read(FileSystemPath projectFileLocation, BinaryReader reader)
+        public virtual T Read(VirtualFileSystemPath projectFileLocation, BinaryReader reader)
         {
             int sizeofT = reader.ReadInt32();
             return DeserializeFromBytes(reader.ReadBytes(sizeofT));
@@ -45,14 +45,14 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Solution
         /// <param name="projectFileLocation"></param>
         /// <param name="writer"></param>
         /// <param name="data"></param>
-        public virtual void Write(FileSystemPath projectFileLocation, BinaryWriter writer, T data)
+        public virtual void Write(VirtualFileSystemPath projectFileLocation, BinaryWriter writer, T data)
         {
             byte[] rawdata = SerializeToBytes(data);
             writer.Write(rawdata.Length);
             writer.Write(rawdata);
         }
 
-        public virtual bool CanHandle(FileSystemPath projectFileLocation)
+        public virtual bool CanHandle(VirtualFileSystemPath projectFileLocation)
         {
             bool result = false;
 
@@ -79,7 +79,7 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Solution
         /// <param name="projectFileLocation"></param>
         /// <param name="doc"></param>
         /// <returns></returns>
-        public abstract T BuildData(FileSystemPath projectFileLocation, XmlDocument doc);
+        public abstract T BuildData(VirtualFileSystemPath projectFileLocation, XmlDocument doc);
 
         /// <summary>
         /// You should implement OnDataChanged only if you need to do something when the data changes. 
@@ -90,7 +90,7 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Solution
         /// <param name="oldData"></param>
         /// <param name="newData"></param>
         /// <returns>You can decide what needs to happen in response to this change, and you should return it as an action that will get executed later (after all processing of the file completes).</returns>
-        public virtual Action OnDataChanged(FileSystemPath projectFileLocation, T oldData, T newData)
+        public virtual Action OnDataChanged(VirtualFileSystemPath projectFileLocation, T oldData, T newData)
         {
             /*
             if (oldData != null)

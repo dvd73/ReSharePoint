@@ -1,10 +1,7 @@
-﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
-using JetBrains.ReSharper.Feature.Services.Daemon;
+﻿using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
-using ReSharePoint.Basic.Inspection.Code.Ported;
 using ReSharePoint.Basic.Inspection.Common.CodeAnalysis;
 using ReSharePoint.Common;
 using ReSharePoint.Common.Attributes;
@@ -12,19 +9,18 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC050236Highlighting.CheckId,
-  null,
-  Consts.BEST_PRACTICE_GROUP,
-  SPC050236Highlighting.CheckId + ": " + SPC050236Highlighting.Message,
-  "Do not call SPItemEventProperties.OpenWeb(). Use the newly introduced SPItemEventProperties.Web property instead for better performance and to avoid the need to call Dispose().",
-  Severity.WARNING
-  )]
-
 namespace ReSharePoint.Basic.Inspection.Code.Ported
 {
+    [RegisterConfigurableSeverity(SPC050236Highlighting.CheckId,
+        null,
+        Consts.BEST_PRACTICE_GROUP,
+        SPC050236Highlighting.CheckId + ": " + SPC050236Highlighting.Message,
+        "Do not call SPItemEventProperties.OpenWeb(). Use the newly introduced SPItemEventProperties.Web property instead for better performance and to avoid the need to call Dispose().",
+        Severity.WARNING
+    )]
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(SPC050236Highlighting) })]
     [Applicability(
-        IDEProjectType.SPFarmSolution  |
+        IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox |
         IDEProjectType.SPServerAPIReferenced)]
     public class DoNotCallSPItemEventPropertiesOpenWeb : SPElementProblemAnalyzer<IReferenceExpression>
@@ -38,7 +34,7 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
             if (expressionType.IsResolved)
             {
                 result = element.IsResolvedAsMethodCall(ClrTypeKeys.SPItemEventProperties,
-                    new[] {new MethodCriteria() {ShortName = "OpenWeb"}});
+                    new[] { new MethodCriteria() { ShortName = "OpenWeb" } });
             }
 
             return result;
@@ -50,7 +46,8 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
         }
     }
 
-    [ConfigurableSeverityHighlighting(CheckId, CSharpLanguage.Name, OverlapResolve = OverlapResolveKind.NONE, ShowToolTipInStatusBar = true)]
+    [ConfigurableSeverityHighlighting(CheckId, CSharpLanguage.Name, OverlapResolve = OverlapResolveKind.NONE,
+        ShowToolTipInStatusBar = true)]
     public class SPC050236Highlighting : SPCSharpErrorHighlighting<IReferenceExpression>
     {
         public const string CheckId = CheckIDs.Rules.Assembly.SPC050236;

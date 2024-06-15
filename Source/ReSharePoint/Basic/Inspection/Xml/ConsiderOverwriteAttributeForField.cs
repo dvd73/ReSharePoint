@@ -14,16 +14,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(ConsiderOverwriteAttributeForFieldHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(ConsiderOverwriteAttributeForFieldHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   ConsiderOverwriteAttributeForFieldHighlighting.CheckId + ": " + ConsiderOverwriteAttributeForFieldHighlighting.Message,
   "Consider Overwrite=\"TRUE\" for field.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.DocumentModel;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -17,16 +16,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPMonitoredScopeShouldBeUsedHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(SPMonitoredScopeShouldBeUsedHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   SPMonitoredScopeShouldBeUsedHighlighting.CheckId + ": " + SPMonitoredScopeShouldBeUsedHighlighting.Message,
   "Some recommended practices regarding SPMonitoredScope class utilization.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IClassDeclaration), HighlightingTypes = new[] { typeof(SPMonitoredScopeShouldBeUsedHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

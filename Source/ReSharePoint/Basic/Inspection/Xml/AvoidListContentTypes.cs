@@ -9,15 +9,14 @@ using ReSharePoint.Basic.Inspection.Common.XmlAnalysis;
 using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(AvoidListContentTypesHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(AvoidListContentTypesHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   AvoidListContentTypesHighlighting.CheckId + ": " + AvoidListContentTypesHighlighting.Message,
   "Avoid using list content type in list template. Use ContentTypeRef instead.",
   Severity.WARNING)]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

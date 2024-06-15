@@ -11,16 +11,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC016401Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC016401Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC016401Highlighting.CheckId + ": " + SPC016401Highlighting.Message,
   "WebPart should contain a title which is visible to the user in SharePoint.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

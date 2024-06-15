@@ -13,16 +13,16 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(UniqueContentTypeIDHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+
+    [RegisterConfigurableSeverity(UniqueContentTypeIDHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   UniqueContentTypeIDHighlighting.CheckId + ": " + UniqueContentTypeIDHighlighting.Message,
   "ContentType ID must be unique.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

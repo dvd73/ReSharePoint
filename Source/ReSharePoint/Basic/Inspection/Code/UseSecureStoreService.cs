@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(UseSecureStoreServiceHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(UseSecureStoreServiceHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   UseSecureStoreServiceHighlighting.CheckId + ": " + UseSecureStoreServiceHighlighting.Message,
   "At some point, it is better to use Secure Store Provider to store credentials/connection strins intead of saving them into web.config, property bags or lists.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IObjectCreationExpression), HighlightingTypes = new[] { typeof(UseSecureStoreServiceHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

@@ -17,16 +17,15 @@ using ReSharePoint.Basic.Inspection.Page.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC026901Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Page.Ported
+{
+    [RegisterConfigurableSeverity(SPC026901Highlighting.CheckId,
   null,
   Consts.SECURITY_GROUP,
   SPC026901Highlighting.CheckId + ": " + SPC026901Highlighting.Message,
   "ASPX pages should not contain inline code. Use code behind instead.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Page.Ported
-{
     [DaemonStage(StagesBefore = new[] { typeof(LanguageSpecificDaemonStage) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

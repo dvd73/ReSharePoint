@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -14,7 +13,9 @@ using ReSharePoint.Common.Attributes;
 using ReSharePoint.Common.Consts;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC040213Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code.Ported
+{
+    [RegisterConfigurableSeverity(SPC040213Highlighting.CheckId,
   null,
   Consts.DESIGN_GROUP,
   SPC040213Highlighting.CheckId + ": " + SPC040213Highlighting.Message,
@@ -22,8 +23,6 @@ using ReSharePoint.Entities;
   Severity.WARNING
   )]
 
-namespace ReSharePoint.Basic.Inspection.Code.Ported
-{
     [ElementProblemAnalyzer(typeof(IClassLikeDeclaration),
         HighlightingTypes = new[] {typeof (SPC040213Highlighting)})]
     [Applicability(

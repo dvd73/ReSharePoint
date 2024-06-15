@@ -10,14 +10,14 @@ namespace ReSharePoint.Activation
     }
 
     [ZoneActivator]
-    public class ProductActivator : IActivate<IBasicProductZone>, IActivate<IProProductZone>
+    public class ProductActivator : IActivateDynamic<IBasicProductZone>, IActivateDynamic<IProProductZone>
     {
-        bool IActivate<IBasicProductZone>.ActivatorEnabled()
+        bool IActivateDynamic<IBasicProductZone>.ActivatorEnabled()
         {
             return true;
         }
 
-        bool IActivate<IProProductZone>.ActivatorEnabled()
+        bool IActivateDynamic<IProProductZone>.ActivatorEnabled()
         {
             return CheckLicenseType();
         }

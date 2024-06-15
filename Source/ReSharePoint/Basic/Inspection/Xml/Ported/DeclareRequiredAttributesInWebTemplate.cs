@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC017701Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC017701Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC017701Highlighting.CheckId + ": " + SPC017701Highlighting.Message,
   "Required attributes BaseTemplateID, BaseTemplateName, BaseConfigurationID and Name must be declared in WebTemplate.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

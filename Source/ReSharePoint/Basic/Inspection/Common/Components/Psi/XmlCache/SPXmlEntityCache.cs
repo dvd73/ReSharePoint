@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Application.Threading;
 using JetBrains.Lifetimes;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Caches;
@@ -24,8 +25,8 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Psi.XmlCache
 
         #region Ctor
 
-        protected SPXmlEntityCache(Lifetime lifetime, IPersistentIndexManager persistentIndexManager) 
-            : base(lifetime, persistentIndexManager)
+        protected SPXmlEntityCache(Lifetime lifetime, IShellLocks locks, IPersistentIndexManager persistentIndexManager) 
+            : base(lifetime, locks, persistentIndexManager)
         {
         }
         #endregion

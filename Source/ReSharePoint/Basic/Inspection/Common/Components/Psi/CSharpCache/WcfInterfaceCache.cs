@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Application;
 using JetBrains.Application.changes;
+using JetBrains.Application.Threading;
 using JetBrains.DataFlow;
 using JetBrains.Lifetimes;
 using JetBrains.ProjectModel;
@@ -37,8 +38,8 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Psi.CSharpCache
         #endregion
 
         #region Ctor
-        public WcfInterfaceCache(Lifetime lifetime, IPersistentIndexManager persistentIndexManager)
-            : base(lifetime, persistentIndexManager)
+        public WcfInterfaceCache(Lifetime lifetime, IShellLocks locks, IPersistentIndexManager persistentIndexManager)
+            : base(lifetime, locks, persistentIndexManager)
         {
         }
         #endregion

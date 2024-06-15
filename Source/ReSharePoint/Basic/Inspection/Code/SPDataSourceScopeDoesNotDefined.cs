@@ -1,6 +1,5 @@
 ﻿using System;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Feature.Services.QuickFixes;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -16,16 +15,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPDataSourceScopeDoesNotDefinedHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(SPDataSourceScopeDoesNotDefinedHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPDataSourceScopeDoesNotDefinedHighlighting.CheckId + ": " + SPDataSourceScopeDoesNotDefinedHighlighting.Message,
   "All SPViewScope enumeration values are covered all possible developer's intentions. If not specified SharePoint will use Default value.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IObjectCreationExpression), HighlightingTypes = new[] { typeof(SPDataSourceScopeDoesNotDefinedHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

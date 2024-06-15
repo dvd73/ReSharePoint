@@ -14,16 +14,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC012202Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC012202Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC012202Highlighting.CheckId + ": " + SPC012202Highlighting.Message,
   "Do not use a <Field Name=\"InternalType\"> element in a custom field type definition.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

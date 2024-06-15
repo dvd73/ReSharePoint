@@ -15,16 +15,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015212Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015212Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015212Highlighting.CheckId + ": " + SPC015212Highlighting.Message,
   "A content type should not have attribute 'Inherits' set to 'TRUE' if custom forms are used.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

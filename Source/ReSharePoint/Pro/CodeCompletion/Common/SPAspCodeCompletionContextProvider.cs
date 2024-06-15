@@ -38,8 +38,8 @@ namespace ReSharePoint.Pro.CodeCompletion.Common
             return false;
         }
 
-    public SPAspCodeCompletionContextProvider(HtmlIntellisenseManager htmlIntellisenseManager, IHtmlDeclaredElementTypes htmlCache, IAspDeclaredElementTypes aspDeclaredElementTypes)
-            : base(htmlIntellisenseManager, htmlCache, aspDeclaredElementTypes)
+    public SPAspCodeCompletionContextProvider(HtmlCodeCompletionManager htmlCodeCompletionManager, IHtmlDeclaredElementTypes htmlCache, IAspDeclaredElementTypes aspDeclaredElementTypes)
+            : base(htmlCodeCompletionManager, htmlCache, aspDeclaredElementTypes)
     {
         _aspDeclaredElementTypes = aspDeclaredElementTypes;
     }

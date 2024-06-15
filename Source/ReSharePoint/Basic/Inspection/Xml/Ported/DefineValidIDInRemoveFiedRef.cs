@@ -15,16 +15,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC016603Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC016603Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC016603Highlighting.CheckId + ": " + SPC016603Highlighting.Message,
   "The attribute 'ID' in elements of type 'RemoveFieldRef' should start and end with '}'. Otherwise they may not work correctly.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]
