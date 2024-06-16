@@ -24,7 +24,7 @@ namespace ReSharePoint.Common.Actions
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                System.Diagnostics.Process.Start("http://www.subpointsolutions.com/resp");
+                System.Diagnostics.Process.Start("https://github.com/dvd73/ReSharePoint");
             }
         }
     }
