@@ -14,16 +14,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(RepeatCalculatedFieldsInListSchemaHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(RepeatCalculatedFieldsInListSchemaHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   RepeatCalculatedFieldsInListSchemaHighlighting.CheckId + ": " + RepeatCalculatedFieldsInListSchemaHighlighting.Message,
   "If you are using ContentTypeRef in your list schema be sure that all calculated fields from related content type are repeated in the Fields section.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox)]

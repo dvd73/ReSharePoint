@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using JetBrains.Metadata.Reader.API;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Feature.Services.Html;
 using JetBrains.ReSharper.Psi;
@@ -16,7 +15,9 @@ using ReSharePoint.Common.Attributes;
 using ReSharePoint.Common.Consts;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(AvoidStaicSPObjectsInFieldsHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(AvoidStaicSPObjectsInFieldsHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   AvoidStaicSPObjectsInFieldsHighlighting.CheckId + ": " + AvoidStaicSPObjectsInFieldsHighlighting.Message,
@@ -24,8 +25,6 @@ using ReSharePoint.Entities;
   Severity.WARNING
   )]
 
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IMultipleFieldDeclaration), HighlightingTypes = new[] { typeof(AvoidStaicSPObjectsInFieldsHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC055501Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC055501Highlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   SPC055501Highlighting.CheckId + ": " + SPC055501Highlighting.Message,
   "The ListTemplate Type should be greater than 10000. This makes it easier to identify custom ListTemplates",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

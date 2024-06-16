@@ -14,16 +14,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015107Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015107Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015107Highlighting.CheckId + ": " + SPC015107Highlighting.Message,
   "Attribute 'FromBaseType' is deprecated in favor of the Sealed attribute.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

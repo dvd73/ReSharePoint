@@ -23,7 +23,9 @@ using ReSharePoint.Basic.Inspection.JavaScript;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(AvoidJQueryDocumentReadyHighlighting.SeverityId,
+namespace ReSharePoint.Basic.Inspection.JavaScript
+{
+    [RegisterConfigurableSeverity(AvoidJQueryDocumentReadyHighlighting.SeverityId,
   null,
   Consts.CORRECTNESS_GROUP,
   AvoidJQueryDocumentReadyHighlighting.Message,
@@ -31,7 +33,7 @@ using ReSharePoint.Entities;
   Severity.WARNING
   )]
 
-[assembly: RegisterConfigurableSeverity(AvoidDollarGlobalVariableHighlighting.SeverityId,
+[RegisterConfigurableSeverity(AvoidDollarGlobalVariableHighlighting.SeverityId,
   null,
   Consts.CORRECTNESS_GROUP,
   AvoidDollarGlobalVariableHighlighting.Message,
@@ -39,8 +41,6 @@ using ReSharePoint.Entities;
   Severity.WARNING
   )]
 
-namespace ReSharePoint.Basic.Inspection.JavaScript
-{
     /// <summary>
     /// Daemon stage processes work on psi files, and a psi file is an abstraction on physical files. 
     /// Frequently, it’s a one-to-one match, but a physical file can contain more than one psi file. 

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using JetBrains.Application.Settings;
+using JetBrains.ReSharper.Daemon.Xml.Stages;
 using JetBrains.ReSharper.Daemon.Xml.Stages.Analysis;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi.Xml.Tree;
@@ -21,7 +22,7 @@ namespace ReSharePoint.Pro.Tooltips.Common.XmlAnalysis
         /// <param name="process"></param>
         /// <param name="settings"></param>
         /// <returns></returns>
-        public IEnumerable<JetBrains.ReSharper.Daemon.Xml.Stages.XmlAnalysis> GetAnalyses(IXmlFile file, IDaemonProcess process, IContextBoundSettingsStore settings)
+        public IEnumerable<IXmlAnalysis> GetAnalyses(IXmlFile file, IDaemonProcess process, IContextBoundSettingsStore settings)
         {
             if (file is IDTDFile || file.GetSourceFile().HasExcluded(settings))
                 return EmptyList<JetBrains.ReSharper.Daemon.Xml.Stages.XmlAnalysis>.InstanceList;

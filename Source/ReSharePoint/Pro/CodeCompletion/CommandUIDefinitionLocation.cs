@@ -65,7 +65,7 @@ namespace ReSharePoint.Pro.CodeCompletion
         {
             //var solution = context.BasicContext.SourceFile.GetSolution();
             //var project = context.BasicContext.SourceFile.GetProject();
-            var prefix = LiveTemplatesManager.GetPrefix(new DocumentOffset(context.BasicContext.TextControl.Document, context.BasicContext.TextControl.Caret.Position.Value.ToDocOffsetAndVirtual().Offset), '.');
+            var prefix = LiveTemplatesManager.GetPrefix(new DocumentOffset(context.BasicContext.TextControl.Document, context.BasicContext.TextControl.Caret.Position.Value.ToDocOffsetAndVirtual().Offset.GetHashCode()), '.');
             
             Func<string, bool> predicateBuiltIn = x => !String.IsNullOrEmpty(x);
 

@@ -1,10 +1,8 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
-using ReSharePoint.Basic.Inspection.Code.Ported;
 using ReSharePoint.Basic.Inspection.Common.CodeAnalysis;
 using ReSharePoint.Common;
 using ReSharePoint.Common.Attributes;
@@ -12,20 +10,19 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC020203Highlighting.CheckId,
-  null,
-  Consts.SECURITY_GROUP,
-  SPC020203Highlighting.CheckId + ": " + SPC020203Highlighting.Message,
-  "Setting this property to true opens security risks, potentially introducing cross-site scripting vulnerabilities.",
-  Severity.WARNING
-  )]
-
 namespace ReSharePoint.Basic.Inspection.Code.Ported
 {
+    [RegisterConfigurableSeverity(SPC020203Highlighting.CheckId,
+        null,
+        Consts.SECURITY_GROUP,
+        SPC020203Highlighting.CheckId + ": " + SPC020203Highlighting.Message,
+        "Setting this property to true opens security risks, potentially introducing cross-site scripting vulnerabilities.",
+        Severity.WARNING
+    )]
     [ElementProblemAnalyzer(typeof(IAssignmentExpression),
-        HighlightingTypes = new[] {typeof (SPC020203Highlighting)})]
+        HighlightingTypes = new[] { typeof(SPC020203Highlighting) })]
     [Applicability(
-        IDEProjectType.SPFarmSolution  |
+        IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox |
         IDEProjectType.SPServerAPIReferenced)]
     public class AvoidCallToAllowUnsafeUpdatesOnSPSite : SPElementProblemAnalyzer<IAssignmentExpression>
@@ -49,8 +46,9 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
             return new SPC020203Highlighting(element);
         }
     }
-    
-    [ConfigurableSeverityHighlighting(CheckId, CSharpLanguage.Name, OverlapResolve = OverlapResolveKind.NONE, ShowToolTipInStatusBar = true)]
+
+    [ConfigurableSeverityHighlighting(CheckId, CSharpLanguage.Name, OverlapResolve = OverlapResolveKind.NONE,
+        ShowToolTipInStatusBar = true)]
     public class SPC020203Highlighting : SPCSharpErrorHighlighting<IAssignmentExpression>
     {
         public const string CheckId = CheckIDs.Rules.Assembly.SPC020203;

@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Common.XmlAnalysis;
 using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC017510Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC017510Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC017510Highlighting.CheckId + ": " + SPC017510Highlighting.Message,
   "The element 'DefaultDescription' must be declared in the schema.xml of a ListTemplate.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

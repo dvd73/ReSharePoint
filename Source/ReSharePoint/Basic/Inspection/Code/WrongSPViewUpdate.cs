@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(WrongSPViewUpdateHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(WrongSPViewUpdateHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   WrongSPViewUpdateHighlighting.CheckId + ": " + WrongSPViewUpdateHighlighting.Message,
   "SPList.DefaultView and SPList.Views[] properties returns a new SPView instance with every call.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression),
         HighlightingTypes = new[] {typeof (WrongSPViewUpdateHighlighting)})]
     [Applicability(

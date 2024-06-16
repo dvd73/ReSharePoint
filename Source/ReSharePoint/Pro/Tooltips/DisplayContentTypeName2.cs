@@ -13,7 +13,9 @@ using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 using ReSharePoint.Pro.Tooltips;
 
-[assembly: RegisterConfigurableSeverity(DisplayContentTypeName2Highlighting.CheckId,
+namespace ReSharePoint.Pro.Tooltips
+{
+    [RegisterConfigurableSeverity(DisplayContentTypeName2Highlighting.CheckId,
   null,
   Consts.TOOLTIP_GROUP,
   DisplayContentTypeName2Highlighting.CheckId,
@@ -21,8 +23,6 @@ using ReSharePoint.Pro.Tooltips;
   Severity.INFO
   )]
 
-namespace ReSharePoint.Pro.Tooltips
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox)]

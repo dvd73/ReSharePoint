@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{4C7533D8-3059-44EE-813F-3FC58BE882D0}"
 	ProjectSection(SolutionItems) = preProject
@@ -19,18 +19,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AB4403
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReSharePoint.Docs", "ReSharePoint.Docs\ReSharePoint.Docs.csproj", "{D2CB09CD-F0D7-42D7-9315-0C47718BE272}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubPoint2.DocsImport", "SubPoint2.DocsImport\SubPoint2.DocsImport.csproj", "{9E519BA2-6AF4-4327-BA30-565A9987588B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordPressSharp", "_3rd part\WordPressSharp\WordPressSharp.csproj", "{7A938355-0B6B-48B7-97FB-C0C09015307B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{118F1768-2C76-4AD2-833F-C8D82C09EEEF}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{C5E26F8A-2080-483E-AA27-DFA500DB8C6E}"
 	ProjectSection(SolutionItems) = preProject
 		..\Deploy\BuildPackage.cmd = ..\Deploy\BuildPackage.cmd
 		..\Deploy\DeployPackage.cmd = ..\Deploy\DeployPackage.cmd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EA1EDB70-46D9-480C-8092-8AE82A7827AB}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Global
@@ -47,52 +44,11 @@ Global
 		{2870606F-0CFA-4C6D-8933-AD07D024A8F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2870606F-0CFA-4C6D-8933-AD07D024A8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2870606F-0CFA-4C6D-8933-AD07D024A8F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D2CB09CD-F0D7-42D7-9315-0C47718BE272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D2CB09CD-F0D7-42D7-9315-0C47718BE272}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D2CB09CD-F0D7-42D7-9315-0C47718BE272}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D2CB09CD-F0D7-42D7-9315-0C47718BE272}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9E519BA2-6AF4-4327-BA30-565A9987588B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E519BA2-6AF4-4327-BA30-565A9987588B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9E519BA2-6AF4-4327-BA30-565A9987588B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E519BA2-6AF4-4327-BA30-565A9987588B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A938355-0B6B-48B7-97FB-C0C09015307B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A938355-0B6B-48B7-97FB-C0C09015307B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A938355-0B6B-48B7-97FB-C0C09015307B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A938355-0B6B-48B7-97FB-C0C09015307B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{D2CB09CD-F0D7-42D7-9315-0C47718BE272} = {118F1768-2C76-4AD2-833F-C8D82C09EEEF}
-		{9E519BA2-6AF4-4327-BA30-565A9987588B} = {118F1768-2C76-4AD2-833F-C8D82C09EEEF}
-		{7A938355-0B6B-48B7-97FB-C0C09015307B} = {118F1768-2C76-4AD2-833F-C8D82C09EEEF}
-	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2F19CA9-2EC0-4C0A-8470-8B5EC8F9753F}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://dvd73.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = ReSharePoint\\ReSharePoint.csproj
-		SccProjectName1 = ReSharePoint
-		SccLocalPath1 = ReSharePoint
-		SccProjectUniqueName2 = ReSharePoint.Entities\\ReSharePoint.Entities.csproj
-		SccProjectName2 = ReSharePoint.Entities
-		SccLocalPath2 = ReSharePoint.Entities
-		SccProjectUniqueName3 = ReSharePoint.Docs\\ReSharePoint.Docs.csproj
-		SccProjectTopLevelParentUniqueName3 = ReSharePoint.sln
-		SccProjectName3 = ReSharePoint.Docs
-		SccLocalPath3 = ReSharePoint.Docs
-		SccProjectUniqueName4 = SubPoint2.DocsImport\\SubPoint2.DocsImport.csproj
-		SccProjectTopLevelParentUniqueName4 = ReSharePoint.sln
-		SccProjectName4 = SubPoint2.DocsImport
-		SccLocalPath4 = SubPoint2.DocsImport
-		SccProjectUniqueName5 = _3rd\u0020part\\WordPressSharp\\WordPressSharp.csproj
-		SccProjectTopLevelParentUniqueName5 = ReSharePoint.sln
-		SccProjectName5 = _3rd\u0020part/WordPressSharp
-		SccLocalPath5 = _3rd\u0020part\\WordPressSharp
 	EndGlobalSection
 EndGlobal

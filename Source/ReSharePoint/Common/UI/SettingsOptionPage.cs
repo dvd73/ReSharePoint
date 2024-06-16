@@ -20,6 +20,8 @@ using JetBrains.Lifetimes;
 using JetBrains.IDE.UI.Options;
 using JetBrains.Rider.Model.UIAutomation;
 using JetBrains.Threading;
+using System.Text.RegularExpressions;
+using JetBrains.Rider.Model;
 
 namespace ReSharePoint.Common.UI
 {
@@ -67,9 +69,9 @@ namespace ReSharePoint.Common.UI
             BlackListViewModel model = new BlackListViewModel(this.Lifetime, this.OptionsSettingsSmartContext, reSharePointOptionsStore);
             return model.SelectedEntry.GetBeSingleSelectionListWithToolbar(model.Entries, this.Lifetime, (entryLt, entry, properties) => new List<BeControl>()
             {
-                entry.Pattern.GetBeTextBox(entryLt).WithValidationRule(this.Lifetime, GeneratedUtils.IsValidGeneratedFilesMask, "Pattern is not valid", _iconHost.Transform(JetBrains.Application.UI.Icons.CommonThemedIcons.CommonThemedIcons.Error.Id), ValidationStates.validationError, null, (Func<BeTextBox, IViewableProperty<string>>) null)
+                entry.Pattern.GetBeTextBox(entryLt).WithValidationRule(this.Lifetime, CommonHelper.IsValidGeneratedFilesMask, "Pattern is not valid", ValidationStates.validationError, null, (Func<BeTextBox, IViewableProperty<string>>) null)
             }, this._iconHost, new [] { "Pattern,*" }, true, BeDock.RIGHT).AddButtonWithListAction(BeListAddAction.ADD, i => model.CreateNewEntry()).AddButtonWithListAction<BlackListEntry>(BeListAction.REMOVE, i => model.OnEntryRemoved());
-        }
+        }        
 
         private class BlackListEntry
         {
@@ -97,7 +99,7 @@ namespace ReSharePoint.Common.UI
                 this._lifetime = lifetime;
                 this._optionContext = context;
                 this._optionStore = store;
-                this._entryChanged = new GroupingEventHost(lifetime, false).CreateEvent(lifetime, "BlackListViewModel.EntryChangedGrouped", TimeSpan.FromMilliseconds(100.0), this.OnEntryChanged);
+                //this._entryChanged = new GroupingEventHost(lifetime, false).CreateEvent(lifetime, "BlackListViewModel.EntryChangedGrouped", TimeSpan.FromMilliseconds(100.0), this.OnEntryChanged);
                 var list = store.GetBlackList(context).Select(entry => new BlackListEntry(lifetime, this._entryChanged.Incoming, entry.Trim())).ToList();
                 this.Entries = new ListEvents<BlackListEntry>(lifetime, "BlackListViewModel.Entries", list, false);
                 this.SelectedEntry = new Property<BlackListEntry>(lifetime, "BlackListViewModel.SelectedEntry");

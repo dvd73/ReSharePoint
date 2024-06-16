@@ -1,19 +1,19 @@
 ﻿using System;
 using JetBrains.ReSharper.Feature.Services.Daemon;
-using ReSharePoint.Common.Consts;
-
-[assembly: RegisterConfigurableHighlightingsGroup(Consts.CORRECTNESS_GROUP, Consts.CORRECTNESS_GROUP)]
-[assembly: RegisterConfigurableHighlightingsGroup(Consts.BEST_PRACTICE_GROUP, Consts.BEST_PRACTICE_GROUP)]
-[assembly: RegisterConfigurableHighlightingsGroup(Consts.SECURITY_GROUP, Consts.SECURITY_GROUP)]
-[assembly: RegisterConfigurableHighlightingsGroup(Consts.SHAREPOINT_SUPPORTABILITY_GROUP, Consts.SHAREPOINT_SUPPORTABILITY_GROUP)]
-[assembly: RegisterConfigurableHighlightingsGroup(Consts.DESIGN_GROUP, Consts.DESIGN_GROUP)]
-[assembly: RegisterConfigurableHighlightingsGroup(Consts.MEMORY_DISPOSAL_GROUP, Consts.MEMORY_DISPOSAL_GROUP)]
-[assembly: RegisterConfigurableHighlightingsGroup(Consts.SHAREPOINT_2013_COMPATIBILITY_GROUP, Consts.SHAREPOINT_2013_COMPATIBILITY_GROUP)]
-[assembly: RegisterConfigurableHighlightingsGroup(Consts.SANDBOX_COMPATIBILITY_GROUP, Consts.SANDBOX_COMPATIBILITY_GROUP)]
-[assembly: RegisterConfigurableHighlightingsGroup(Consts.TOOLTIP_GROUP, Consts.TOOLTIP_GROUP)]
 
 namespace ReSharePoint.Common.Consts
 {
+    [RegisterConfigurableHighlightingsGroup(Consts.CORRECTNESS_GROUP, Consts.CORRECTNESS_GROUP)]
+    [RegisterConfigurableHighlightingsGroup(Consts.BEST_PRACTICE_GROUP, Consts.BEST_PRACTICE_GROUP)]
+    [RegisterConfigurableHighlightingsGroup(Consts.SECURITY_GROUP, Consts.SECURITY_GROUP)]
+    [RegisterConfigurableHighlightingsGroup(Consts.SHAREPOINT_SUPPORTABILITY_GROUP,
+        Consts.SHAREPOINT_SUPPORTABILITY_GROUP)]
+    [RegisterConfigurableHighlightingsGroup(Consts.DESIGN_GROUP, Consts.DESIGN_GROUP)]
+    [RegisterConfigurableHighlightingsGroup(Consts.MEMORY_DISPOSAL_GROUP, Consts.MEMORY_DISPOSAL_GROUP)]
+    [RegisterConfigurableHighlightingsGroup(Consts.SHAREPOINT_2013_COMPATIBILITY_GROUP,
+        Consts.SHAREPOINT_2013_COMPATIBILITY_GROUP)]
+    [RegisterConfigurableHighlightingsGroup(Consts.SANDBOX_COMPATIBILITY_GROUP, Consts.SANDBOX_COMPATIBILITY_GROUP)]
+    [RegisterConfigurableHighlightingsGroup(Consts.TOOLTIP_GROUP, Consts.TOOLTIP_GROUP)]
     public sealed class Consts
     {
         public const string CORRECTNESS_GROUP = "reSP. Correctness";
@@ -39,7 +39,6 @@ namespace ReSharePoint.Common.Consts
             Guid.Parse("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}")
         };
 
-        public static char[] ResourceStringChars = {'$', ':', ',', '_', ';', '.', ' '};
+        public static char[] ResourceStringChars = { '$', ':', ',', '_', ';', '.', ' ' };
     }
 }
-

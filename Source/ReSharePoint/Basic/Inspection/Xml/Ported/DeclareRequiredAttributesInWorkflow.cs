@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC016202Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC016202Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC016202Highlighting.CheckId + ": " + SPC016202Highlighting.Message,
   "Required attributes Name, CodeBesideAssembly, CodeBesideClass and Id must be declared in Workflow.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

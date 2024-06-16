@@ -16,16 +16,15 @@ using ReSharePoint.Basic.Inspection.Common.XmlAnalysis;
 using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015601Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015601Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015601Highlighting.CheckId + ": " + SPC015601Highlighting.Message,
   "ContentTypeBinding can only be deployed with Features of scope 'Web' or 'Site'.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

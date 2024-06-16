@@ -1,30 +1,27 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
-using ReSharePoint.Basic.Inspection.Code.Ported;
 using ReSharePoint.Basic.Inspection.Common.CodeAnalysis;
 using ReSharePoint.Common;
 using ReSharePoint.Common.Attributes;
 using ReSharePoint.Common.Consts;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC050250IIHighlighting.CheckId,
-  null,
-  Consts.BEST_PRACTICE_GROUP,
-  SPC050250Highlighting.CheckId + ": " + SPC050250IIHighlighting.Message,
-  "Assign RowLimit for SPQuery within the limited range (default 1 to 2000).",
-  Severity.WARNING
-  )]
-
 namespace ReSharePoint.Basic.Inspection.Code.Ported
 {
+    [RegisterConfigurableSeverity(SPC050250IIHighlighting.CheckId,
+        null,
+        Consts.BEST_PRACTICE_GROUP,
+        SPC050250Highlighting.CheckId + ": " + SPC050250IIHighlighting.Message,
+        "Assign RowLimit for SPQuery within the limited range (default 1 to 2000).",
+        Severity.WARNING
+    )]
     [ElementProblemAnalyzer(typeof(IMemberInitializer),
-        HighlightingTypes = new[] {typeof (SPC050250IIHighlighting)})]
+        HighlightingTypes = new[] { typeof(SPC050250IIHighlighting) })]
     [Applicability(
-        IDEProjectType.SPFarmSolution  |
+        IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox |
         IDEProjectType.SPServerAPIReferenced)]
     public class AssignSPQueryRowLimitInLimitedRangeII : SPElementProblemAnalyzer<IMemberInitializer>
@@ -33,8 +30,10 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
         {
             bool result = false;
 
-            if (element.Reference.IsValid() && 
-                element.Reference.GetName() == "RowLimit" && element.Expression?.ConstantValue.Value != null && element.Expression.ConstantValue.IsValid() && CheckSPQueryType(element.Reference.Resolve().Result.DeclaredElement))
+            if (element.Reference.IsValid() &&
+                element.Reference.GetName() == "RowLimit" && element.Expression?.ConstantValue.Value != null &&
+                element.Expression.ConstantValue.IsValid() &&
+                CheckSPQueryType(element.Reference.Resolve().Result.DeclaredElement))
             {
                 int rowlimit = Convert.ToInt32(element.Expression.ConstantValue.Value.ToString());
                 result = rowlimit < 1 || rowlimit > 2000;
@@ -62,8 +61,9 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
             }
         }
     }
-    
-    [ConfigurableSeverityHighlighting(CheckId, CSharpLanguage.Name, OverlapResolve = OverlapResolveKind.NONE, ShowToolTipInStatusBar = true)]
+
+    [ConfigurableSeverityHighlighting(CheckId, CSharpLanguage.Name, OverlapResolve = OverlapResolveKind.NONE,
+        ShowToolTipInStatusBar = true)]
     public class SPC050250IIHighlighting : SPCSharpErrorHighlighting<IMemberInitializer>
     {
         public const string CheckId = CheckIDs.Rules.Assembly.SPC050250_2;

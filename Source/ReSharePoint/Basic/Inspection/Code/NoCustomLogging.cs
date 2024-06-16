@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(NoCustomLoggingHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+[RegisterConfigurableSeverity(NoCustomLoggingHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   NoCustomLoggingHighlighting.CheckId + ": " + NoCustomLoggingHighlighting.Message,
   "Avoid introducing 3-rd part logging like EventLog or NLog or log4net. It is required web.config changes or affects to solution security.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(NoCustomLoggingHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

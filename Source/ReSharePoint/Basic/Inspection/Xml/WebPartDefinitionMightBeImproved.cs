@@ -18,16 +18,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(WebPartDefinitionMightBeImprovedHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(WebPartDefinitionMightBeImprovedHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   WebPartDefinitionMightBeImprovedHighlighting.CheckId + ": Improve web part description.",
   "Set of checks for web part file.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

@@ -15,16 +15,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015211Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015211Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015211Highlighting.CheckId + ": " + SPC015211Highlighting.Message,
   "A content type should not have attribute 'Inherits' set to 'TRUE' if elements of type 'RemoveFieldRef' are used.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

@@ -14,16 +14,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(ConsiderOverwriteAttributeForContentTypeHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(ConsiderOverwriteAttributeForContentTypeHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   ConsiderOverwriteAttributeForContentTypeHighlighting.CheckId + ": " + ConsiderOverwriteAttributeForContentTypeHighlighting.Message,
   "Consider Overwrite=\"TRUE\" for content type.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

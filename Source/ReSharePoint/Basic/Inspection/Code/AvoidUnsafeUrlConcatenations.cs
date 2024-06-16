@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Feature.Services.QuickFixes;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -18,17 +17,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(AvoidUnsafeUrlConcatenationsHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(AvoidUnsafeUrlConcatenationsHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   AvoidUnsafeUrlConcatenationsHighlighting.CheckId + ": " + AvoidUnsafeUrlConcatenationsHighlighting.Message,
   "Url property for SPSite, SPWeb and SPFolder may return string with or without triling slash.",
   Severity.WARNING
   )]
-
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IAdditiveExpression), HighlightingTypes = new[] { typeof(AvoidUnsafeUrlConcatenationsHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution |
@@ -89,7 +86,7 @@ namespace ReSharePoint.Basic.Inspection.Code
 
             using (WriteLockCookie.Create(element.IsPhysical()))
             {
-                if (!file.Imports.Any(d => d.ImportedSymbolName.QualifiedName.Equals(namespaceIdentifier)))
+                if (!file.Imports.Any(usingDirective => CommonHelper.EnsureUsingDirective(usingDirective, namespaceIdentifier)))
                     file.AddImport(elementFactory.CreateUsingDirective(namespaceIdentifier));
 
                 expressionFormat = String.Format(expressionFormat, GetArgumentValue(element.Arguments[0]),

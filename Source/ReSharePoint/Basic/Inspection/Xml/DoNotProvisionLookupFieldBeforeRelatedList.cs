@@ -17,16 +17,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotProvisionLookupFieldBeforeRelatedListHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DoNotProvisionLookupFieldBeforeRelatedListHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DoNotProvisionLookupFieldBeforeRelatedListHighlighting.CheckId + ": " + DoNotProvisionLookupFieldBeforeRelatedListHighlighting.Message,
   "Consider to put lookup fields in the same feature among with related lists.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

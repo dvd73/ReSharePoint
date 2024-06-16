@@ -11,16 +11,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC012206Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC012206Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC012206Highlighting.CheckId + ": " + SPC012206Highlighting.Message,
   "Field <Field Name=\"FieldTypeClass\" /> is an optional element, but required for all custom field types. Represents the strong name of the field type class library.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox)]

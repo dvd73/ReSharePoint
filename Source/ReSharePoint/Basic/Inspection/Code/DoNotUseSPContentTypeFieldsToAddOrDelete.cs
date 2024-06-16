@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotUseSPContentTypeFieldsToAddOrDeleteHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(DoNotUseSPContentTypeFieldsToAddOrDeleteHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DoNotUseSPContentTypeFieldsToAddOrDeleteHighlighting.CheckId + ": " + DoNotUseSPContentTypeFieldsToAddOrDeleteHighlighting.Message,
   "SPContentType contains two collections, Fields (of type SPFieldCollection) and FieldLinks (of type SPFieldLinkCollection). Even if the object model appears to support addition or deletion of fields using the Fields collection, an exception is thrown if you try to do so.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(DoNotUseSPContentTypeFieldsToAddOrDeleteHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

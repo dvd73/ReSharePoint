@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,7 +11,9 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotUseDirectorySearcherHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(DoNotUseDirectorySearcherHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DoNotUseDirectorySearcherHighlighting.CheckId + ": " + DoNotUseDirectorySearcherHighlighting.Message,
@@ -20,8 +21,6 @@ using ReSharePoint.Entities;
   Severity.WARNING
   )]
 
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IObjectCreationExpression), HighlightingTypes = new[] { typeof(DoNotUseDirectorySearcherHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

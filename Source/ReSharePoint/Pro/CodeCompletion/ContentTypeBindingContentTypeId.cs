@@ -48,7 +48,7 @@ namespace ReSharePoint.Pro.CodeCompletion
         {
             var solution = context.BasicContext.SourceFile.GetSolution();
             var project = context.BasicContext.SourceFile.GetProject();
-            var prefix = LiveTemplatesManager.GetPrefix(new DocumentOffset(context.BasicContext.TextControl.Document, context.BasicContext.TextControl.Caret.Position.Value.ToDocOffsetAndVirtual().Offset));
+            var prefix = LiveTemplatesManager.GetPrefix(new DocumentOffset(context.BasicContext.TextControl.Document, context.BasicContext.TextControl.Caret.Position.Value.ToDocOffsetAndVirtual().Offset.GetHashCode()));
             CommonHelper.FillSystemPageContentTypes(context, collector, prefix, solution, project, CompletionCaseType._ContentTypeBindingContentTypeId);
 
             return base.AddLookupItems(context, collector);

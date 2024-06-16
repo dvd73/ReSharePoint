@@ -11,16 +11,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotDefineMultipleFieldGroupInOneElementFileHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DoNotDefineMultipleFieldGroupInOneElementFileHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   DoNotDefineMultipleFieldGroupInOneElementFileHighlighting.CheckId + ": " + DoNotDefineMultipleFieldGroupInOneElementFileHighlighting.Message,
   "Do not define multiple field groups in one element file.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
@@ -11,16 +10,15 @@ using ReSharePoint.Common.Attributes;
 using ReSharePoint.Common.Consts;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(UseBuiltInPublishingFieldOfStringsHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(UseBuiltInPublishingFieldOfStringsHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   UseBuiltInPublishingFieldOfStringsHighlighting.CheckId + ": " + UseBuiltInPublishingFieldOfStringsHighlighting.Message,
   "Use FieldId class fields to reference builtin publishing field.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(ILiteralExpression), HighlightingTypes = new[] { typeof(UseBuiltInPublishingFieldOfStringsHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

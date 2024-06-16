@@ -14,16 +14,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotAllowDeletionForListHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DoNotAllowDeletionForListHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   DoNotAllowDeletionForListHighlighting.CheckId + ": " + DoNotAllowDeletionForListHighlighting.Message,
   "Prevent SharePoint list from deletion.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

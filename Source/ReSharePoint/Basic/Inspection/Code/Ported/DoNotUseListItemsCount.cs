@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Feature.Services.QuickFixes;
 using JetBrains.ReSharper.Psi;
@@ -18,19 +17,20 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC050225Highlighting.CheckId,
+
+
+namespace ReSharePoint.Basic.Inspection.Code.Ported
+{
+    [RegisterConfigurableSeverity(SPC050225Highlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   SPC050225Highlighting.CheckId + ": " + SPC050225Highlighting.Message,
   "Do not call SPList.Items.Count. Use SPList.ItemCount instead.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code.Ported
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(SPC050225Highlighting) })]
     [Applicability(
-        IDEProjectType.SPFarmSolution  |
+        IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox |
         IDEProjectType.SPServerAPIReferenced)]
     public class DoNotUseListItemsCount : SPElementProblemAnalyzer<IReferenceExpression>
@@ -43,9 +43,9 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
 
             if (expressionType.IsResolved)
             {
-                result = element.IsResolvedAsPropertyUsage(ClrTypeKeys.SPListItemCollection, new[] {"Count"}) &&
+                result = element.IsResolvedAsPropertyUsage(ClrTypeKeys.SPListItemCollection, new[] { "Count" }) &&
                          element.Children<IReferenceExpression>()
-                             .Any(r => r.IsResolvedAsPropertyUsage(ClrTypeKeys.SPList, new[] {"Items"}));
+                             .Any(r => r.IsResolvedAsPropertyUsage(ClrTypeKeys.SPList, new[] { "Items" }));
             }
 
             return result;
@@ -63,11 +63,11 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
         public const string CheckId = CheckIDs.Rules.Assembly.SPC050225;
         public const string Message = "Do not call SPList.Items.Count";
 
-        public SPC050225Highlighting(IReferenceExpression element): 
+        public SPC050225Highlighting(IReferenceExpression element) :
             base(element, $"{CheckId}: {Message}")
         {
         }
-        
+
     }
 
     [QuickFix]

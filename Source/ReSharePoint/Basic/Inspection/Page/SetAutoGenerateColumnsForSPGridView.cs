@@ -21,16 +21,15 @@ using ReSharePoint.Basic.Inspection.Page;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SetAutoGenerateColumnsForSPGridViewHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Page
+{
+    [RegisterConfigurableSeverity(SetAutoGenerateColumnsForSPGridViewHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SetAutoGenerateColumnsForSPGridViewHighlighting.CheckId + ": " + SetAutoGenerateColumnsForSPGridViewHighlighting.Message,
   "The SPGridView control does not support the automatic generation of columns.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Page
-{
     [DaemonStage(StagesBefore = new[] { typeof(LanguageSpecificDaemonStage) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

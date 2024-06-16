@@ -14,16 +14,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC025501Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC025501Highlighting.CheckId,
   null,
   Consts.SECURITY_GROUP,
   SPC025501Highlighting.CheckId + ": " + SPC025501Highlighting.Message,
   "The attribute ListAllowEveryoneViewItems of a ListDefinition should not be set to true, as it allows every authenticated user of the web application to access the list items when the URL is known.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

@@ -16,16 +16,15 @@ using ReSharePoint.Basic.Inspection.Common.XmlAnalysis;
 using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015501Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015501Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015501Highlighting.CheckId + ": " + SPC015501Highlighting.Message,
   "ListTemplate can only be deployed with Features of scope 'Web' or 'Site'.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

@@ -18,16 +18,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Options;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(ULSLoggingInCatchBlockHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(ULSLoggingInCatchBlockHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   ULSLoggingInCatchBlockHighlighting.CheckId + ": " + ULSLoggingInCatchBlockHighlighting.Message,
   "Catch block should include ULS logging output or re-throw.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(ICatchClause), HighlightingTypes = new[] { typeof(ULSLoggingInCatchBlockHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

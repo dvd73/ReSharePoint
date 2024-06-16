@@ -21,16 +21,15 @@ using ReSharePoint.Basic.Inspection.Page;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPDataSourceScopeDoesNotDefinedInPageHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Page
+{
+    [RegisterConfigurableSeverity(SPDataSourceScopeDoesNotDefinedInPageHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPDataSourceScopeDoesNotDefinedInPageHighlighting.CheckId + ": " + SPDataSourceScopeDoesNotDefinedInPageHighlighting.Message,
   "All SPViewScope enumeration values are covered all possible developer's intentions. If not specified SharePoint will use Default value.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Page
-{
     [DaemonStage(StagesBefore = new[] { typeof(LanguageSpecificDaemonStage) })]
     [Applicability(
         IDEProjectType.SPFarmSolution |

@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015201Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015201Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015201Highlighting.CheckId + ": " + SPC015201Highlighting.Message,
   "Content type IDs have a maximum length of 512 bytes. Because two hexadecimal characters can fit in each byte, each content type ID has an effective maximum length of 1024 characters.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

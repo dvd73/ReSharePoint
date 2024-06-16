@@ -17,16 +17,15 @@ using ReSharePoint.Basic.Inspection.Common.XmlAnalysis;
 using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DeclareEmptyFieldsElementHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DeclareEmptyFieldsElementHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DeclareEmptyFieldsElementHighlighting.CheckId + ": " + DeclareEmptyFieldsElementHighlighting.Message,
   "Declare empty Fields element when using only ContentTypeRefs.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

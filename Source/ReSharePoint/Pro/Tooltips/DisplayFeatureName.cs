@@ -13,16 +13,15 @@ using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 using ReSharePoint.Pro.Tooltips;
 
-[assembly: RegisterConfigurableSeverity(DisplayFeatureNameHighlighting.CheckId,
+namespace ReSharePoint.Pro.Tooltips
+{
+    [RegisterConfigurableSeverity(DisplayFeatureNameHighlighting.CheckId,
   null,
   Consts.TOOLTIP_GROUP,
   DisplayFeatureNameHighlighting.CheckId,
   "Display feature name.",
   Severity.INFO
   )]
-
-namespace ReSharePoint.Pro.Tooltips
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

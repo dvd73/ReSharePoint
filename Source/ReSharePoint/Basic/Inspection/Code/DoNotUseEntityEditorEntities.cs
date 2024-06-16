@@ -1,6 +1,5 @@
 ﻿using System;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Feature.Services.QuickFixes;
 using JetBrains.ReSharper.Psi;
@@ -16,7 +15,9 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotUseEntityEditorEntitiesHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(DoNotUseEntityEditorEntitiesHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DoNotUseEntityEditorEntitiesHighlighting.CheckId + ": " + DoNotUseEntityEditorEntitiesHighlighting.Message,
@@ -24,8 +25,6 @@ using ReSharePoint.Entities;
   Severity.WARNING
   )]
 
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(DoNotUseEntityEditorEntitiesHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

@@ -19,16 +19,15 @@ using ReSharePoint.Basic.Inspection.Common.XmlAnalysis;
 using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC019903Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC019903Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC019903Highlighting.CheckId + ": " + SPC019903Highlighting.Message,
   "If attributes in SharePoint elements are localized with resources the resource key cannot contains spaces.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

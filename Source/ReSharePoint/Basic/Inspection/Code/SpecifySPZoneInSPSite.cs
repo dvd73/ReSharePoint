@@ -1,6 +1,5 @@
 using System;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Feature.Services.QuickFixes;
 using JetBrains.ReSharper.Psi;
@@ -18,16 +17,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SpecifySPZoneInSPSiteHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(SpecifySPZoneInSPSiteHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SpecifySPZoneInSPSiteHighlighting.CheckId + ": " + SpecifySPZoneInSPSiteHighlighting.Message,
   "Constructor would take default SPUrlZone so that you may have issues with the *.Url properties.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IObjectCreationExpression), HighlightingTypes = new[] { typeof(SpecifySPZoneInSPSiteHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

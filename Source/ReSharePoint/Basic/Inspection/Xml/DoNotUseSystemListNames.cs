@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotUseSystemListNamesHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DoNotUseSystemListNamesHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DoNotUseSystemListNamesHighlighting.CheckId + ": " + DoNotUseSystemListNamesHighlighting.Message,
   "Do not use reserved url for the list instance.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

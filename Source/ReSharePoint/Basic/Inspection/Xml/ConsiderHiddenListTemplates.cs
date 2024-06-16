@@ -14,16 +14,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(ConsiderHiddenListTemplatesHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(ConsiderHiddenListTemplatesHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   ConsiderHiddenListTemplatesHighlighting.CheckId + ": " + ConsiderHiddenListTemplatesHighlighting.Message,
   "List template should not be created by end user.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

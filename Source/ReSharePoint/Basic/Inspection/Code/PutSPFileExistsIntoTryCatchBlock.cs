@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(PutSPFileExistsIntoTryCatchBlockHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(PutSPFileExistsIntoTryCatchBlockHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   PutSPFileExistsIntoTryCatchBlockHighlighting.CheckId + ": " + PutSPFileExistsIntoTryCatchBlockHighlighting.Message,
   "If a file doesn’t exist, it throws an ArgumentException error.",
   Severity.HINT
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(PutSPFileExistsIntoTryCatchBlockHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

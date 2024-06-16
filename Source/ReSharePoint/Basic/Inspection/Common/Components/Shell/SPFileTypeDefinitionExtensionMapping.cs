@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using JetBrains.Application;
+using JetBrains.Application.Parts;
 using JetBrains.DataFlow;
 using JetBrains.Lifetimes;
 using JetBrains.ProjectModel;
@@ -8,8 +9,8 @@ using JetBrains.Util;
 
 namespace ReSharePoint.Basic.Inspection.Common.Components.Shell
 {
-    [ShellComponent]
-    public class SPFileTypeDefinitionExtensionMapping : IFileExtensionMapping
+    [ShellComponent(Instantiation.DemandAnyThreadSafe)]
+    public class SPFileTypeDefinitionExtensionMapping
     {
         private readonly IEnumerable<string> xmlExtensions = new[] {".feature"};
 
@@ -20,7 +21,7 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Shell
 
         public SPFileTypeDefinitionExtensionMapping(Lifetime lifetime, IProjectFileTypes fileTypes) 
         {
-            Changed = new SimpleSignal(lifetime, GetType().Name + "::Changed");
+            Changed = new SimpleSignal(GetType().Name + "::Changed");
 
             fileTypes.View(lifetime, (typeLifetime, fileType) =>
             {

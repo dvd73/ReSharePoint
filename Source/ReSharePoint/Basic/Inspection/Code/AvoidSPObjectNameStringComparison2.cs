@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
@@ -11,7 +10,9 @@ using ReSharePoint.Common.Attributes;
 using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 
-[assembly: RegisterConfigurableSeverity(AvoidSPObjectNameStringComparisonHighlighting.CheckId + "-2",
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(AvoidSPObjectNameStringComparisonHighlighting.CheckId + "-2",
   null,
   Consts.CORRECTNESS_GROUP,
   AvoidSPObjectNameStringComparisonHighlighting.CheckId + ": Avoid SPObject.Name == <string> comparison",
@@ -19,8 +20,6 @@ using ReSharePoint.Common.Extensions;
   Severity.SUGGESTION
   )]
 
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IEqualityExpression),
         HighlightingTypes = new[] { typeof(AvoidSPObjectNameStringComparisonHighlighting) })]
     [Applicability(

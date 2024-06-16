@@ -17,16 +17,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC016602Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC016602Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC016602Highlighting.CheckId + ": " + SPC016602Highlighting.Message,
   "Do not declare attributes except ID in RemoveFieldRef. All other attributes are ignored by SharePoint.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

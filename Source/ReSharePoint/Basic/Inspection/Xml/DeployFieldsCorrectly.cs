@@ -15,16 +15,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DeployFieldsCorrectlyHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DeployFieldsCorrectlyHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DeployFieldsCorrectlyHighlighting.CheckId + ": Deploy lookup fields correctly.",
   "Set of principal checks for lookup field provision.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

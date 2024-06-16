@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Application.Threading;
 using JetBrains.Lifetimes;
 using JetBrains.ProjectModel;
 using JetBrains.ReSharper.Psi;
@@ -37,8 +38,8 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Psi.XmlCache
         } 
         #endregion
 
-        public ListTemplateCache(Lifetime lifetime, IPersistentIndexManager persistentIndexManager)
-            : base(lifetime, persistentIndexManager)
+        public ListTemplateCache(Lifetime lifetime, IShellLocks locks, IPersistentIndexManager persistentIndexManager)
+            : base(lifetime, locks, persistentIndexManager)
         {
         }
 

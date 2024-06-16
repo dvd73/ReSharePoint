@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using JetBrains.ProjectModel;
 using JetBrains.ReSharper.Feature.Services.CodeCompletion.Infrastructure.LookupItems;
 using JetBrains.ReSharper.Feature.Services.CSharp.CodeCompletion.Infrastructure;
+using JetBrains.ReSharper.Psi.CSharp.Tree;
 using ReSharePoint.Basic.Inspection.Common.Components.Psi.XmlCache;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
@@ -395,6 +396,35 @@ namespace ReSharePoint.Common
                 if (!String.IsNullOrEmpty(pageLayout.FileName))
                     collector.Add(new PublishingPageLayoutLookupItem(prefix, pageLayout.FileName, pageLayout.Title, context.Ranges.ReplaceRange, caseType));
             }
+        }
+
+        public static bool IsValidGeneratedFilesMask(string mask)
+        {
+            try
+            {
+                string arg = mask.Replace(".", "\\.").Replace("*", ".*").Replace("?", ".");
+                string pattern = $"^{arg}$";
+
+                new Regex(pattern);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static bool EnsureUsingDirective(IUsingDirective usingDirective, string namespaceIdentifier)
+        {
+            switch (usingDirective)
+            {
+                case IUsingSymbolDirective usingSymbolDirective:
+                    return usingSymbolDirective.ImportedSymbolName.QualifiedName.Equals(namespaceIdentifier);
+                case IUsingAliasDirective usingAliasDirective:
+                    return usingAliasDirective.DeclaredName.Equals(namespaceIdentifier);
+                default:
+                    return false;
+            };
         }
     }
 }

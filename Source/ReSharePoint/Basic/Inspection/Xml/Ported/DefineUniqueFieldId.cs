@@ -13,16 +13,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015103Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015103Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015103Highlighting.CheckId + ": " + SPC015103Highlighting.Message,
   "The attribute ID of Field must be unique. In some case the id of a Field could be used more than once because of copy-paste errors during development.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

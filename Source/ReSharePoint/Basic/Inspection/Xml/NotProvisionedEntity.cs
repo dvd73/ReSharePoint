@@ -16,16 +16,15 @@ using ReSharePoint.Basic.Inspection.Common.XmlAnalysis;
 using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(NotProvisionedEntityHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(NotProvisionedEntityHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   NotProvisionedEntityHighlighting.CheckId + ": " + NotProvisionedEntityHighlighting.Message,
   "Any xml manifest is not included into feature considered not provisioned.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

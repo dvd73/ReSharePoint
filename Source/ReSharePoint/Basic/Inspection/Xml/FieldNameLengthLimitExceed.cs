@@ -12,16 +12,16 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(FieldNameLengthLimitExceedHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+
+    [RegisterConfigurableSeverity(FieldNameLengthLimitExceedHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   FieldNameLengthLimitExceedHighlighting.CheckId + ": " + FieldNameLengthLimitExceedHighlighting.Message,
   "SharePoint only allows 32-character in field's internal (static) name.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

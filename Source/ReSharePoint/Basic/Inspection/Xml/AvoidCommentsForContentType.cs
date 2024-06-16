@@ -18,16 +18,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(AvoidCommentsForContentTypeHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(AvoidCommentsForContentTypeHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   AvoidCommentsForContentTypeHighlighting.CheckId + ": " + AvoidCommentsForContentTypeHighlighting.Message,
   "Xml comment in elements file can break your content type.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

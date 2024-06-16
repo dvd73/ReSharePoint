@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DeployContentTypesCorrectlyHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DeployContentTypesCorrectlyHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DeployContentTypesCorrectlyHighlighting.CheckId + ": " + DeployContentTypesCorrectlyHighlighting.Message,
   "Set of principal checks for content type provision.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

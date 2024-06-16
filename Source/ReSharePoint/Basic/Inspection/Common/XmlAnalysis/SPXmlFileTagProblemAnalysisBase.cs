@@ -21,7 +21,7 @@ namespace ReSharePoint.Basic.Inspection.Common.XmlAnalysis
             _tagProblemAnalyzers = analyzers;
         }
 
-        public override bool InteriorShouldBeProcessed(ITreeNode element)
+        public override bool InteriorShouldBeProcessed(ITreeNode element, IHighlightingConsumer context)
         {
             return element is IXmlTagContainer;
         }

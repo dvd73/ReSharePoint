@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(WebPartModuleDefinitionMightbeImprovedHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(WebPartModuleDefinitionMightbeImprovedHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   WebPartModuleDefinitionMightbeImprovedHighlighting.CheckId + ": " + WebPartModuleDefinitionMightbeImprovedHighlighting.Message,
   "Group property value should not be 'Custom'.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox )]

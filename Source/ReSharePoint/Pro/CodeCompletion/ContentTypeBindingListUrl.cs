@@ -53,7 +53,7 @@ namespace ReSharePoint.Pro.CodeCompletion
         {
             var solution = context.BasicContext.SourceFile.GetSolution();
             var project = context.BasicContext.SourceFile.GetProject();
-            var prefix = LiveTemplatesManager.GetPrefix(new DocumentOffset(context.BasicContext.TextControl.Document, context.BasicContext.TextControl.Caret.Position.Value.ToDocOffsetAndVirtual().Offset), Consts.ResourceStringChars.Concat(new[] { '/' }).ToArray());
+            var prefix = LiveTemplatesManager.GetPrefix(new DocumentOffset(context.BasicContext.TextControl.Document, context.BasicContext.TextControl.Caret.Position.Value.ToDocOffsetAndVirtual().Offset.GetHashCode()), Consts.ResourceStringChars.Concat(new[] { '/' }).ToArray());
             if (String.IsNullOrWhiteSpace(prefix))
                 collector.Add(new ListUrlLookupItem(prefix, "$Resources:cmscore,List_Pages_UrlName;", "Culture sensitive Pages list", context.Ranges.ReplaceRange, CompletionCaseType._ContentTypeBindingListUrl));
             CommonHelper.FillListUrls(context, collector, prefix, solution, project, CompletionCaseType._ContentTypeBindingListUrl);

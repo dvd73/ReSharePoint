@@ -1,6 +1,5 @@
 ﻿using System;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Feature.Services.QuickFixes;
 using JetBrains.ReSharper.Psi;
@@ -19,7 +18,9 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotUseSPContextObjectInDisposedBlockHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(DoNotUseSPContextObjectInDisposedBlockHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DoNotUseSPContextObjectInDisposedBlockHighlighting.CheckId + ": " + DoNotUseSPContextObjectInDisposedBlockHighlighting.Message,
@@ -27,8 +28,6 @@ using ReSharePoint.Entities;
   Severity.ERROR
   )]
 
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(DoNotUseSPContextObjectInDisposedBlockHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution |

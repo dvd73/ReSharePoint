@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(MixedIDInFieldNameHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(MixedIDInFieldNameHighlighting.CheckId,
   null,
   Consts.BEST_PRACTICE_GROUP,
   MixedIDInFieldNameHighlighting.CheckId + ": " + MixedIDInFieldNameHighlighting.Message,
   "It might be suggested to avoid mixing up \"ID\" and \"Id\" while crafting field.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

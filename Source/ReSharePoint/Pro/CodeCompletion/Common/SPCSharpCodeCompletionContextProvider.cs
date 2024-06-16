@@ -2,6 +2,7 @@
 using JetBrains.ProjectModel;
 using JetBrains.ReSharper.Feature.Services.CodeCompletion;
 using JetBrains.ReSharper.Feature.Services.CodeCompletion.Infrastructure;
+using JetBrains.ReSharper.Feature.Services.CodeCompletion.Settings;
 using JetBrains.ReSharper.Feature.Services.CSharp.CodeCompletion;
 using JetBrains.ReSharper.Feature.Services.CSharp.CodeCompletion.Infrastructure;
 using JetBrains.ReSharper.Feature.Services.CSharp.CodeCompletion.Settings;
@@ -42,7 +43,7 @@ namespace ReSharePoint.Pro.CodeCompletion.Common
             return false;
         }
 
-        public SPCSharpCodeCompletionContextProvider(CSharpIntellisenseManager cSharpIntellisenseManager, ILanguageManager languageManager) : base(cSharpIntellisenseManager,  languageManager)
+        public SPCSharpCodeCompletionContextProvider(CSharpCodeCompletionManager cSharpCodeCompletionManager, ILanguageManager languageManager) : base(cSharpCodeCompletionManager,  languageManager)
         {
             
         }
@@ -67,7 +68,8 @@ namespace ReSharePoint.Pro.CodeCompletion.Common
                 return null;
             if (context.CodeCompletionType == CodeCompletionType.ImportCompletion)
                 return null;
-            if (context.CodeCompletionType == CodeCompletionType.BasicCompletion && !IntellisenseManager.GetIntellisenseEnabled(context.ContextBoundSettingsStore))
+
+            if (context.CodeCompletionType == CodeCompletionType.BasicCompletion && !CodeCompletionManager.GetIntellisenseEnabled(context.ContextBoundSettingsStore))
                 return null;
 
             return null;

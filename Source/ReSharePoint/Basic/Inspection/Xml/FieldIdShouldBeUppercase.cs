@@ -16,16 +16,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(FieldIdShouldBeUppercaseHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(FieldIdShouldBeUppercaseHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   FieldIdShouldBeUppercaseHighlighting.CheckId + ": " + FieldIdShouldBeUppercaseHighlighting.Message,
   "List scoped field must have \"ID\" (not \"Id\") attribute.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox)]

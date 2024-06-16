@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -14,16 +13,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(InappropriateUsageOfTaxonomyGroupCollectionHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(InappropriateUsageOfTaxonomyGroupCollectionHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   InappropriateUsageOfTaxonomyGroupCollectionHighlighting.CheckId + ": " + InappropriateUsageOfTaxonomyGroupCollectionHighlighting.Message,
   "Consider fetching term group or term set by GUID or string comporation by collection enumeration.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IElementAccessExpression), HighlightingTypes = new[] { typeof(InappropriateUsageOfTaxonomyGroupCollectionHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

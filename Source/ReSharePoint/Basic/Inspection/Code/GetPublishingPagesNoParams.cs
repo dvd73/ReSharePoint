@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(GetPublishingPagesNoParamsHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(GetPublishingPagesNoParamsHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   GetPublishingPagesNoParamsHighlighting.CheckId + ": " + GetPublishingPagesNoParamsHighlighting.Message,
   "Some recommended practices regarding GetPublishingPages method utilization.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(GetPublishingPagesNoParamsHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

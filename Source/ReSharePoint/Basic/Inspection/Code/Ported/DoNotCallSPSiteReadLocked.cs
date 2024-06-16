@@ -1,13 +1,10 @@
-﻿using System;
-using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
+﻿using JetBrains.Annotations;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Feature.Services.QuickFixes;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Resources.Shell;
-using ReSharePoint.Basic.Inspection.Code.Ported;
 using ReSharePoint.Basic.Inspection.Common.CodeAnalysis;
 using ReSharePoint.Basic.Inspection.Common.QuickFix;
 using ReSharePoint.Common;
@@ -16,19 +13,18 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC010213Highlighting.CheckId,
-  null,
-  Consts.CORRECTNESS_GROUP,
-  SPC010213Highlighting.CheckId + ": " + SPC010213Highlighting.Message,
-  "Property SPSite.ReadLocked is reserved for internal and is not intended to be used directly from your code. Use the IsReadLocked property instead.",
-  Severity.WARNING
-  )]
-
 namespace ReSharePoint.Basic.Inspection.Code.Ported
 {
+    [RegisterConfigurableSeverity(SPC010213Highlighting.CheckId,
+        null,
+        Consts.CORRECTNESS_GROUP,
+        SPC010213Highlighting.CheckId + ": " + SPC010213Highlighting.Message,
+        "Property SPSite.ReadLocked is reserved for internal and is not intended to be used directly from your code. Use the IsReadLocked property instead.",
+        Severity.WARNING
+    )]
     [ElementProblemAnalyzer(typeof(IAssignmentExpression), HighlightingTypes = new[] { typeof(SPC010213Highlighting) })]
     [Applicability(
-        IDEProjectType.SPFarmSolution  |
+        IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox |
         IDEProjectType.SPServerAPIReferenced)]
     public class DoNotCallSPSiteReadLocked : SPElementProblemAnalyzer<IAssignmentExpression>
@@ -53,7 +49,8 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
         }
     }
 
-    [ConfigurableSeverityHighlighting(CheckId, CSharpLanguage.Name, OverlapResolve = OverlapResolveKind.NONE, ShowToolTipInStatusBar = true)]
+    [ConfigurableSeverityHighlighting(CheckId, CSharpLanguage.Name, OverlapResolve = OverlapResolveKind.NONE,
+        ShowToolTipInStatusBar = true)]
     public class SPC010213Highlighting : SPCSharpErrorHighlighting<IAssignmentExpression>
     {
         public const string CheckId = CheckIDs.Rules.Assembly.SPC010213;
@@ -70,6 +67,7 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
     {
         private const string ACTION_TEXT = "Replace to SPSite.IsReadLocked";
         private const string SCOPED_TEXT = "Replace to SPSite.IsReadLocked for all occurrences";
+
         public SPC010213Fix([NotNull] SPC010213Highlighting highlighting)
             : base(highlighting)
         {
@@ -85,7 +83,8 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
 
             if (element.Dest != null)
             {
-                ICSharpExpression newElement = elementFactory.CreateExpression(element.Dest.GetText().Replace(".ReadLocked", ".IsReadLocked"));
+                ICSharpExpression newElement =
+                    elementFactory.CreateExpression(element.Dest.GetText().Replace(".ReadLocked", ".IsReadLocked"));
 
                 using (WriteLockCookie.Create(element.IsPhysical()))
                     element.Dest.ReplaceBy(newElement);

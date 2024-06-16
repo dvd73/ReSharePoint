@@ -10,16 +10,15 @@ using ReSharePoint.Basic.Inspection.Xml;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotDeployTaxonomyFieldsInListDefinitionHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml
+{
+    [RegisterConfigurableSeverity(DoNotDeployTaxonomyFieldsInListDefinitionHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DoNotDeployTaxonomyFieldsInListDefinitionHighlighting.CheckId + ": " + DoNotDeployTaxonomyFieldsInListDefinitionHighlighting.Message,
   "Do not deploy taxonomy field using list definition.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

@@ -12,10 +12,13 @@ using JetBrains.TextControl;
 using JetBrains.Util;
 using JetBrains.ReSharper.Feature.Services.Intentions.Scoped;
 using JetBrains.ReSharper.Feature.Services.Intentions.Scoped.Actions;
+using JetBrains.ReSharper.Feature.Services.Intentions.Scoped.Scopes;
+using JetBrains.ReSharper.Feature.Services.BulbActions;
 
+#nullable enable
 namespace ReSharePoint.Basic.Inspection.Common.QuickFix
 {
-    public abstract class SPQuickFix<THighlighting, TElement> : QuickFixBase, IHighlightingsSetScopedAction
+    public abstract class SPQuickFix<THighlighting, TElement> : QuickFixBase, IModernManualScopedAction
         where THighlighting : class, ISPHighlighting<TElement>
         where TElement : ITreeNode
     {
@@ -45,14 +48,13 @@ namespace ReSharePoint.Basic.Inspection.Common.QuickFix
             return null;
         }
 
-        public Action<ITextControl> ExecuteAction(IEnumerable<HighlightingInfo> highlightings, ISolution solution, IProgressIndicator progress)
+        public IBulbActionCommand? ExecuteAction(ISolution solution, Scope scope, IHighlighting? sourceHighlighting, IProgressIndicator progress)
         {
-            foreach (HighlightingInfo highlightingInfo in highlightings.AsList().WithProgress(progress, BulkText))
+            // below the old code and maybe it won't be work
+            // see R# "class OptimizeImportsFix : ModernScopedQuickFixBase" implementation for details of a new approach
+            if (sourceHighlighting is THighlighting highlighting && highlighting.Element.IsValid())
             {
-                if (highlightingInfo.Highlighting is THighlighting highlighting && highlighting.Element.IsValid())
-                {
-                    Fix(highlighting.Element);
-                }
+                Fix(highlighting.Element);
             }
 
             return null;
@@ -60,6 +62,7 @@ namespace ReSharePoint.Basic.Inspection.Common.QuickFix
 
         public abstract string ScopedText { get; }
         public abstract FileCollectorInfo FileCollectorInfo { get; }
+
         protected abstract void Fix(TElement element);
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
@@ -11,7 +10,9 @@ using ReSharePoint.Common.Attributes;
 using ReSharePoint.Common.Consts;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotSuppressExceptionsHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(DoNotSuppressExceptionsHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DoNotSuppressExceptionsHighlighting.CheckId + ": " + DoNotSuppressExceptionsHighlighting.Message,
@@ -19,8 +20,6 @@ using ReSharePoint.Entities;
   Severity.ERROR
   )]
 
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(ICatchClause), HighlightingTypes = new[] { typeof(DoNotSuppressExceptionsHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

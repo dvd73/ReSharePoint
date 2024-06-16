@@ -17,16 +17,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC016003Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC016003Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC016003Highlighting.CheckId + ": " + SPC016003Highlighting.Message,
   "If email event receivers are used within a feature with scope 'Site' the attribute 'Scope' must be set to 'Web' or the event receiver must be deployed via a web scopes feature.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

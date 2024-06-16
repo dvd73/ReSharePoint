@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Feature.Services.QuickFixes;
 using JetBrains.ReSharper.Psi;
@@ -19,16 +18,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC050232Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code.Ported
+{
+    [RegisterConfigurableSeverity(SPC050232Highlighting.CheckId,
   null,
   Consts.DESIGN_GROUP,
   SPC050232Highlighting.CheckId + ": " + SPC050232Highlighting.Message,
   "Use SPBuiltInFieldId to reference builtin field.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code.Ported
-{
     [ElementProblemAnalyzer(typeof(IElementAccessExpression), HighlightingTypes = new[] { typeof(SPC050232Highlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |
@@ -117,7 +115,7 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
 
                     using (WriteLockCookie.Create(element.IsPhysical()))
                     {
-                        if (!file.Imports.Any(d => d.ImportedSymbolName.QualifiedName.Equals(namespaceIdentifier)))
+                        if (!file.Imports.Any(usingDirective => CommonHelper.EnsureUsingDirective(usingDirective, namespaceIdentifier)))
                             file.AddImport(elementFactory.CreateUsingDirective(namespaceIdentifier));
                         firstArgument.SetValue(newElement);
                     }

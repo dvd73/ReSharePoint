@@ -60,7 +60,7 @@ namespace ReSharePoint.Pro.CodeCompletion.Common.LookupItem
         {
             if (Context is SPXmlCodeCompletionContext)
             {
-                IPsiServices psiServices = Context.BasicContext.CompletionManager.PsiServices;
+                IPsiServices psiServices = Context.BasicContext.IntellisenseManager.PsiServices;
                 ITreeNode treeNode = TextControlToPsi.GetElement<ITreeNode>(solution, textControl);
                 IXmlTag tag = null;
                 if (treeNode != null)

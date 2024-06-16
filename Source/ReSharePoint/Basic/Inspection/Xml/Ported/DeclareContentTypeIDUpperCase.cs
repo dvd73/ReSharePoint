@@ -15,16 +15,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC045203Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC045203Highlighting.CheckId,
   null,
   Consts.DESIGN_GROUP,
   SPC045203Highlighting.CheckId + ": " + SPC045203Highlighting.Message,
   "The ID of a ContentType should by a GUID in uppercase letters to avoid problems when accessing ContentTypes in code.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

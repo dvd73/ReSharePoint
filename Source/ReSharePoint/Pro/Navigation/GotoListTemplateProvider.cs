@@ -16,17 +16,14 @@ namespace ReSharePoint.Pro.Navigation
             throw new NotImplementedException();
         }
 
-        public IEnumerable<MatchingInfo> FindMatchingInfos(IIdentifierMatcher matcher, INavigationScope scope, GotoContext gotoContext,
-            Func<bool> checkForInterrupt)
+        public IEnumerable<MatchingInfo> FindMatchingInfos(IIdentifierMatcher matcher, INavigationScope scope, GotoContext gotoContext)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<IOccurrence> GetOccurrencesByMatchingInfo(MatchingInfo navigationInfo, INavigationScope scope, GotoContext gotoContext,
-            Func<bool> checkForInterrupt)
+        public IEnumerable<IOccurrence> GetOccurrencesByMatchingInfo(MatchingInfo navigationInfo, INavigationScope scope, GotoContext gotoContext)
         {
             throw new NotImplementedException();
         }
-        
     }
 }

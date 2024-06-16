@@ -14,16 +14,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC012203Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [ RegisterConfigurableSeverity(SPC012203Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC012203Highlighting.CheckId + ": " + SPC012203Highlighting.Message,
   "Do not use a <Field Name=\"SQLType\"> element in a custom field type definition. The field represents the SQL data type that will be used to store the data in the content database, but cannot be used in custom field types.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

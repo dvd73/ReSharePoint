@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(ThreadSleepShouldNotBeUsedHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(ThreadSleepShouldNotBeUsedHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   ThreadSleepShouldNotBeUsedHighlighting.CheckId + ": " + ThreadSleepShouldNotBeUsedHighlighting.Message,
   "Usually, Thread.Sleep() indicates lack of the general design or misunderstanding of SharePoint API.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(ThreadSleepShouldNotBeUsedHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

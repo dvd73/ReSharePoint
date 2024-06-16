@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(UnsafeCastingInItemReceiverHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(UnsafeCastingInItemReceiverHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   UnsafeCastingInItemReceiverHighlighting.CheckId + ": " + UnsafeCastingInItemReceiverHighlighting.Message,
   "SPItemEventDataCollection.Item contains data for specified key. In case of key missing it returns null so null reference exceptions might be arised with ToString() call.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IElementAccessExpression), HighlightingTypes = new[] { typeof(UnsafeCastingInItemReceiverHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(AvoidUsingSPListItemFileHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(AvoidUsingSPListItemFileHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   AvoidUsingSPListItemFileHighlighting.CheckId + ": " + AvoidUsingSPListItemFileHighlighting.Message,
   "Do not use SPListItem.File. For non document library it returns null.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(AvoidUsingSPListItemFileHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

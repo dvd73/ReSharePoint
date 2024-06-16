@@ -13,16 +13,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC015404Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC015404Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC015404Highlighting.CheckId + ": " + SPC015404Highlighting.Message,
   "A ListInstance instantiates lists based on a ListTemplate. This ListTemplate must be either a SharePoint default ListTemplate or a custom ListTemplate which must be deployed.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

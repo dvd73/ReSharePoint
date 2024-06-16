@@ -26,7 +26,7 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Solution.ProjectFileCa
         /// <param name="projectFileLocation"></param>
         /// <param name="doc"></param>
         /// <returns></returns>
-        public override SandboxedOptions BuildData(FileSystemPath projectFileLocation, XmlDocument doc)
+        public override SandboxedOptions BuildData(VirtualFileSystemPath projectFileLocation, XmlDocument doc)
         {
             bool isSandboxed = false;
 

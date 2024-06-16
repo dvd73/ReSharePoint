@@ -1,5 +1,4 @@
 ﻿using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(AvoidEnumeratingAllUserProfilesHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(AvoidEnumeratingAllUserProfilesHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   AvoidEnumeratingAllUserProfilesHighlighting.CheckId + ": " + AvoidEnumeratingAllUserProfilesHighlighting.Message,
   "Some recommended practices regarding UserProfileManager class utilization.",
   Severity.SUGGESTION
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IReferenceExpression), HighlightingTypes = new[] { typeof(AvoidEnumeratingAllUserProfilesHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution |
@@ -40,10 +38,10 @@ namespace ReSharePoint.Basic.Inspection.Code
                 var containingStatement = element.GetContainingStatement();
                 if (containingStatement != null)
                 {
-                    result = (element.IsOneOfTypes(new[] {ClrTypeKeys.ProfileManagerBase}) &&
+                    result = (element.IsOneOfTypes(new[] { ClrTypeKeys.ProfileManagerBase }) &&
                               containingStatement.NodeType.ToString() == "FOREACH_STATEMENT") ||
                              element.IsResolvedAsMethodCall(ClrTypeKeys.ProfileManagerBase,
-                                 new[] {new MethodCriteria() {ShortName = "GetEnumerator"}});
+                                 new[] { new MethodCriteria() { ShortName = "GetEnumerator" } });
                 }
             }
 

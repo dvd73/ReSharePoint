@@ -8,6 +8,7 @@ using JetBrains.Annotations;
 using JetBrains.Application;
 using JetBrains.Application.changes;
 using JetBrains.Application.Progress;
+using JetBrains.Application.Threading;
 using JetBrains.DataFlow;
 using JetBrains.Diagnostics;
 using JetBrains.DocumentManagers.impl;
@@ -59,15 +60,15 @@ namespace ReSharePoint.Basic.Inspection.Common.Components.Psi
 
         #region Ctor
 
-        protected SPPsiCacheBase(Lifetime lifetime, IPersistentIndexManager persistentIndexManager)
-            : base(lifetime, persistentIndexManager, SPPsiCacheItems<T>.Marshaller)
+        protected SPPsiCacheBase(Lifetime lifetime, IShellLocks locks, IPersistentIndexManager persistentIndexManager)
+            : base(lifetime, locks, persistentIndexManager, SPPsiCacheItems<T>.Marshaller)
         {
             #if DEBUG
             // TODO: Useful for testing. Remove for release
             ClearOnLoad = true;
             #endif
 
-            Map.Cache = new UnlimitedCache<IPsiSourceFile, SPPsiCacheItems<T>>(persistentIndexManager.PersistentEqualityComparer);
+            Map.Cache = new UnlimitedCache<IPsiSourceFile, SPPsiCacheItems<T>>(persistentIndexManager.PsiSourceFilePersistentEqualityComparer);
 
             ProjectFileToItems = new OneToSetMap<IPsiSourceFile, T>();
             ItemsToProjectFiles = new OneToSetMap<T, IPsiSourceFile>(ItemsEqualityComparer);

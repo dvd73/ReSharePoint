@@ -1,13 +1,10 @@
-﻿using System;
-using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
+﻿using JetBrains.Annotations;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Feature.Services.QuickFixes;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Resources.Shell;
-using ReSharePoint.Basic.Inspection.Code.Ported;
 using ReSharePoint.Basic.Inspection.Common.CodeAnalysis;
 using ReSharePoint.Basic.Inspection.Common.QuickFix;
 using ReSharePoint.Common;
@@ -16,19 +13,18 @@ using ReSharePoint.Common.Consts;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC010212Highlighting.CheckId,
-  null,
-  Consts.CORRECTNESS_GROUP,
-  SPC010212Highlighting.CheckId + ": " + SPC010212Highlighting.Message,
-  "Property SPSite.CatchAccessDeniedException is reserved for internal use. Use the SPSecurity.CatchAccessDeniedException property instead.",
-  Severity.WARNING
-  )]
-
 namespace ReSharePoint.Basic.Inspection.Code.Ported
 {
+    [RegisterConfigurableSeverity(SPC010212Highlighting.CheckId,
+        null,
+        Consts.CORRECTNESS_GROUP,
+        SPC010212Highlighting.CheckId + ": " + SPC010212Highlighting.Message,
+        "Property SPSite.CatchAccessDeniedException is reserved for internal use. Use the SPSecurity.CatchAccessDeniedException property instead.",
+        Severity.WARNING
+    )]
     [ElementProblemAnalyzer(typeof(IAssignmentExpression), HighlightingTypes = new[] { typeof(SPC010212Highlighting) })]
     [Applicability(
-        IDEProjectType.SPFarmSolution  |
+        IDEProjectType.SPFarmSolution |
         IDEProjectType.SPSandbox |
         IDEProjectType.SPServerAPIReferenced)]
     public class DoNotCallSPSiteCatchAccessDeniedException : SPElementProblemAnalyzer<IAssignmentExpression>
@@ -41,7 +37,8 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
 
             if (expressionType.IsResolved)
             {
-                result = element.Dest.IsResolvedAsPropertyUsage(ClrTypeKeys.SPSite, new[] { "CatchAccessDeniedException" });
+                result = element.Dest.IsResolvedAsPropertyUsage(ClrTypeKeys.SPSite,
+                    new[] { "CatchAccessDeniedException" });
             }
 
             return result;
@@ -53,7 +50,8 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
         }
     }
 
-    [ConfigurableSeverityHighlighting(CheckId, CSharpLanguage.Name, OverlapResolve = OverlapResolveKind.NONE, ShowToolTipInStatusBar = true)]
+    [ConfigurableSeverityHighlighting(CheckId, CSharpLanguage.Name, OverlapResolve = OverlapResolveKind.NONE,
+        ShowToolTipInStatusBar = true)]
     public class SPC010212Highlighting : SPCSharpErrorHighlighting<IAssignmentExpression>
     {
         public const string CheckId = CheckIDs.Rules.Assembly.SPC010212;
@@ -70,6 +68,7 @@ namespace ReSharePoint.Basic.Inspection.Code.Ported
     {
         private const string ACTION_TEXT = "Replace to SPSecurity.CatchAccessDeniedException";
         private const string SCOPED_TEXT = "Replace to SPSecurity.CatchAccessDeniedException for all occurrences";
+
         public SPC010212Fix([NotNull] SPC010212Highlighting highlighting)
             : base(highlighting)
         {

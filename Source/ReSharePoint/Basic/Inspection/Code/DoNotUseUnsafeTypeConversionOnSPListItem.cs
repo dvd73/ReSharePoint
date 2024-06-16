@@ -1,5 +1,4 @@
 using System;
-using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -12,16 +11,15 @@ using ReSharePoint.Common.Attributes;
 using ReSharePoint.Common.Consts;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(DoNotUseUnsafeTypeConversionOnSPListItemHighlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Code
+{
+    [RegisterConfigurableSeverity(DoNotUseUnsafeTypeConversionOnSPListItemHighlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   DoNotUseUnsafeTypeConversionOnSPListItemHighlighting.CheckId + ": " + DoNotUseUnsafeTypeConversionOnSPListItemHighlighting.Message,
   "SPListItem is untyped entity, so null reference exceptions on nullable types or wrong type conversion exception might be arised.",
   Severity.WARNING
   )]
-
-namespace ReSharePoint.Basic.Inspection.Code
-{
     [ElementProblemAnalyzer(typeof(IElementAccessExpression), HighlightingTypes = new[] { typeof(DoNotUseUnsafeTypeConversionOnSPListItemHighlighting) })]
     [Applicability(
         IDEProjectType.SPFarmSolution  |

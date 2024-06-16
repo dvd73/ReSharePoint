@@ -13,16 +13,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC010703Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC010703Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC010703Highlighting.CheckId + ": " + SPC010703Highlighting.Message,
   "The attribute 'VisibilityFeatureDependency' is not supported for Features with Web application scope.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]

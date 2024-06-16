@@ -13,16 +13,15 @@ using ReSharePoint.Basic.Inspection.Xml.Ported;
 using ReSharePoint.Common.Extensions;
 using ReSharePoint.Entities;
 
-[assembly: RegisterConfigurableSeverity(SPC017702Highlighting.CheckId,
+namespace ReSharePoint.Basic.Inspection.Xml.Ported
+{
+    [RegisterConfigurableSeverity(SPC017702Highlighting.CheckId,
   null,
   Consts.CORRECTNESS_GROUP,
   SPC017702Highlighting.CheckId + ": " + SPC017702Highlighting.Message,
   "A WebTemplate must derive from an existing Template, e.g from a template in TEMPLATE\\1033\\XML\\WEBTEMP.xml.",
   Severity.ERROR
   )]
-
-namespace ReSharePoint.Basic.Inspection.Xml.Ported
-{
     [Applicability(
         IDEProjectType.SPFarmSolution  |
         IDEProjectType.SPSandbox )]
