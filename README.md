@@ -29,7 +29,7 @@ You can enable/disable reSP features in the ReSharper Product & Features dialog.
    * Console application
 
 ## To debug plugin 
-1. Be sure you install ReSharper for experimental instance (custom hives)
+1. Be sure you install ReSharper for experimental instance (custom hives).
 To install to an experimental instance, run the ReSharper installer, select the Options button, and enter the name of the instance as reSP. 
 2. Simply make sure it is selected as the start-up project
 3. Check debug command line arguments: /ReSharper.Internal /rootsuffix reSP

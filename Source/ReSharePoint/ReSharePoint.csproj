@@ -17,9 +17,9 @@
     <Company>SubPoint Solutions</Company>
     <PackageId>SPCAFContrib.ReSharper</PackageId>
     <Copyright>Copyright © 2020 SubPoint Solutions</Copyright>
-    <PackageProjectUrl>http://www.subpointsolutions.com/resp/</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/dvd73/ReSharePoint</PackageProjectUrl>
     <PackageIconUrl>http://docs.resharepoint.ru/Cms_Data/Contents/Documentation/Media/Common/SharePointR.png</PackageIconUrl>
-    <PackageLicenseUrl>http://docs.resharepoint.ru/Articles/Detail/License?folder=Article</PackageLicenseUrl>
+    <PackageLicenseUrl>https://opensource.org/licenses/MITShare</PackageLicenseUrl>
     <PackageReleaseNotes></PackageReleaseNotes>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Dmitry Dolotovskikh</Authors>
