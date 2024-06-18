@@ -4,10 +4,8 @@ using System.Linq;
 using JetBrains.Annotations;
 using JetBrains.Util;
 using JetBrains.ReSharper.Feature.Services.Daemon.OptionPages;
-using JetBrains.ReSharper.Psi.GeneratedCode;
 using ReSharePoint.Common.Assets;
 using ReSharePoint.Common.Options;
-using MessageBox = JetBrains.Util.MessageBox;
 using JetBrains.Application.UI.Options;
 using JetBrains.Application.UI.Options.OptionsDialog;
 using JetBrains.Collections.Viewable;
@@ -20,13 +18,11 @@ using JetBrains.Lifetimes;
 using JetBrains.IDE.UI.Options;
 using JetBrains.Rider.Model.UIAutomation;
 using JetBrains.Threading;
-using System.Text.RegularExpressions;
-using JetBrains.Rider.Model;
 
 namespace ReSharePoint.Common.UI
 {
     /// <summary>
-    /// Copied from ParameterNameHintsOptionsPage
+    /// Currently, this page is not displayed. Please check out JetBrains.ReSharper.Features.Altering.CodeStyle.CSharp.CSharpNamespaceImportsPage class to fix 
     /// </summary>
     [OptionsPage(PID, "reSP", typeof(AssetsThemedIcons.SharePoint2013), ParentId = CodeInspectionPage.PID)]
     public class ReSharePointSettingsOptionPage : BeSimpleOptionsPage
