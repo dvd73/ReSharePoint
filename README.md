@@ -30,10 +30,15 @@ You can enable/disable reSP features in the ReSharper Product & Features dialog.
 
 ## To debug plugin 
 1. Be sure you install ReSharper for experimental instance (custom hives).
-To install to an experimental instance, run the ReSharper installer, select the Options button, and enter the name of the instance as reSP. 
-2. Simply make sure it is selected as the start-up project
-3. Check debug command line arguments: /ReSharper.Internal /rootsuffix reSP
-4. Ctrl+F5 and simply attach a debugger to an instance of Visual Studio that will run the plugin 
+To install to an experimental instance, run the ReSharper installer, select the Options button, and enter the name of the instance as reSP. Note: this instance of VS must not have reSP installed!
+2. Check command line arguments: /ReSharper.Internal /rootsuffix reSP3. 
+3. In the *.nuspec file change string in path Release -> Debug: bin\Release|Debug\net48\.
+4. Run 'VS custom hive reSP': compile and Build plugin project in the Debug mode.
+5. Execute BuildPackage.cmd and get .nupkg locally.
+6. Remove existing reSP package from Visual Studio and then install it again from the local path (check before that plugin's local path is a Source in the R# plugin settings).
+7. Run regular VS but do not open any solution, just pending on the welcome window.
+8. Run 'VS custom hive reSP' and attach to the devenv.exe process. Set a breakpoint if reguired.
+9. In the regular VS open target SharePoint solution.
 
 ## To link rule with help page 
 1. You need to ensure that [CheckId - help page url] pair exists in the project resources.
@@ -41,8 +46,6 @@ To install to an experimental instance, run the ReSharper installer, select the 
 ![help image](/assets/get_help.png 'how to get help for incident')
 
 ## To update package:
-1. Modify assembly version.
+1. Modify assembly version in the project properties.
 2. Edit Deploy\ReSharePoint.nuspec file. Change version in the <version> tag.
-3. Edit Deploy\UpdatePackage.cmd. Set right package file name (ReSharePoint.1.0.0.1.nupkg).
-4. Build Release in VS. 
-5. Run UpdatePackage.cmd.
+3. Build Release in VS. 

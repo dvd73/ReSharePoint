@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.Application;
-using JetBrains.Application.changes;
 using JetBrains.Application.Threading;
-using JetBrains.DataFlow;
 using JetBrains.Lifetimes;
 using JetBrains.ProjectModel;
 using JetBrains.ReSharper.Psi;
@@ -14,8 +11,6 @@ using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Files;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.Serialization;
-using JetBrains.Util;
-using JetBrains.Util.PersistentMap;
 using ReSharePoint.Common;
 using ReSharePoint.Common.Attributes;
 

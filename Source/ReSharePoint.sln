@@ -22,7 +22,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{C5E26F8A-2080-483E-AA27-DFA500DB8C6E}"
 	ProjectSection(SolutionItems) = preProject
 		..\Deploy\BuildPackage.cmd = ..\Deploy\BuildPackage.cmd
-		..\Deploy\DeployPackage.cmd = ..\Deploy\DeployPackage.cmd
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EA1EDB70-46D9-480C-8092-8AE82A7827AB}"
