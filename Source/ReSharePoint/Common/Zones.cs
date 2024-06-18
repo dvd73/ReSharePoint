@@ -11,10 +11,10 @@ namespace ReSharePoint.Common
 
     [ZoneDefinition]
     [ZoneDefinitionConfigurableFeature("reSP Pro", "SharePoint productivity extension.", true)]
-    [ZoneDefinitionProduct(CompanyName = "SubPoint Solutions", CompanyNameLegal = "SubPoint Solutions",
+    [ZoneDefinitionProduct(CompanyName = "Dmitry Dolotovskikh", CompanyNameLegal = "Dmitry Dolotovskikh",
         ProductPresentableName = "reSP Pro", ProductTechnicalName = "ReSharePoint Pro",
         Version = "1.0.0.0",
-        ProductUrl = "http://docs.subpointsolutions.com/resp/",
+        ProductUrl = "https://github.com/dvd73/ReSharePoint",
         ProductIcon = typeof(AssetsThemedIcons.ReSPLogo16))]
     public interface IProProductZone : IBasicProductZone
     {

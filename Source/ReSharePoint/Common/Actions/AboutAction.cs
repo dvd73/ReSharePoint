@@ -19,7 +19,7 @@ namespace ReSharePoint.Common.Actions
         public void Execute(IDataContext context, DelegateExecute nextExecute)
         {
             if (MessageBox.Show(
-                    $"Essential tool to ensure SharePoint code quality. \r\nVersion {Assembly.GetExecutingAssembly().GetName().Version}\r\nVisit our site http://www.subpointsolutions.com/resp",
+                    $"Essential tool to ensure SharePoint code quality. \r\nVersion {Assembly.GetExecutingAssembly().GetName().Version}\r\nVisit our site https://github.com/dvd73/ReSharePoint",
                     "About reSP Plugin",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Information) == DialogResult.Yes)

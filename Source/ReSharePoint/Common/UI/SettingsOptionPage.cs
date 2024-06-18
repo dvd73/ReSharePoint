@@ -18,11 +18,12 @@ using JetBrains.Lifetimes;
 using JetBrains.IDE.UI.Options;
 using JetBrains.Rider.Model.UIAutomation;
 using JetBrains.Threading;
+using JetBrains.Application.Threading;
 
 namespace ReSharePoint.Common.UI
 {
     /// <summary>
-    /// Currently, this page is not displayed. Please check out JetBrains.ReSharper.Features.Altering.CodeStyle.CSharp.CSharpNamespaceImportsPage class to fix 
+    /// Please check out JetBrains.ReSharper.Features.Altering.CodeStyle.CSharp.CSharpNamespaceImportsPage
     /// </summary>
     [OptionsPage(PID, "reSP", typeof(AssetsThemedIcons.SharePoint2013), ParentId = CodeInspectionPage.PID)]
     public class ReSharePointSettingsOptionPage : BeSimpleOptionsPage
@@ -30,16 +31,18 @@ namespace ReSharePoint.Common.UI
         private const string PID = "CodeInspection.ReSharePointSettingsOptionPageId";
         [NotNull]
         private readonly IconHostBase _iconHost;
+        private readonly IShellLocks Locks;
 
         public ReSharePointSettingsOptionPage(
             Lifetime lifetime,
             [NotNull] OptionsPageContext optionsPageContext,
             [NotNull] OptionsSettingsSmartContext optionsSettingsSmartContext,
-            [NotNull] IconHostBase iconHost)
+            [NotNull] IconHostBase iconHost,
+            [NotNull] IShellLocks locks)
             : base(lifetime, optionsPageContext, optionsSettingsSmartContext)
         {
             this._iconHost = iconHost;
-
+            this.Locks = locks;
             this.AddHeader("Ignored files:");
             var tabbedControl = BeControls.GetTabbedControl();
             var reSharePointOptionsStores = new IReSharePointOptionsStore[]
@@ -62,7 +65,7 @@ namespace ReSharePoint.Common.UI
         private BeControl CreateBlackListControl(
             IReSharePointOptionsStore reSharePointOptionsStore)
         {
-            BlackListViewModel model = new BlackListViewModel(this.Lifetime, this.OptionsSettingsSmartContext, reSharePointOptionsStore);
+            BlackListViewModel model = new BlackListViewModel(this.Lifetime, this.OptionsSettingsSmartContext, reSharePointOptionsStore, this.Locks);
             return model.SelectedEntry.GetBeSingleSelectionListWithToolbar(model.Entries, this.Lifetime, (entryLt, entry, properties) => new List<BeControl>()
             {
                 entry.Pattern.GetBeTextBox(entryLt).WithValidationRule(this.Lifetime, CommonHelper.IsValidGeneratedFilesMask, "Pattern is not valid", ValidationStates.validationError, null, (Func<BeTextBox, IViewableProperty<string>>) null)
@@ -75,7 +78,7 @@ namespace ReSharePoint.Common.UI
 
             public BlackListEntry([NotNull] Lifetime lifetime, [NotNull] ISimpleSignal entryChanged, string pattern)
             {
-                this.Pattern = new Property<string>(lifetime, "BlackListEntry.Pattern", pattern);
+                this.Pattern = new Property<string>("BlackListEntry.Pattern", pattern);
                 this.Pattern.Change.Advise_NoAcknowledgement(lifetime, entryChanged.Fire);
             }
         }
@@ -90,15 +93,16 @@ namespace ReSharePoint.Common.UI
             public BlackListViewModel(
               [NotNull] Lifetime lifetime,
               [NotNull] OptionsSettingsSmartContext context,
-              [NotNull] IReSharePointOptionsStore store)
+              [NotNull] IReSharePointOptionsStore store,
+              [NotNull] IShellLocks locks)
             {
                 this._lifetime = lifetime;
                 this._optionContext = context;
                 this._optionStore = store;
-                //this._entryChanged = new GroupingEventHost(lifetime, false).CreateEvent(lifetime, "BlackListViewModel.EntryChangedGrouped", TimeSpan.FromMilliseconds(100.0), this.OnEntryChanged);
+                this._entryChanged = locks.GroupingEvents[Rgc.Invariant].CreateEvent(lifetime, "BlackListViewModel.EntryChangedGrouped", TimeSpan.FromMilliseconds(100.0), this.OnEntryChanged);
                 var list = store.GetBlackList(context).Select(entry => new BlackListEntry(lifetime, this._entryChanged.Incoming, entry.Trim())).ToList();
-                this.Entries = new ListEvents<BlackListEntry>(lifetime, "BlackListViewModel.Entries", list, false);
-                this.SelectedEntry = new Property<BlackListEntry>(lifetime, "BlackListViewModel.SelectedEntry");
+                this.Entries = new ListEvents<BlackListEntry>("BlackListViewModel.Entries", list, false);
+                this.SelectedEntry = new Property<BlackListEntry>("BlackListViewModel.SelectedEntry");
             }
 
             public ListEvents<BlackListEntry> Entries { get; }
