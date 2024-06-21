@@ -7,26 +7,24 @@ Code inspection is performed automatically in design time for all opened files. 
 
 ![inspect image](/assets/inspect.png 'you can inspect both the current file and the entire project or solution')
 
-Depends on issue severity the problem text is highlighted in different ways and corresponded color marks are added to the marker bar. Mostly each of highlightings has a quick fix action (look like a bulb). And you can apply this fix on the current file, current folder or project or whole solution.
-
-![severity image](/assets/severity.png 'you can change the severity as well')
 
 reSP plugin comes as a single bundle with two different editions:
 
 * Basic - includes validation rules.
 * Professional - includes productivity features like code completion, live templates etc.
 
-You can enable/disable reSP features in the ReSharper Product & Features dialog.
-
-![options image](/assets/options.png 'you can specify file for ignoring')
-
 ## Supported platforms
-* JetBrains ReSharper 9.0 or high 
-* Visual Studio 2010/2012/2013/2015/2017/2019/2022
+* JetBrains ReSharper 8.2 or high 
+* Visual Studio 2010+
 * SharePoint project types:
    * Farm solution
    * Sandboxed
    * Console application
+
+## How to install
+Use ReSharper Extension Manager to install reSP plugin from repository. Just try to find by SHAREPOINT tag.
+
+![getting started image](/assets/getting-started.gif 'how to install reSP')
 
 ## To debug plugin 
 1. Be sure you install ReSharper for experimental instance (custom hives).
@@ -40,12 +38,10 @@ To install to an experimental instance, run the ReSharper installer, select the 
 8. Run 'VS custom hive reSP' and attach to the devenv.exe process. Set a breakpoint if reguired.
 9. In the regular VS open target SharePoint solution.
 
-## To link rule with help page 
-1. You need to ensure that [CheckId - help page url] pair exists in the project resources.
-
-![help image](/assets/get_help.png 'how to get help for incident')
-
 ## To update package:
 1. Modify assembly version in the project properties.
 2. Edit Deploy\ReSharePoint.nuspec file. Change version in the <version> tag.
 3. Build Release in VS. 
+
+## Documentation
+Please check out the full documentation [here](/Documentation/index.md).
