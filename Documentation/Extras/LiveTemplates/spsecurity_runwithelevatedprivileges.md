@@ -1,3 +1,3 @@
 ## Description
 
-![SPSecurity.RunWithElevatedPrivileges image](../../assets/rwep.gif)
+![SPSecurity.RunWithElevatedPrivileges image](../../../assets/rwep.gif)
