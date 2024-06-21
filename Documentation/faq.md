@@ -16,6 +16,7 @@ Depends on issue severity the problem text is highlighted in different ways and 
 
 ### How can I read more about highlighting?
 Open context menu, select [Inspection "name of issue"] and select "Why is reSP suggestion this?". The help page will be opened immediatelly in the browser.
+
 ![get help image](../assets/get_help.png)
 
 You need to ensure that [CheckId - help page url] pair exists in the project resources.
@@ -34,4 +35,5 @@ Check out this [guide](../assets/ReSharper_DefaultKeymap_VSscheme.pdf) PDF.
 
 ### List of excluded libraries
 You can configure lists of ignored files using regular expression or wildcards in the ReSharper | Options dialog.
+
 ![options image](../assets/options.png 'you can specify file for ignoring')
