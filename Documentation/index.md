@@ -1,12 +1,12 @@
 ## Index
 
 *   Basic features
-    *   [C#](Code/readme.md)
-    *   [ASP.NET](ASP-NET/readme.md)
-    *   [Xml](Xml/readme.md)
-    *   [JavaScript](JavaScript/readme.md)
+    *   [C#](Basic/Code/readme.md)
+    *   [ASP.NET](Basic/ASP-NET/readme.md)
+    *   [Xml](Basic/Xml/readme.md)
+    *   [JavaScript](Basic/JavaScript/readme.md)
 *   Extras
-    *   [Live Templates](LiveTemplates/Extras/readme.md)
-    *   [Code Completion](CodeCompletion/Extras/readme.md)
+    *   [Live Templates](Extras/LiveTemplates/readme.md)
+    *   [Code Completion](Extras/CodeCompletion/readme.md)
 * [F.A.Q.](faq.md)
 * [Know issue](know_issues.md)
