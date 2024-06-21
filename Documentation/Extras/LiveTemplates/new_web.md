@@ -1,3 +1,3 @@
 ## Description
 
-![new web image](../../assets/nweb.gif)
+![new web image](../../../assets/nweb.gif)

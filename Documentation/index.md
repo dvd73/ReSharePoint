@@ -6,7 +6,7 @@
     *   [Xml](Xml/readme.md)
     *   [JavaScript](JavaScript/readme.md)
 *   Extras
-    *   [Live Templates](LiveTemplates/readme.md)
-    *   [Code Completion](CodeCompletion/readme.md)
+    *   [Live Templates](LiveTemplates/Extras/readme.md)
+    *   [Code Completion](CodeCompletion/Extras/readme.md)
 * [F.A.Q.](faq.md)
 * [Know issue](know_issues.md)
