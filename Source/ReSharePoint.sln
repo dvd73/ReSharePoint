@@ -32,8 +32,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{D9748EB5-116B-4C49-B824-DBBEF71000E9}"
 	ProjectSection(SolutionItems) = preProject
 		..\Documentation\faq.md = ..\Documentation\faq.md
-		..\Documentation\index.md = ..\Documentation\index.md
 		..\Documentation\known_issues.md = ..\Documentation\known_issues.md
+		..\Documentation\readme.md = ..\Documentation\readme.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{79188589-2353-4174-BE92-164970F2F0EC}"

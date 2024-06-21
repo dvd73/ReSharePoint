@@ -44,4 +44,4 @@ To install to an experimental instance, run the ReSharper installer, select the 
 3. Build Release in VS. 
 
 ## Documentation
-Please check out the full documentation [here](/Documentation/index.md).
+Please check out the full documentation [here](/Documentation/readme.md).
