@@ -29,9 +29,48 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{E7AF8C21-ECF7-4757-8AD6-DDD28EFA822C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{D9748EB5-116B-4C49-B824-DBBEF71000E9}"
 	ProjectSection(SolutionItems) = preProject
-		..\Documentation\F.A.Q.md = ..\Documentation\F.A.Q.md
+		..\Documentation\faq.md = ..\Documentation\faq.md
+		..\Documentation\index.md = ..\Documentation\index.md
+		..\Documentation\known_issues.md = ..\Documentation\known_issues.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{79188589-2353-4174-BE92-164970F2F0EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP-NET", "ASP-NET", "{602E244A-B2A5-4D98-8D1E-8CF777CCB1E8}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentation\Basic\ASP-NET\readme.md = ..\Documentation\Basic\ASP-NET\readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{25549A16-B1A6-4B9A-A566-E7290D421F35}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentation\Basic\Code\readme.md = ..\Documentation\Basic\Code\readme.md
+		..\Documentation\Basic\Code\RESP510239.md = ..\Documentation\Basic\Code\RESP510239.md
+		..\Documentation\Basic\Code\RESP510242.md = ..\Documentation\Basic\Code\RESP510242.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JavaScript", "JavaScript", "{AD5951C8-F830-49C0-8129-5EB98D970DE7}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentation\Basic\JavaScript\readme.md = ..\Documentation\Basic\JavaScript\readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xml", "Xml", "{6A23DEA8-DF1A-4947-9930-18932CA9596B}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentation\Basic\Xml\readme.md = ..\Documentation\Basic\Xml\readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extras", "Extras", "{3282F33D-B1E7-4D59-AE25-98DB329AAE95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeCompletion", "CodeCompletion", "{A046F2C0-B384-4F04-900F-2B2377F46839}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LiveTemplates", "LiveTemplates", "{35FE470B-E015-4E99-85C3-1F06A8BC06C9}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentation\Extras\LiveTemplates\new_site.md = ..\Documentation\Extras\LiveTemplates\new_site.md
+		..\Documentation\Extras\LiveTemplates\new_site_and_web.md = ..\Documentation\Extras\LiveTemplates\new_site_and_web.md
+		..\Documentation\Extras\LiveTemplates\new_web.md = ..\Documentation\Extras\LiveTemplates\new_web.md
+		..\Documentation\Extras\LiveTemplates\readme.md = ..\Documentation\Extras\LiveTemplates\readme.md
+		..\Documentation\Extras\LiveTemplates\spsecurity_runwithelevatedprivileges.md = ..\Documentation\Extras\LiveTemplates\spsecurity_runwithelevatedprivileges.md
 	EndProjectSection
 EndProject
 Global
@@ -51,6 +90,16 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{79188589-2353-4174-BE92-164970F2F0EC} = {D9748EB5-116B-4C49-B824-DBBEF71000E9}
+		{602E244A-B2A5-4D98-8D1E-8CF777CCB1E8} = {79188589-2353-4174-BE92-164970F2F0EC}
+		{25549A16-B1A6-4B9A-A566-E7290D421F35} = {79188589-2353-4174-BE92-164970F2F0EC}
+		{AD5951C8-F830-49C0-8129-5EB98D970DE7} = {79188589-2353-4174-BE92-164970F2F0EC}
+		{6A23DEA8-DF1A-4947-9930-18932CA9596B} = {79188589-2353-4174-BE92-164970F2F0EC}
+		{3282F33D-B1E7-4D59-AE25-98DB329AAE95} = {D9748EB5-116B-4C49-B824-DBBEF71000E9}
+		{A046F2C0-B384-4F04-900F-2B2377F46839} = {3282F33D-B1E7-4D59-AE25-98DB329AAE95}
+		{35FE470B-E015-4E99-85C3-1F06A8BC06C9} = {3282F33D-B1E7-4D59-AE25-98DB329AAE95}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2F19CA9-2EC0-4C0A-8470-8B5EC8F9753F}
