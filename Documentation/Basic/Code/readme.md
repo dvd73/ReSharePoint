@@ -11,4 +11,5 @@
 1. ##### [gProcessingId parameter is missed for SPSite.AddWorkItem()](RESP510257.md)
 1. ##### [Inappropriate PublishingWeb.GetPublishingPages() usage.](RESP510232.md)
 1. ##### [Inappropriate SPList collection usage.](RESP510209.md)
+1. ##### [Inappropriate taxonomy collection usage.](RESP510227.md)
 
