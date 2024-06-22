@@ -7,3 +7,4 @@
 #### [Consider Secure Store Service usage.](RESP510206.md)
 #### [DirectorySearcher is used.](RESP510212.md)
 #### [EntityEditor.Entities is used.](RESP510251.md)
+#### [General exception is suppressed.](RESP510236.md)
