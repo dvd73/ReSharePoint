@@ -18,4 +18,8 @@
 1. ##### [Magic string is used.](RESP510225.md)
 1. ##### [Missing SPUrlZone param in SPSite constructor.](RESP510238.md)
 1. ##### [Not logged exception found.](RESP510241.md)
+1. ##### [PortalLog is used.](RESP510245.md)
+1. ##### [RunWithElevatedPrivileges is used while HTTPContext is null.](RESP510244.md)
+1. ##### [SPContext objects are disposed.](RESP510261.md)
+1. ##### [SPContext.Current is used outside web context.](RESP510222.md)
 
