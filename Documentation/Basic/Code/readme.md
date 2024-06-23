@@ -17,5 +17,5 @@
 1. ##### [jQuery(document).ready in CSharp code.](RESP510223.md)
 1. ##### [Magic string is used.](RESP510225.md)
 1. ##### [Missing SPUrlZone param in SPSite constructor.](RESP510238.md)
-1. ##### [BackNot logged exception found.](RESP510241.md)
+1. ##### [Not logged exception found.](RESP510241.md)
 
