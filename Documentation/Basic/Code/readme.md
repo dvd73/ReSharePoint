@@ -29,4 +29,9 @@
 1. ##### [SPQuery.Scope is missed.](RESP510210.md)
 1. ##### [SPUtility.SendEmail usage while SPContext is null.](RESP510252.md)
 1. ##### [SPView.Scope is missed.](RESP510205.md)
+1. ##### [SPWebPartManager is used while HTTPContext is null.](RESP510249.md)
+1. ##### [Static SP-object used as field.](RESP510234.md)
+1. ##### [Thread.Sleep() usage.](RESP510201.md)
+1. ##### [Unsafe cast on SPItemEventDataCollection.Item.](RESP510259.md)
+1. ##### [Unsafe cast on SPListItem.](RESP510213.md)
 
