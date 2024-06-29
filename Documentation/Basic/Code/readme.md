@@ -39,4 +39,8 @@
 1. ##### [Use FeatureIds class.](RESP510254.md)
 1. ##### [Use FieldId class.](RESP510255.md)
 1. ##### [Use PropertyConstants class.](RESP510203.md)
+1. ##### [Use SPBuiltInFieldId class.](RESP510256.md)
+1. ##### [Use try-catch for SPFile.Exists.](RESP510250.md)
+1. ##### [UserProfileManager.GetEnumerator() is used.](RESP510204.md)
+1. ##### [UTC time is used. ](RESP510253.md)
 
