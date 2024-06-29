@@ -29,18 +29,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{DE57E66F-36E6-4E18-AA1E-8677889FEF4D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{51DCD449-2B5D-4EC3-B7EF-25A22B808368}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentation\faq.md = ..\Documentation\faq.md
+		..\Documentation\known_issues.md = ..\Documentation\known_issues.md
+		..\Documentation\readme.md = ..\Documentation\readme.md
+	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{6FB880C1-B7A4-42C8-B1C5-C03580A06D1D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{05B579CF-03F1-4943-ACE1-D5F866E69527}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP-NET", "ASP-NET", "{7418E4BF-EEEE-497B-9CAC-C188ECD99876}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP-NET", "ASP-NET", "{AB68BB7A-6D56-454C-85E1-F7F453A34C80}"
 	ProjectSection(SolutionItems) = preProject
 		..\Documentation\Basic\ASP-NET\readme.md = ..\Documentation\Basic\ASP-NET\readme.md
 		..\Documentation\Basic\ASP-NET\RESP516902.md = ..\Documentation\Basic\ASP-NET\RESP516902.md
 		..\Documentation\Basic\ASP-NET\RESP516905.md = ..\Documentation\Basic\ASP-NET\RESP516905.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{7EA2DBA5-FEF4-4BA1-85B3-169907F16990}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{14485FA0-900C-4757-8584-1794D8FEB47F}"
 	ProjectSection(SolutionItems) = preProject
 		..\Documentation\Basic\Code\readme.md = ..\Documentation\Basic\Code\readme.md
 		..\Documentation\Basic\Code\RESP510201.md = ..\Documentation\Basic\Code\RESP510201.md
@@ -89,16 +94,32 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{7EA2DBA5-F
 		..\Documentation\Basic\Code\RESP512101.md = ..\Documentation\Basic\Code\RESP512101.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JavaScript", "JavaScript", "{A008B543-C07D-4578-8444-0CFA384B8D08}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JavaScript", "JavaScript", "{B9F9207D-C912-4B8D-9A6C-F27126C830D6}"
 	ProjectSection(SolutionItems) = preProject
 		..\Documentation\Basic\JavaScript\readme.md = ..\Documentation\Basic\JavaScript\readme.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xml", "Xml", "{208CEDF1-7701-4DDD-AB57-54B8EDE36A05}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xml", "Xml", "{C8D6DDDA-1A1B-4C7E-86B0-A6ABCF263BAD}"
 	ProjectSection(SolutionItems) = preProject
 		..\Documentation\Basic\Xml\readme.md = ..\Documentation\Basic\Xml\readme.md
 		..\Documentation\Basic\Xml\RESP515108.md = ..\Documentation\Basic\Xml\RESP515108.md
 		..\Documentation\Basic\Xml\RESP515115.md = ..\Documentation\Basic\Xml\RESP515115.md
+		..\Documentation\Basic\Xml\RESP515201.md = ..\Documentation\Basic\Xml\RESP515201.md
+		..\Documentation\Basic\Xml\RESP515205.md = ..\Documentation\Basic\Xml\RESP515205.md
+		..\Documentation\Basic\Xml\RESP515403.md = ..\Documentation\Basic\Xml\RESP515403.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extras", "Extras", "{DAA47A46-2CD0-4A96-BAE5-04620C47A2F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeCompletion", "CodeCompletion", "{CFCE0C05-7659-4E65-AE91-D1D77BC94B41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LiveTemplates", "LiveTemplates", "{D795EB8B-6751-44EC-A60B-68C847385C45}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentation\Extras\LiveTemplates\new_site.md = ..\Documentation\Extras\LiveTemplates\new_site.md
+		..\Documentation\Extras\LiveTemplates\new_site_and_web.md = ..\Documentation\Extras\LiveTemplates\new_site_and_web.md
+		..\Documentation\Extras\LiveTemplates\new_web.md = ..\Documentation\Extras\LiveTemplates\new_web.md
+		..\Documentation\Extras\LiveTemplates\readme.md = ..\Documentation\Extras\LiveTemplates\readme.md
+		..\Documentation\Extras\LiveTemplates\spsecurity_runwithelevatedprivileges.md = ..\Documentation\Extras\LiveTemplates\spsecurity_runwithelevatedprivileges.md
 	EndProjectSection
 EndProject
 Global
@@ -120,11 +141,14 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{6FB880C1-B7A4-42C8-B1C5-C03580A06D1D} = {DE57E66F-36E6-4E18-AA1E-8677889FEF4D}
-		{7418E4BF-EEEE-497B-9CAC-C188ECD99876} = {6FB880C1-B7A4-42C8-B1C5-C03580A06D1D}
-		{7EA2DBA5-FEF4-4BA1-85B3-169907F16990} = {6FB880C1-B7A4-42C8-B1C5-C03580A06D1D}
-		{A008B543-C07D-4578-8444-0CFA384B8D08} = {6FB880C1-B7A4-42C8-B1C5-C03580A06D1D}
-		{208CEDF1-7701-4DDD-AB57-54B8EDE36A05} = {6FB880C1-B7A4-42C8-B1C5-C03580A06D1D}
+		{05B579CF-03F1-4943-ACE1-D5F866E69527} = {51DCD449-2B5D-4EC3-B7EF-25A22B808368}
+		{AB68BB7A-6D56-454C-85E1-F7F453A34C80} = {05B579CF-03F1-4943-ACE1-D5F866E69527}
+		{14485FA0-900C-4757-8584-1794D8FEB47F} = {05B579CF-03F1-4943-ACE1-D5F866E69527}
+		{B9F9207D-C912-4B8D-9A6C-F27126C830D6} = {05B579CF-03F1-4943-ACE1-D5F866E69527}
+		{C8D6DDDA-1A1B-4C7E-86B0-A6ABCF263BAD} = {05B579CF-03F1-4943-ACE1-D5F866E69527}
+		{DAA47A46-2CD0-4A96-BAE5-04620C47A2F3} = {51DCD449-2B5D-4EC3-B7EF-25A22B808368}
+		{CFCE0C05-7659-4E65-AE91-D1D77BC94B41} = {DAA47A46-2CD0-4A96-BAE5-04620C47A2F3}
+		{D795EB8B-6751-44EC-A60B-68C847385C45} = {DAA47A46-2CD0-4A96-BAE5-04620C47A2F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2F19CA9-2EC0-4C0A-8470-8B5EC8F9753F}
