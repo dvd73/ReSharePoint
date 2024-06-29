@@ -22,4 +22,5 @@
 1. ##### [RunWithElevatedPrivileges is used while HTTPContext is null.](RESP510244.md)
 1. ##### [SPContext objects are disposed.](RESP510261.md)
 1. ##### [SPContext.Current is used outside web context.](RESP510222.md)
+1. ##### [SPDataSource.Scope is missed.](RESP510218.md)
 
