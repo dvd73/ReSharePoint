@@ -23,4 +23,8 @@
 1. ##### [SPContext objects are disposed.](RESP510261.md)
 1. ##### [SPContext.Current is used outside web context.](RESP510222.md)
 1. ##### [SPDataSource.Scope is missed.](RESP510218.md)
+1. ##### [SPFeature activated via code.](RESP512101.md)
+1. ##### [SPMonitoredScope should be used.](RESP510208.md)
+1. ##### [SPPersistedObject is updated.](RESP510243.md)
+1. ##### [SPQuery.Scope is missed.](RESP510210.md)
 
