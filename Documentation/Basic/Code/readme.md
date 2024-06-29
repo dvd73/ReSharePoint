@@ -34,4 +34,9 @@
 1. ##### [Thread.Sleep() usage.](RESP510201.md)
 1. ##### [Unsafe cast on SPItemEventDataCollection.Item.](RESP510259.md)
 1. ##### [Unsafe cast on SPListItem.](RESP510213.md)
+1. ##### [Unsafe SPObject.Name == \<string> comparison.](RESP510235.md)
+1. ##### [Unsafe url concatenation.](RESP510228.md)
+1. ##### [Use FeatureIds class.](RESP510254.md)
+1. ##### [Use FieldId class.](RESP510255.md)
+1. ##### [Use PropertyConstants class.](RESP510203.md)
 
