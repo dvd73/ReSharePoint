@@ -27,4 +27,6 @@
 1. ##### [SPMonitoredScope should be used.](RESP510208.md)
 1. ##### [SPPersistedObject is updated.](RESP510243.md)
 1. ##### [SPQuery.Scope is missed.](RESP510210.md)
+1. ##### [SPUtility.SendEmail usage while SPContext is null.](RESP510252.md)
+1. ##### [SPView.Scope is missed.](RESP510205.md)
 
