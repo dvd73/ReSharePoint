@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="JSFile">
+    <File Path="JSFile\Sample.js" Url="JSFile/Sample.js" />
+  </Module>
+</Elements>

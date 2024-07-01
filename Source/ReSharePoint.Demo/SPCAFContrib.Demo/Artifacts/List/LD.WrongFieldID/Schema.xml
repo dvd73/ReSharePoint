@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="WrongFieldID" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/SPCAF.Rules.Features-LD.WrongFieldID" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      <ContentTypeRef ID="0x01">
+        <Folder TargetName="Item" />
+      </ContentTypeRef>
+      <ContentType ID="0x0100ddcf54dfa5494411bacd914e6079cc59003ec9a5f81b3647c190c18efc00468cf4"
+               Name="CT.ResourceType"
+               Group="Apps Common"
+               Description="Create new resource type"
+               Inherits="TRUE"
+               Version="0">
+        <FieldRefs>
+        </FieldRefs>
+      </ContentType>
+      <ContentTypeRef ID="0x0120" />
+    </ContentTypes>
+    <Fields>
+        <Field Id="{e34b2caf-fcb9-48ff-b86d-a75e521e454e}"
+          Type="Text"
+          Name="WrongFieldId"
+          StaticName="WrongFieldId"
+          DisplayName="Wrong Field Id declaration"
+          Required="TRUE"/>
+        
+        <Field ID="{2d7a5495-893b-4a38-95b9-f25d9a3e38f3}"
+          Type="Note"
+          Name="CorrectFieldId"
+          StaticName="CorrectFieldId"
+          DisplayName="Correct Field Id declaration"
+          Required="TRUE"
+          UnlimitedLengthInDocumentLibrary="TRUE"/>
+
+      <Field Type="User" DisplayName="Исполнитель"
+				 List="UserInfo"
+				 Required="TRUE"
+				 EnforceUniqueValues="FALSE"
+				 Indexed="TRUE"
+				 ShowField="NameWithPicture"
+				 UserSelectionMode="PeopleOnly"
+				 UserSelectionScope="0"
+				 ID="{E2D7B230-07B7-47CA-BF1B-D96639C83BCB}"
+				 StaticName="ProjectResponsiblePerson"
+				 Name="ProjectResponsiblePerson"
+				 Group="GTSS"
+				 Description="Главный инженер проекта"/>
+      </Fields>
+    <Views>
+      <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="LinkTitleNoMenu"></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="Modified" Ascending="FALSE"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="Attachments"></FieldRef>
+          <FieldRef Name="LinkTitle"></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="ID"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View>
+    </Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

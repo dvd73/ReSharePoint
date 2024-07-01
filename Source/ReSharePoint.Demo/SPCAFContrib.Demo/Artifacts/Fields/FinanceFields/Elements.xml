@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{a983defa-cb3c-4db0-822b-7ae09df7dbcd}"
+       Name="FinanceFields"
+       DisplayName="Finance Fields"
+       Type="Text"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+
+  <Field
+       ID="{8F980346-652E-4B2E-8A14-3CFF1CDA4413}"
+       Name="FinanceFields"
+       DisplayName="Finance Fields"
+       Type="Text"
+       Required="FALSE"
+       Group="Custom Site Columns">
+  </Field>
+
+</Elements>

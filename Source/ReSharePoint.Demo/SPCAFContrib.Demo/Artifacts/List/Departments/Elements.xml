@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Departments"
+                OnQuickLaunch="TRUE"
+                TemplateType="100"
+                FeatureId="467abde1-fa95-4572-9991-439b38c184cd"
+                Url="Lists/Departments"
+                Description="">
+  </ListInstance>
+</Elements>
