@@ -29,18 +29,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{DE57E66F-36E6-4E18-AA1E-8677889FEF4D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{C25C42A0-0339-44C7-A0E5-10D0ED4B95E6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{6FB880C1-B7A4-42C8-B1C5-C03580A06D1D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{E13DB9CC-94DE-4860-B530-59AF5584F478}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP-NET", "ASP-NET", "{7418E4BF-EEEE-497B-9CAC-C188ECD99876}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP-NET", "ASP-NET", "{8AE9213B-A8F0-4932-8217-4B6722F9ECAC}"
 	ProjectSection(SolutionItems) = preProject
 		..\Documentation\Basic\ASP-NET\readme.md = ..\Documentation\Basic\ASP-NET\readme.md
 		..\Documentation\Basic\ASP-NET\RESP516902.md = ..\Documentation\Basic\ASP-NET\RESP516902.md
 		..\Documentation\Basic\ASP-NET\RESP516905.md = ..\Documentation\Basic\ASP-NET\RESP516905.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{7EA2DBA5-FEF4-4BA1-85B3-169907F16990}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{6FB43ACD-C2FB-4CB9-B6F2-99E9D32B1632}"
 	ProjectSection(SolutionItems) = preProject
 		..\Documentation\Basic\Code\readme.md = ..\Documentation\Basic\Code\readme.md
 		..\Documentation\Basic\Code\RESP510201.md = ..\Documentation\Basic\Code\RESP510201.md
@@ -89,17 +89,61 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{7EA2DBA5-F
 		..\Documentation\Basic\Code\RESP512101.md = ..\Documentation\Basic\Code\RESP512101.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JavaScript", "JavaScript", "{A008B543-C07D-4578-8444-0CFA384B8D08}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JavaScript", "JavaScript", "{85260AB0-6DFE-4665-B9DE-8A201A1733E9}"
 	ProjectSection(SolutionItems) = preProject
 		..\Documentation\Basic\JavaScript\readme.md = ..\Documentation\Basic\JavaScript\readme.md
+		..\Documentation\Basic\JavaScript\RESP516801.md = ..\Documentation\Basic\JavaScript\RESP516801.md
+		..\Documentation\Basic\JavaScript\RESP516804.md = ..\Documentation\Basic\JavaScript\RESP516804.md
+		..\Documentation\Basic\JavaScript\RESP516901.md = ..\Documentation\Basic\JavaScript\RESP516901.md
+		..\Documentation\Basic\JavaScript\RESP516903.md = ..\Documentation\Basic\JavaScript\RESP516903.md
+		..\Documentation\Basic\JavaScript\RESP517301.md = ..\Documentation\Basic\JavaScript\RESP517301.md
+		..\Documentation\Basic\JavaScript\RESP517303.md = ..\Documentation\Basic\JavaScript\RESP517303.md
+		..\Documentation\Basic\JavaScript\RESP518901.md = ..\Documentation\Basic\JavaScript\RESP518901.md
+		..\Documentation\Basic\JavaScript\RESP518902.md = ..\Documentation\Basic\JavaScript\RESP518902.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xml", "Xml", "{208CEDF1-7701-4DDD-AB57-54B8EDE36A05}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xml", "Xml", "{7F0F51F7-2C4A-4F09-B164-45F11C28D56A}"
 	ProjectSection(SolutionItems) = preProject
 		..\Documentation\Basic\Xml\readme.md = ..\Documentation\Basic\Xml\readme.md
+		..\Documentation\Basic\Xml\RESP510004.md = ..\Documentation\Basic\Xml\RESP510004.md
+		..\Documentation\Basic\Xml\RESP515101.md = ..\Documentation\Basic\Xml\RESP515101.md
+		..\Documentation\Basic\Xml\RESP515102.md = ..\Documentation\Basic\Xml\RESP515102.md
+		..\Documentation\Basic\Xml\RESP515103.md = ..\Documentation\Basic\Xml\RESP515103.md
+		..\Documentation\Basic\Xml\RESP515104.md = ..\Documentation\Basic\Xml\RESP515104.md
+		..\Documentation\Basic\Xml\RESP515105.md = ..\Documentation\Basic\Xml\RESP515105.md
+		..\Documentation\Basic\Xml\RESP515106.md = ..\Documentation\Basic\Xml\RESP515106.md
+		..\Documentation\Basic\Xml\RESP515107.md = ..\Documentation\Basic\Xml\RESP515107.md
 		..\Documentation\Basic\Xml\RESP515108.md = ..\Documentation\Basic\Xml\RESP515108.md
+		..\Documentation\Basic\Xml\RESP515109.md = ..\Documentation\Basic\Xml\RESP515109.md
+		..\Documentation\Basic\Xml\RESP515110.md = ..\Documentation\Basic\Xml\RESP515110.md
+		..\Documentation\Basic\Xml\RESP515111.md = ..\Documentation\Basic\Xml\RESP515111.md
+		..\Documentation\Basic\Xml\RESP515112.md = ..\Documentation\Basic\Xml\RESP515112.md
+		..\Documentation\Basic\Xml\RESP515113.md = ..\Documentation\Basic\Xml\RESP515113.md
+		..\Documentation\Basic\Xml\RESP515114.md = ..\Documentation\Basic\Xml\RESP515114.md
 		..\Documentation\Basic\Xml\RESP515115.md = ..\Documentation\Basic\Xml\RESP515115.md
+		..\Documentation\Basic\Xml\RESP515201.md = ..\Documentation\Basic\Xml\RESP515201.md
+		..\Documentation\Basic\Xml\RESP515202.md = ..\Documentation\Basic\Xml\RESP515202.md
+		..\Documentation\Basic\Xml\RESP515203.md = ..\Documentation\Basic\Xml\RESP515203.md
+		..\Documentation\Basic\Xml\RESP515204.md = ..\Documentation\Basic\Xml\RESP515204.md
+		..\Documentation\Basic\Xml\RESP515205.md = ..\Documentation\Basic\Xml\RESP515205.md
+		..\Documentation\Basic\Xml\RESP515402.md = ..\Documentation\Basic\Xml\RESP515402.md
+		..\Documentation\Basic\Xml\RESP515403.md = ..\Documentation\Basic\Xml\RESP515403.md
+		..\Documentation\Basic\Xml\RESP515404.md = ..\Documentation\Basic\Xml\RESP515404.md
+		..\Documentation\Basic\Xml\RESP515405.md = ..\Documentation\Basic\Xml\RESP515405.md
+		..\Documentation\Basic\Xml\RESP515501.md = ..\Documentation\Basic\Xml\RESP515501.md
+		..\Documentation\Basic\Xml\RESP515502.md = ..\Documentation\Basic\Xml\RESP515502.md
+		..\Documentation\Basic\Xml\RESP515503.md = ..\Documentation\Basic\Xml\RESP515503.md
+		..\Documentation\Basic\Xml\RESP515504.md = ..\Documentation\Basic\Xml\RESP515504.md
+		..\Documentation\Basic\Xml\RESP515505.md = ..\Documentation\Basic\Xml\RESP515505.md
+		..\Documentation\Basic\Xml\RESP515506.md = ..\Documentation\Basic\Xml\RESP515506.md
+		..\Documentation\Basic\Xml\RESP515507.md = ..\Documentation\Basic\Xml\RESP515507.md
+		..\Documentation\Basic\Xml\RESP516401.md = ..\Documentation\Basic\Xml\RESP516401.md
+		..\Documentation\Basic\Xml\RESP516402.md = ..\Documentation\Basic\Xml\RESP516402.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extras", "Extras", "{38E3BD4F-21F4-4790-BC6A-005CBED76DA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeCompletion", "CodeCompletion", "{ABB76F50-54CA-4BC9-812F-1B185EC74494}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -120,11 +164,13 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{6FB880C1-B7A4-42C8-B1C5-C03580A06D1D} = {DE57E66F-36E6-4E18-AA1E-8677889FEF4D}
-		{7418E4BF-EEEE-497B-9CAC-C188ECD99876} = {6FB880C1-B7A4-42C8-B1C5-C03580A06D1D}
-		{7EA2DBA5-FEF4-4BA1-85B3-169907F16990} = {6FB880C1-B7A4-42C8-B1C5-C03580A06D1D}
-		{A008B543-C07D-4578-8444-0CFA384B8D08} = {6FB880C1-B7A4-42C8-B1C5-C03580A06D1D}
-		{208CEDF1-7701-4DDD-AB57-54B8EDE36A05} = {6FB880C1-B7A4-42C8-B1C5-C03580A06D1D}
+		{E13DB9CC-94DE-4860-B530-59AF5584F478} = {C25C42A0-0339-44C7-A0E5-10D0ED4B95E6}
+		{8AE9213B-A8F0-4932-8217-4B6722F9ECAC} = {E13DB9CC-94DE-4860-B530-59AF5584F478}
+		{6FB43ACD-C2FB-4CB9-B6F2-99E9D32B1632} = {E13DB9CC-94DE-4860-B530-59AF5584F478}
+		{85260AB0-6DFE-4665-B9DE-8A201A1733E9} = {E13DB9CC-94DE-4860-B530-59AF5584F478}
+		{7F0F51F7-2C4A-4F09-B164-45F11C28D56A} = {E13DB9CC-94DE-4860-B530-59AF5584F478}
+		{38E3BD4F-21F4-4790-BC6A-005CBED76DA0} = {C25C42A0-0339-44C7-A0E5-10D0ED4B95E6}
+		{ABB76F50-54CA-4BC9-812F-1B185EC74494} = {38E3BD4F-21F4-4790-BC6A-005CBED76DA0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2F19CA9-2EC0-4C0A-8470-8B5EC8F9753F}
