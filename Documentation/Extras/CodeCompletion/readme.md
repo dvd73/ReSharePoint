@@ -23,7 +23,7 @@
 1. ##### [RegistrationType attribute.](CustomActionRegistrationType.md)
 1. ##### [Rights attribute.](CustomActionRights.md)
 1. ##### [SPWebCollection.Add method.](SPWebCollectionAdd.md)
-1. ##### [emplateType attribute.](ListInstanceTemplateType.md)
+1. ##### [TemplateType attribute.](ListInstanceTemplateType.md)
 1. ##### [Use SPBuiltInField.](UseBuiltInFieldsInsteadOfStrings.md)
 1. ##### [User profile property name.](UserProfilePropertyName.md)
 1. ##### [Web part zone Title attribute.](WebPartZoneTitle.md)

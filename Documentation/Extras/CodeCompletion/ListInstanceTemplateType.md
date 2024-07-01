@@ -1,4 +1,4 @@
-## emplateType attribute.
+## TemplateType attribute.
 
 ### Description
 List instance has TemplateType attribute. It should contain list template type which is positive number. Having more than two custom list templates in the project or solution developer can forgive their numbers.
