@@ -14,7 +14,7 @@
     <copyright>Copyright &#x00A9; 2024 Dmitry Dolotovskikh</copyright>
     <tags>Static Analysis,Refactoring,Live Templates,Code Quality,Completion</tags>
     <releaseNotes>
-      Support R# 2024.1.3;
+      Support R# 2024.1.4;
       Fix help links;
     </releaseNotes>
     <dependencies>
