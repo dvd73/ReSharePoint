@@ -21,3 +21,4 @@
 1. ##### [Improve web part module.](RESP516402.md)
 1. ##### [Incorrect 'ID' attr name.](RESP515105.md)
 1. ##### [Incorrect lookup field provision.](RESP515114.md)
+1. ##### [Incorrect 'Note' field index.](RESP515112.md)
