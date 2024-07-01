@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: CT.Item.Base (0x0100DDCF54DFA5494411BACD914E6079CC59) -->
+  <ContentType ID="0x0100DDCF54DFA5494411BACD914E6079CC5900dbf81fb4a1a34d64bd61fb23148c0f0f"
+               Name="Demo - Order"
+               Group="Demo"
+               Description="Заявка"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+      <FieldRef ID="{BBC0AC6C-992D-476E-B226-D53F0885819B}" Name="Demo_OrderType" />
+      <FieldRef ID="{12AF008E-BB7D-45D7-8197-CF7939656538}" Name="Demo_OrderDepartment" />
+      <FieldRef ID="{3F9B67CF-2AA3-4FE9-AB74-B75DF7E22BE8}" Name="Demo_DepartmentBU" />      
+      <FieldRef ID="{7E71923D-F306-415C-BE8C-F1A3116FB5A1}" Name="Demo_DepartmentCostCenter" />      
+      <FieldRef ID="{C2AF84F0-D236-4216-B6F0-699F3ED58F03}" Name="Demo_DepartmentChiefManager" />
+      <FieldRef ID="{DA9AAF44-ABB2-4118-BD98-AED94AEE9DA2}" Name="Demo_OrderStatus" />
+      <FieldRef ID="{DD425DF5-C346-4630-8765-135C4E8B554D}" Name="Demo_OrderPrice" />
+      <FieldRef ID="{6df9bd52-550e-4a30-bc31-a4366832a87e}" Name="V3Comments" />
+      <FieldRef ID="{9DCB575B-648C-4BC1-A827-0BA9FE4B1C4A}" Name="Demo_OrderClosed" />
+      <FieldRef ID="{374EF9DE-BADD-469E-BBB7-2554BDD32C36}" Name="Demo_OrderCanceled" />
+      <FieldRef ID="{7DBD0B4A-A810-4FF9-9647-96101B87A0F8}" Name="Demo_OrderRejected" />
+    </FieldRefs>    
+  </ContentType>
+</Elements>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="PageLayouts" List="116" Url="_catalogs/masterpage" Path="PageLayouts" RootWebOnly="TRUE">
+    <File Url="SampleLayout.aspx">
+      <AllUsersWebPart WebPartOrder="1" WebPartZoneID="Center">
+        <![CDATA[
+						<WebPart xmlns="http://schemas.microsoft.com/WebPart/v2">
+								<Assembly>Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>                         
+								<TypeName>Microsoft.SharePoint.WebPartPages.ContentEditorWebPart</TypeName>
+								<FrameType>None</FrameType>
+								<ChromeType>None</ChromeType>
+								<Title>Collapse / Expand</Title>
+								<Content xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor">
+													&lt;script type=&quot;text/javascript&quot;&gt;
+													function collapseGroups() {
+													 $(&quot;img[src*=&#39;minus.gif&#39;]:visible&quot;).parent().click();
+													}
+													function expandGroups() {
+													 $(&quot;img[src*=&#39;plus.gif&#39;]:visible&quot;).parent().click();
+													}
+													$(function() {
+													 var expandAll = &quot;&lt;div style=&#39;float:right&#39;&gt;&lt;a href=&#39;#&#39; onClick=&quot;
+														+&#39;&quot;&#39;+&quot;this.href=&#39;javascript:expandGroups()&#39;&quot;
+														+&#39;&quot;&gt;&lt;img title=&quot;раскрыть все проекты&quot; style=&quot;border:none;&quot; alt=&quot;expand all&quot; src=&quot;/_layouts/images/collapseplus.gif&quot;&gt;&lt;/a&gt;&lt;/div&gt;&#39;;
+													 var collapseAll = &quot;&lt;div style=&#39;float:right&#39;&gt;&lt;a href=&#39;#&#39; onClick=&quot;+&#39;&quot;&#39;
+														+&quot;this.href=&#39;javascript:collapseGroups()&#39;&quot;
+														+&#39;&quot;&gt;&lt;img title=&quot;свернуть все проекты&quot; style=&quot;border:none;&quot; alt=&quot;collapse all&quot; src=&quot;/_layouts/images/collapseminus.gif&quot;&gt;&lt;/a&gt;&lt;/div&gt;&#39;; 
+
+													$(&quot;#WebPartTitleWPQ7&quot;).wrapInner(&quot;&lt;div id=&#39;projectWPTitle&#39; style=&#39;float: left;&#39;&gt;&lt;/div&gt;&quot;);
+													$(&quot;#WebPartTitleWPQ7&quot;).append(expandAll).append(collapseAll);
+													
+													_spBodyOnLoadFunctionNames.push(&quot;expandGroups&quot;); 
+													});
+													&lt;/script&gt;​​                          ​
+								 </Content>
+							</WebPart>
+						]]>
+      </AllUsersWebPart>
+    </File>
+    <File Path="SitePages\AssignedTasks.aspx" Url="SitePages/AssignedTasks.aspx">
+      <AllUsersWebPart WebPartOrder="0" WebPartZoneID="Main">
+        <![CDATA[
+						<webParts>
+							<webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+								<metaData>
+									<type name="GTSS.PM.Local.WebParts.AssignedTasks, $SharePoint.Project.AssemblyFullName$" />
+									<importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+								</metaData>
+								<data>
+									<properties>
+										<property name="Title" type="string">Выданные мною поручения</property>
+										<property name="Description" type="string">Задачи, которые я назначил</property>
+										<property name="ChromeType" type="chrometype">TitleOnly</property>										
+										<property name="ContentMode" type="WidgetContentMode">Full</property>
+										<property name="Dockable" type="bool">False</property>
+									</properties>
+								</data>
+							</webPart>
+						</webParts>
+						]]>
+      </AllUsersWebPart>
+    </File>
+  </Module>
+</Elements>

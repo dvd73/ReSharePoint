@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Id="e7d0f042-9f7c-47fc-a266-2ca18cb4cbdd"                 
+                Title="Remove LeftNavigationAreaCell" 
+                Location="ScriptLink"
+                ScriptBlock="function loadImageUploaderScript() {   
+                
+                      var head = document.getElementsByTagName('head')[0];                      
+                      var body = document.getElementsByTagName('body')[0];
+                      var url = window.location.toString();
+                      /*
+                      if (typeof jQuery == 'undefined')
+                      {
+                        var jq_script = document.createElement('script');         
+                        jq_script.type = 'text/javascript';                         
+                        url = typeof(L_Menu_BaseUrl) != 'undefined' ? L_Menu_BaseUrl : url.substr(0, url.indexOf('/_layouts')); 
+                        jq_script.src = url + '/_layouts/moss.common/scripts/jquery.min.js';                         
+                        (head || body).appendChild(jq_script);
+                      }                      
+                       */
+                      var script = document.createElement('script');         
+                      script.type = 'text/javascript';     
+                      url = window.location.toString();
+                      url = typeof(L_Menu_BaseUrl) != 'undefined' ? L_Menu_BaseUrl : url.substr(0, url.indexOf('/_layouts')); 
+                      script.src = url + '/_layouts/SPCAFContrib/Scripts/LeftNavigationAreaCellOff.js';                         
+                      (head || body).appendChild(script);                          
+                      
+            }   
+ _spBodyOnLoadFunctionNames.push('loadImageUploaderScript()');" Sequence="120"/>
+</Elements>

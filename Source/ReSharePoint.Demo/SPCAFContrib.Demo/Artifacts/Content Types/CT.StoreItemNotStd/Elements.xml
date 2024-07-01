@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: CT.Item.Base (SharePoint.Common\CT.Item.Base) (0x0100ddcf54dfa5494411bacd914e6079cc59) -->
+  <ContentType ID="0x0100ddcf54dfa5494411bacd914e6079cc590041125bb5d33947c5bcef6d1615ac3843"
+               Name="Demo - Store item Not Standard"
+               Group="Demo"
+               Description="Товар из внешнего каталога"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+      <FieldRef ID="{1891D9C0-909E-45D1-93FD-8703D32902FB}" Name="Demo_ItemTitle" />
+      <FieldRef ID="{B9FC1C06-E61D-4896-B95B-E9EA4D7D28DD}" Name="Demo_ItemCategoryNotStd" />      
+      <FieldRef ID="{39665E53-9F30-495E-B3C5-3F9EE80A7ECA}" Name="Demo_ItemMeasureUnitNotStd" />
+      <FieldRef ID="{C9B97D87-BAFD-4452-A193-F2349E65058B}" Name="Demo_ItemPrice" />
+    </FieldRefs>
+  </ContentType>
+</Elements>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: CT.Item.Base (SharePoint.Common\CT.Item.Base) (0x0100ddcf54dfa5494411bacd914e6079cc59) -->
+  <ContentType ID="0x0100ddcf54dfa5494411bacd914e6079cc5900539927e950d44a0295d1c6b88a9b8594"
+               Name="Demo - Store item"
+               Group="Demo"
+               Description="Товар из внутреннего каталога(склад)"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+      <FieldRef ID="{1891D9C0-909E-45D1-93FD-8703D32902FB}" Name="Demo_ItemTitle" />
+      <FieldRef ID="{F8E065F6-0024-4A63-871A-4C60D36FA698}" Name="Demo_ItemCategory" />
+      <FieldRef ID="{D5CD7EEC-584E-429B-9C99-B834566FD01F}" Name="Demo_ItemPicture" />
+      <FieldRef ID="{09DE68C0-1A0E-4BF9-AB4F-D2CA6F0C5A96}" Name="Demo_ItemMeasureUnit" />
+      <FieldRef ID="{C9B97D87-BAFD-4452-A193-F2349E65058B}" Name="Demo_ItemPrice" />
+      <FieldRef ID="{B8C87745-94D9-457E-95BA-45821F568044}" Name="Demo_ItemAvailability" />
+      <FieldRef ID="{944FA8F0-5F26-48C1-A800-08B695044574}" Name="Demo_ItemStatusIndicator" />
+      <FieldRef ID="{FE00A26A-2669-4243-828C-9FDF4551C319}" Name="Demo_ItemOrderCount" />
+      <FieldRef ID="{DD41F1D1-8863-442C-BD33-7E4CA1735E90}" Name="Demo_ItemIncome" />
+      <FieldRef ID="{9AADF3AB-380A-4CFD-9114-DA65C8C7AC3F}" Name="Demo_ItemThreshold" />
+      <FieldRef ID="{15CDF3BE-AF98-42C4-BAF1-913B06B6C324}" Name="Demo_ItemReserveBalance" />
+      <FieldRef ID="{53535BFF-BCF0-4405-9798-1F9A42F1D4CC}" Name="Demo_ItemReserved" />
+      <FieldRef ID="{A473E042-1743-48A3-9DF1-9E0538A840C2}" Name="Demo_ItemNotVisible" />
+      <FieldRef ID="{6df9bd52-550e-4a30-bc31-a4366832a87e}" Name="V3Comments" />
+    </FieldRefs>    
+  </ContentType>
+</Elements>

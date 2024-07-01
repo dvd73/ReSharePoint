@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: Item (0x01) -->
+  <ContentType ID="0x0100b2f643dfd5a846bfb6505b2cd80a5429"
+               Name="Demo - OrderLog"
+               Group="Demo"
+               Description="История заявок"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+      <FieldRef ID="{FA96EC88-E3D4-4440-B62F-075C985AF75E}" Name="Demo_OrderItemOrder"/>
+      <FieldRef ID="{75022B27-8DA9-48FB-95DE-69248B14431A}" Name="Demo_OrderLogDate"/>
+      <FieldRef ID="{DA9AAF44-ABB2-4118-BD98-AED94AEE9DA2}" Name="Demo_OrderStatus"/>
+      <FieldRef ID="{BC6ACF99-400F-4D8C-83C5-116329667134}" Name="Demo_OrderLogPerson"/>
+      <FieldRef ID="{6df9bd52-550e-4a30-bc31-a4366832a87e}" Name="V3Comments" />
+    </FieldRefs>
+  </ContentType>
+</Elements>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: CT.Item.Base (SharePoint.Common\CT.Item.Base) (0x0100ddcf54dfa5494411bacd914e6079cc59) -->
+  <ContentType ID="0x0100ddcf54dfa5494411bacd914e6079cc590087f0ba5f88e447658bb80be4f6a11583"
+               Name="Demo - Order item"
+               Group="Demo"
+               Description="Позиция заявки"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+      <FieldRef ID="{FA96EC88-E3D4-4440-B62F-075C985AF75E}" Name="Demo_OrderItemOrder" />
+      <FieldRef ID="{BBC0AC6C-992D-476E-B226-D53F0885819B}" Name="Demo_OrderType" />
+      <FieldRef ID="{DA9AAF44-ABB2-4118-BD98-AED94AEE9DA2}" Name="Demo_OrderStatus" />
+      <FieldRef ID="{9B03CFC4-37C3-4DC2-B4A6-BC09161D4EED}" Name="Demo_OrderItemArticle" />
+      <FieldRef ID="{1891D9C0-909E-45D1-93FD-8703D32902FB}" Name="Demo_ItemTitle" />
+      <FieldRef ID="{F8E065F6-0024-4A63-871A-4C60D36FA698}" Name="Demo_ItemCategory" />
+      <FieldRef ID="{09DE68C0-1A0E-4BF9-AB4F-D2CA6F0C5A96}" Name="Demo_ItemMeasureUnit" />
+      <FieldRef ID="{C9B97D87-BAFD-4452-A193-F2349E65058B}" Name="Demo_ItemPrice" />
+      <FieldRef ID="{860AB84B-2A16-4E27-9407-6761BDAB46B0}" Name="Demo_OrderItemAmount" />
+      <FieldRef ID="{E04ABC0F-3D61-43A4-823B-5318A94ED62E}" Name="Demo_OrderItemSum" />
+    </FieldRefs>    
+  </ContentType>
+</Elements>
