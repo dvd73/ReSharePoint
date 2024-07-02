@@ -7,7 +7,7 @@
     <authors>Dmitry Dolotovskikh</authors>
     <owners>Dmitry Dolotovskikh</owners>
     <projectUrl>https://github.com/dvd73/ReSharePoint</projectUrl>
-    <iconUrl>https://github.com/dvd73/ReSharePoint/blob/main/assets/reSPLogo32.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/dvd73/ReSharePoint/main/assets/reSPLogo32.png</iconUrl>
     <licenseUrl>https://opensource.org/licenses/MITShare</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Essential tool to ensure SharePoint code quality</description>
