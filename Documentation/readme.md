@@ -9,4 +9,4 @@
     *   [Live Templates](Extras/LiveTemplates/readme.md)
     *   [Code Completion](Extras/CodeCompletion/readme.md)
 * [F.A.Q.](faq.md)
-* [Known issue](known_issues.md)
+* [Known issues](known_issues.md)
